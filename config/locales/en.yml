@@ -30,4 +30,46 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+   datetime:
+            distance_in_words:
+              about_x_hours:
+                one: anviron 1 è
+                other: anviron %{count} è
+              about_x_months:
+                one: anviwon 1 mwa
+                other: anviwon %{count} mwa
+              about_x_years:
+                one: anviwon 1 an
+                other: anviwon %{count} an
+              almost_x_years:
+                one: preske 1 an
+                other: preske %{count} an
+              half_a_minute: 30 segond
+              less_than_x_minutes:
+                one: mwens ke 1 minit
+                other: mwens ke %{count} minit
+              less_than_x_seconds:
+                one: mwens ke 1 segond
+                other: mwens ke %{count} segond
+              over_x_years:
+                one: plis ke 1 an
+                other: plis %{count} an
+              x_days:
+                one: 1 jou
+                other: "%{count} jou"
+              x_minutes:
+                one: 1 minit
+                other: "%{count} minit"
+              x_months:
+                one: 1 mwa
+                other: "%{count} mwa"
+              x_seconds:
+                one: 1 segond
+                other: "%{count} segond"
+            prompts:
+              day: jou
+              hour: è
+              minute: minit
+              month: mwa
+              second: segond
+              year: an
