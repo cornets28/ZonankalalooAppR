@@ -1045,9 +1045,16 @@ h1.title1 {
   padding: 30px 18px;
   text-align: center;
   transition: all 0.3s ease 0s;
+  /* display: flex; */
+    justify-content: space-between; 
 }
 .b-logo:hover {
   box-shadow: 0 0 5px 3px #eaeaea;
+}
+
+#logo-brand {
+  width: 30px;
+  height: 30px;
 }
 /*----------------------------------------*/
 /*  12. footer top CSS

@@ -1,4 +1,5 @@
 class Reply < ApplicationRecord
+  # has_one_attached :image
   has_rich_text :reply
 
   belongs_to :discussion

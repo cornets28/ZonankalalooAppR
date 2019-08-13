@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :partners
   resources :channels
   resources :discussions do
     resources :replies

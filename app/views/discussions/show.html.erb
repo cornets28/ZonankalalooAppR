@@ -26,7 +26,8 @@
                                     </div>
                                     <div class="blo-image-and-date">
                                       
-                                       <%= image_tag(@discussion.image.url, size: "280x500", alt: 'Image') if @discussion.image? %>
+                                       <%= image_tag @discussion.image, size: "580x1800"%>
+                                       
                                     </div>
                                     <div class="blog-text">
                                         <p><%= @discussion.content %></p>

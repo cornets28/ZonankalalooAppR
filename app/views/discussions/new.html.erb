@@ -1,5 +1,19 @@
-<h1 class="title is-size-3">New Discussion</h1>
+<section class="our-blog-area pt-90 pb-60">
+    <div class="container">
+        <div class="row">
 
-<%= render 'form', discussion: @discussion %>
+            <div class="col-sm-8">
+                <div class="leave-reply">
+                    <h2>Nouvo Diskisyon</h2>
+                
+                    <ul>
+                       <%= render 'form', discussion: @discussion %>
+                    </ul>
+                </div>
 
-<%= link_to 'Back', discussions_path %>
+
+            <%= link_to 'Back', discussions_path %>
+
+        </div>
+    </div>
+</section>

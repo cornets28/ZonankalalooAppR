@@ -132,11 +132,15 @@
                                             </div>
                                             
                                             <div class="field-wrap"> 
-                                                <%= f.input :password, required: true, label: "Modpas", input_html: {tag: "span", class: "req", style:"color: white"}, wrapper: false, label_html: { class: "label" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>           
+                                                <%= f.input :password, required: true, label: "Modpas", input_html: {tag: "span", class: "req", style:"color: white"}, wrapper: false, label_html: { class: "label" }, hint: ("#{@minimum_password_length} karakte pou pi piti" if @minimum_password_length) %>           
                                             </div>
 
                                             <div class="field-wrap">
                                                 <%= f.input :password_confirmation, required: true, label: "Konfime Modpas", input_html: {tag: "span", class: "req"}, wrapper: false, label_html: { class: "label" } %>
+                                            </div>
+
+                                            <div class="field-wrap">
+                                                <%= f.file_field :image, input_html: {tag: "span", class: "req"}, wrapper: false, label_html: { class: "label" } %>
                                             </div>
                                             
                                             <button type="submit" class="button button-block">Anrejiste</button>
@@ -626,7 +630,8 @@
                 </div>
             </section>
             <!-- End brand logo area -->
-
+           
+           
             <section class="brand-logo-area pb-90">
                 <div class="container">
                     <div class="row">
@@ -640,58 +645,26 @@
                         <!-- End section title -->
                         <!-- Start brand logo -->
                         <div class="brand-logo">
-                            <div class="col-sm-2">
-                                <div class="b-logo">
-                                  <a href="https://noukod.com/">
-                                    <img src="/img/patneyo/noukod.png" alt="NouKod Imaj">
-                                   </a> 
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="b-logo">
-                                  <a href="https://achivmizik.com/">
-                                    <img src="/img/patneyo/achivmizik.jpeg" alt="NouKod Imaj">
-                                   </a> 
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="b-logo">
-                                    <a href="https://achivmizik.net/">
-                                        <img src="/img/mic.jpeg" alt="">                                
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="b-logo">
-                                    <a href="https://achivmizik.net/">
-                                        <img src="/img/mic.jpeg" alt="">                                
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-2">
-                                <div class="b-logo">
-                                    <a href="https://achivmizik.net/">
-                                        <img src="/img/mic.jpeg" alt="">                                
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
-                                <div class="b-logo">
-                                    <a href="https://achivmizik.net/">
-                                        <img src="/img/mic.jpeg" alt="">                                
-                                    </a>
-                                </div>
-                            </div>
+                             
+                            <% if !Partner.nil? %>
+                               <% @partners = Partner.all %>   
+                               <div class="col-sm-6" style="display: flex;">
+                                   <% @partners.each do |partner| %>
+                                       <div class="b-logo">
+                                           <a id="logo-brand" href="<%= partner.official_link %>">
+                                               <%= image_tag partner.image if partner.image.attached? %>
+                                           </a>
+                                   </div>
+                                   <% end %>
+                               </div>
+                             <% end %>
                         </div>
                         <!-- End brand logo -->
                     </div>
                 </div>
             </section>
             <!-- Start footer -->
-           
-            <!-- End footer -->
-        </div>
+</div>
         <!-- End main area -->
 
       
