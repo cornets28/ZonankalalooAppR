@@ -1,40 +1,29 @@
 
     
      
-      <div class="coment-image is-48x48">
-       
-        <%= gravatar_image_tag(reply.user.email, class: 'border-radius-50', size: 48, alt: reply.user.username) %>
-      
-      </div>
-    
-   
+   <div class="coment-image">
+      <%= image_tag user_avatar(reply.user, 50), class: "rounded-circle"%>
+   </div>
         
-          <div class="comment-heading">
-            <h5><%= reply.user.username %></h5> 
-            <p><%= time_ago_in_words(reply.created_at) %></p>
-            <a class="reply" href="#"><i class="fa fa-undo"></i>Reply</a>
+   <div class="comment-heading">
+      <h5><%= reply.user.username %> <%= reply.user.userlastname %></h5> 
+      <p><%= time_ago_in_words(reply.created_at) %></p>
+      <a class="reply" href="#"><i class="fa fa-undo"></i>Reply</a>
 
-            <% if reply_author(reply) || has_role?(:admin) %>
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <a class="level-item">
-            <%= link_to edit_discussion_reply_path(reply.discussion, reply) do %>
+      <% if reply_author(reply) || has_role?(:admin) %>
+          <%= link_to edit_discussion_reply_path(reply.discussion, reply) do %>
             <span class="icon is-small"><i class="fa fa-pencil"></i></span>
-            <% end %>
-          </a>
-          <a class="level-item">
-            <%= link_to [reply.discussion, reply],
-                method: :delete, data: {confirm: "Are you sure ?" } do %>
-            <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
-            <% end %>
-          </a>
-        </div>
-      </nav>
+          <% end %> <span> | </span>
+          <%= link_to [reply.discussion, reply],
+               method: :delete, data: {confirm: "Are you sure ?" } do %>
+               <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+          <% end %>
       <% end %>
-          </div>
-          <div class="coment0-text">
-            <%= reply.reply %>
-          </div>
+    </div>
+
+    <div class="coment0-text">
+      <%= reply.reply %>
+    </div>
      
       
       

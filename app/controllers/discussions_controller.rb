@@ -13,6 +13,8 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1.json
   def show
     @discussions = Discussion.all.order('created_at desc')
+    # @replies= @discussion.replies/
+   
   end
 
   # GET /discussions/new

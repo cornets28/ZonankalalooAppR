@@ -1,11 +1,16 @@
+
 <%= simple_form_for(@channel) do |f| %>
   <%= f.error_notification %>
 
  <div class="field">
-   <div class="control">
-     <%= f.input :channel, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label' } %>
+   <div class="input-block-level">
+     <%= f.input :channel, input_html: { class: 'input', placeholder:"Ekri Non Kategori A" }, wrapper: false, label_html: { class: 'label' } %>
    </div>
  </div>
 
- <%= f.button :submit, class: 'button is-info' %>
+  <div class="field">
+    <div class="control">
+      <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
+    </div>
+  </div>
 <% end %>

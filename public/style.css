@@ -1447,6 +1447,7 @@ h1.title1 {
   float: left;
   margin-right: 2.8%;
   width: 31.45%;
+  
 }
 .last{
   margin-right: 0%;  
@@ -1792,6 +1793,7 @@ h1.title1 {
   width: 30px;
 } */
 
+
 .blog-details .blog-text {
   padding: 0;
   margin-top: 15px;
@@ -1867,7 +1869,9 @@ h1.title1 {
   float: left;
   margin-bottom: 30px;
   margin-top: 30px;
-  width: 100%;
+  width: 100%; 
+   
+  /* overflow-x: inherit; */
 }
 .leave-reply h2 {
   background-color: #363636;
@@ -1886,6 +1890,7 @@ h1.title1 {
 .leave-reply ul li {
   margin: 0 0 20px;
   position: relative;
+  min-width: 15px; 
 }
 .leave-reply input[type="text"], .leave-reply textarea {
   background-color: #ffffff;
@@ -1898,6 +1903,18 @@ h1.title1 {
   transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
   width: 100%;
 }
+.trix-button-row {
+  
+  overflow: hidden; 
+}
+
+/* @media screen and (max-width: 544px) {
+
+  .trix-button-row {
+      
+      max-width: 10px;
+  }
+} */
 .leave-reply ul li i {
   font-size: 20px;
   height: 100%;
@@ -1929,6 +1946,7 @@ h1.title1 {
 .leave-reply .btn-style:hover {
   background: #0AAAA0 none repeat scroll 0 0;
 }
+
 /*----------------------------------------*/
 /*  20. Blog details sidebar right CSS
 /*----------------------------------------*/

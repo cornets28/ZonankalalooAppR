@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_one_attached :image
-  
+  has_one_attached :avatar
+
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -9,4 +9,5 @@ class User < ApplicationRecord
 
   has_many :discussions, dependent: :destroy
   has_many :channels, through: :discussions
+  
 end

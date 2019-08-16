@@ -29,7 +29,15 @@ module ApplicationHelper
     # markdown_to_plain_text = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
     # markdown_to_plain_text.render(text).html_safe
   end
-
+  
+  def user_avatar(user, size=40)
+    
+    if user.avatar.attached? 
+        user.avatar.variant(resize: "#{size}x#{size}!") 
+     else 
+        gravatar_image_url(user.email, size: size) 
+    end 
+  end
 end
 
 

@@ -46,6 +46,7 @@ class RepliesController < ApplicationController
   end
 
   def show
+    @users = User.all
   end
 
   private

@@ -1,6 +1,7 @@
 class Discussion < ApplicationRecord
   # mount_uploader :image, ImageUploader
   has_one_attached :image
+  
   has_rich_text :content
 
   belongs_to :channel
