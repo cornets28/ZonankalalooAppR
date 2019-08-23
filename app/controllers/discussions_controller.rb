@@ -7,12 +7,15 @@ class DiscussionsController < ApplicationController
   # GET /discussions.json
   def index
     @discussions = Discussion.all.order('created_at desc')
+    @discussions_pagination = Discussion.paginate(page: params[:page], per_page: 6)
   end
 
   # GET /discussions/1
   # GET /discussions/1.json
   def show
     @discussions = Discussion.all.order('created_at desc')
+    Discussion.increment_counter(:view, @discussion.id)
+    @discussion.save
     # @replies= @discussion.replies/
    
   end

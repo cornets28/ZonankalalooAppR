@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_14_181733) do
+ActiveRecord::Schema.define(version: 2019_08_21_191042) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_08_14_181733) do
     t.integer "channel_id"
     t.string "slug"
     t.string "image"
+    t.integer "view"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -100,6 +101,18 @@ ActiveRecord::Schema.define(version: 2019_08_14_181733) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "position"
+    t.string "facebook_link"
+    t.string "twitter_link"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|

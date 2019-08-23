@@ -6,6 +6,7 @@ class ChannelsController < ApplicationController
   def index
     @channels = Channel.all
     @discussions = Discussion.all.order('created_at desc')
+    @discussionss = Discussion.where('channel_id = ?', @channel.id)
   end
 
   # GET /channels/1

@@ -2167,19 +2167,4 @@ h1.title1 {
   text-transform: capitalize;
 }
 
-
-/* &&&&&&& discussion bottom */
-
-/* .discussion-bottom {
-  display: block;
-  flex: row;
-} */
-/* .is-small {
-  padding-right: 10px;
-  padding-left: 10px;
-  z-index: 9999;
-  /* float: left!important; */
- /* .row {
-   display: row;
-   float: left;
- } */
+/* pagination style */

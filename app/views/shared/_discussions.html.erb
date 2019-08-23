@@ -2,91 +2,197 @@
 <div class="container" style="padding-top: 90px;">
     <div class="row">
         <!-- Start blog -->
-        <div class="blog">
-            <!-- Start of loop -->
-            <% @discussions.each do |discussion| %>
-                <div class="col-sm-4">
-                    <!-- single blog starts here -->
-                    <div class="single-blog mb-30"> 
-                        <div class="blo-image-and-date" id="blo-image">
+        
+  
+     
+        
+            <div class="col-sm-8">
+              <div class="digg_pagination">
+                <%= will_paginate @discussions_pagination, inner_window: 3, outer_window:1 %>
+             </div>
+                <!-- Start of loop -->
+                
+                <% @discussions[0..3].each do |discussion| %>
+                    <div class="col-sm-6">
+                        <!-- single blog starts here -->
+                        <div class="single-blog mb-30"> 
+                            <div class="blo-image-and-date" id="blo-image">
+                            
+                            <%= image_tag discussion.image if discussion.image.attached? %>
+        
                         
-                        <%= image_tag discussion.image if discussion.image.attached? %>
-    
-                       
-                    
-                             
-                            <!--<img src="/img/mic.jpeg" width="356px"alt="Discussion Image">-->
-                             <% if discussion.channel %>
-                                  <%= link_to discussion.channel.channel, discussion.channel %>
-                              <% end %>   
-                        </div>
-                        <div class="blog-info">
-                            <div class="admin">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                        
+                                
+                                <!--<img src="/img/mic.jpeg" width="356px"alt="Discussion Image">-->
+                                <% if discussion.channel %>
+                                    <%= link_to discussion.channel.channel, discussion.channel %>
+                                <% end %>   
                             </div>
-                            <div class="comment">
-                                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
-                                <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                            <div class="blog-info">
+                                <div class="admin">
+                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                </div>
+                                <div class="comment">
+                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
+                                    <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="blog-text">
-                          <h3>
+                            <div class="blog-text">
+                            <h3>
+                                <%= link_to discussion do %>
+                                    <%= truncate(discussion.title, length: 32) %>
+                                <% end %>
+                            </h3>
+                            
+                            <%= truncate(strip_tags(discussion.content.to_s), length: 180) %>
+                            <p>
+                                <em>
+                                    <small>
+                                        Atik sa gen <%= time_ago_in_words(discussion.created_at) %>, Kategori
+                                        <% if discussion.channel %>
+                                            <%= link_to discussion.channel.channel, discussion.channel %>
+                                        <% end %>
+                                    </small>
+                                </em>
+                            </p>
+                                <% if discussion_author(discussion) || has_role?(:admin) %>
+                                    <div class="column has-text-left"> 
+                                        <%= link_to edit_discussion_path(discussion) do %>
+                                            <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                        <% end %> |
+                                        <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
+                                            <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+                                        <% end %>
+                                    </div>
+
+                                <% else %>
+                                    <div class="column has-text-left">
+                                        <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                                    </div>
+                                
+                                <% end %>
                             <%= link_to discussion do %>
-                                <%= truncate(discussion.title, length: 35) %>
+                                
+                                    <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plis Detay...</p>
+                                
                             <% end %>
-                          </h3>
-                         
-                          <%= truncate(strip_tags(discussion.content.to_s), length: 180) %>
-                          <p>
-                            <em>
-                                <small>
-                                    Atik sa gen <%= time_ago_in_words(discussion.created_at) %>, Kategori
+                            </div>      
+                        </div> <!-- End single blog -->
+                    </div>                         
+                <% end %> <!-- Loop ends here -->
+
+              <div class="digg_pagination">
+                <%= will_paginate @discussions_pagination, inner_window: 3, outer_window:1 %>
+             </div>
+            
+            </div> <!-- End blog -->
+            <%= render "/shared/most_popular_discussions" %>
+
+           <hr />
+          
+
+           <% @channels.each do |ch| %>
+                   
+                       
+                    <div class="col-sm-12">
+
+                        <div class="col-sm-12">
+                            <div class="section-title text-center">
+                                <h2><span><%= ch.channel %><hr></span></h2>
+                                <img src="img/title-bottom.png" alt="">
+                            </div>
+                        </div>
+      
+                
+                    <% ch.discussions.each do |discussion| %>
+                        <div class="col-sm-4"> <!--starts here -->
+                            <div class="single-blog mb-30"> 
+                                <div class="blo-image-and-date" id="blo-image">
+                                
+                                   <%= image_tag discussion.image if discussion.image.attached? %>
                                     <% if discussion.channel %>
                                         <%= link_to discussion.channel.channel, discussion.channel %>
-                                    <% end %>
-                                </small>
-                            </em>
-                          </p>
-                            <% if discussion_author(discussion) || has_role?(:admin) %>
-                                <div class="column has-text-left"> 
-                                    <%= link_to edit_discussion_path(discussion) do %>
-                                        <span class="icon is-small"><i class="fa fa-pencil"></i></span>
-                                    <% end %> |
-                                    <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
-                                        <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
-                                    <% end %>
+                                    <% end %>   
                                 </div>
-
-                              <% else %>
-                                <div class="column has-text-left">
-                                    <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                                <div class="blog-info">
+                                    <div class="admin">
+                                        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                    </div>
+                                    <div class="comment">
+                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
+                                        <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                                    </div>
                                 </div>
-                            
-                            <% end %>
-                           <%= link_to discussion do %>
-                             
-                                <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plis Detay...</p>
-                            
-                          <% end %>
-                        </div>      
-                    </div> <!-- End single blog -->
-                </div>                         
-             <% end %> <!-- Loop ends here -->
-        </div> <!-- End blog -->
+                                <div class="blog-text">
+                                <h3>
+                                    <%= link_to discussion do %>
+                                        <%= truncate(discussion.title, length: 35) %>
+                                    <% end %>
+                                </h3>
+                                
+                                <%= truncate(strip_tags(discussion.content.to_s), length: 180) %>
+                                <p>
+                                    <em>
+                                        <small>
+                                            Atik sa gen <%= time_ago_in_words(discussion.created_at) %>, Kategori
+                                            <% if discussion.channel %>
+                                                <%= link_to discussion.channel.channel, discussion.channel %>
+                                            <% end %>
+                                        </small>
+                                    </em>
+                                </p>
+                                    <% if discussion_author(discussion) || has_role?(:admin) %>
+                                        <div class="column has-text-left"> 
+                                            <%= link_to edit_discussion_path(discussion) do %>
+                                                <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                            <% end %> |
+                                            <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
+                                                <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+                                            <% end %>
+                                        </div>
 
-        <div class="col-sm-12">
-            <div class="blog-pagination">
-                <nav>
-                    <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">Next page</a></li>
-                    </ul>
-                </nav>
-            </div> <!-- End of pagination area -->
-        </div>  <!-- End of col-sm-12 -->
+                                    <% else %>
+                                        <div class="column has-text-left">
+                                            <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                                        </div>
+                                    
+                                    <% end %>
+                                <%= link_to discussion do %>
+                                    
+                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plis Detay...</p>
+                                    
+                                <% end %>
+                                </div>      
+                            </div> <!-- End single blog -->
+                        </div>                         
+                    <% end %> <!-- Loop ends here -->
+
+              
+
+            </div>
+                <!-- Start of loop -->
+                  <div class="col-sm-12">
+                <div class="blog-pagination">
+                    <nav>
+                        <ul>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">Next page</a></li>
+                        </ul>
+                    </nav>
+                </div> <!-- End of pagination area -->
+            </div>  <!-- End of col-sm-12 -->
+         <% end %>
+              
+
+           
+           
+
+          
+            </div>
+       </div>
                    
     </div> <!-- Endof row area -->
 </div> <!-- End our container area -->

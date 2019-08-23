@@ -4,14 +4,14 @@
   </div>
   <div class="level-right">
   <% if has_role?(:admin) %>
-    <%= link_to 'Edit Channel', edit_channel_path(@channel), class:"button" %>
+    <%= link_to 'Edit Chan;;nel', edit_channel_path(@channel), class:"button" %>
   <% end %>
   </div>
 </div>
 <hr />
 
 <div class="columns">
- <%= render 'shared/discussions' %>
+ <%= render 'shared/discussions_all_channels' %>
 
 </div>
 
