@@ -30,7 +30,7 @@
                                                         <ul>
                                                             <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path, class:'button is-info' %></li>
                                                             <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
-                                                                                                                           <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
+                                                            <li><%= link_to 'Ajoute Nouvo Esponso', new_sponsor_path, class:'button is-info' %></li>
                                                            <li><%= link_to 'Ajoute Manm', new_team_path, class:'button is-info' %></li>
                             
                                                         </ul>
@@ -38,9 +38,9 @@
                                                     </li> 
                                                 </ul>
                                             </li>
-                                            <li><a href="/home"><strong>NOU SE KIYES</strong></a></li>
+                                            <li><a href="/home"><strong>KIYES NOU SE</strong></a></li>
                                            
-                                            <li><a href="events.html"><strong>EVENMAN</strong></a></li>
+                                            <li><a href="events.html"><strong>FEYTON</strong></a></li>
                                             <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
                                                 <ul class="drop-menu">
                                                     <li> 
@@ -75,7 +75,7 @@
                                                     </ul>
                                                 </div>
                                             </li>
-                                            <li  class="mega-menu"><a href="#"><strong>POKO KONNEN</strong></a>
+                                            <li  class="mega-menu"><a href="#"><strong>COMMING</strong></a>
                                                 <div class="mega-menu-area">
                                                     <ul class="single-mega-item">
                                                         <li class="shortcode-title">Shortcode 1</li>
@@ -141,6 +141,7 @@
                                                 <% if has_role?(:admin) %>
                                                     <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path%></li>
                                                     <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path %></li>
+                                                    <li><%= link_to 'Ajoute Nouvo Sponso', new_sponsor_path %></li>
                                                 <% end %>    
                                             </ul>
                                         </li>

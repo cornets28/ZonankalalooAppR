@@ -9,7 +9,8 @@ class RepliesController < ApplicationController
 
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to discussion_path(@discussion) }
+        #  redirect_to discussion_path(@discussion) or
+         redirect_back(fallback_location: discussion_path(@discussion))
         format.js # renders create.js.erb
       else
         format.html { redirect_to discussion_path(@discussion), notice: "Reply did not save. Please try again."}

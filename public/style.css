@@ -591,10 +591,12 @@ h1.title1 {
   margin-bottom: -5px;
   overflow: hidden;
 }
+
+
 .single-couses-image-text {
   transition: all 0.3s ease 0s;
 }
-.single-couses:hover .single-couses-image-text {
+.single-couses:hover .single-CC-text {
   box-shadow: 0 0 10px 0 #999;
 }
 .couses-text {
@@ -635,7 +637,7 @@ h1.title1 {
 /*----------------------------------------*/
 .help-us-area {
   /* background: #0AAAA0; */
-  background: url("img/microphone.jpeg") no-repeat;
+  background: url("img/background.jpg") no-repeat;
   color: #fff;
   height: 100%;
   width: 100%;
@@ -838,7 +840,7 @@ h1.title1 {
 /*  9. People says area CSS
 /*----------------------------------------*/
 .people-says-area {
-  background: rgba(0, 0, 0, 0) url("img/peopule-say-bg.jpg") repeat scroll 0 0 / cover ;
+  background: rgba(0, 0, 0, 0) url("img/globe2.jpg") repeat scroll 0 0 / cover ;
 }
 .single-people {
   margin: auto;
@@ -863,11 +865,11 @@ h1.title1 {
   width: 115px;
 }
 .peoplp-say-text.text-center > p {
-  color: #ffffff;
+  color: black;
   font-size: 14px;
 }
 .peoplp-say-text.text-center > h5 {
-  color: #ffffff;
+  color: black;
   font-family: roboto;
   font-size: 18px;
   line-height: 18px;
@@ -875,7 +877,7 @@ h1.title1 {
   margin-top: 23px;
 }
 .peoplp-say-text h6 {
-  color: #ffffff;
+  color: black;
   font-family: roboto;
   font-size: 14px;
 }

@@ -19,7 +19,7 @@
                             <div class="comment">
                                  Atik sa gen
                                 <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><%= time_ago_in_words(@discussion.created_at) %></a>
-                                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
+                                <a href="#"><i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i><%= @discussion.likes.count %></a>
                                 <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%= @discussion.replies.count %></a>
                             </div>
                         </div>
@@ -29,13 +29,28 @@
                         <div class="blog-text">
                             <p><%= @discussion.content %></p>
                         </div>
-                                                        
+                        <br/>
+                        <div class="card-footer bg-white">
+                            <% if @discussion.likes.any? {|like| like.user == current_user}%>
+                            <h4> Retire like ou a <%= link_to "",  like_path(id: @discussion.id), 
+                                method: :delete,class:"fa fa-lg fa-thumbs-down" %> </h4>
+                            <% else %>
+                            <h4> Klike si w renmen atik/sije sa <%= link_to "", likes_path(id: @discussion.id),
+                                method: :discussion,class:"fa fa-lg fa-thumbs-up" %></h4>
+                            <% end %>
+                            
+                        </div>
+                        <hr>
+                        <br />
+                                                
                         <div class="blog-coment-box">
                             <div class="single0blog-coment">
-                                <h2><%= @discussion.replies.count %> Repons</h2>
+                                <h3><%= @discussion.replies.count %> Repons | <%= @discussion.likes.count %> <i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i></h3>
+
                                 <ul>
                                    <li><%= render @discussion.replies %></li>
                                 </ul>
+                                 
                             </div>
                                 
                             <ul>
@@ -54,7 +69,7 @@
             </div>
             <!-- End blog -->   
 
-                 <%= render "/shared/most_popular_discussions" %>
+            <%= render "/shared/most_popular_discussions" %>
         </div> <!--end of row-->
     </div>              
 </section>

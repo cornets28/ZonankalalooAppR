@@ -8,7 +8,7 @@
    <div class="comment-heading">
       <h5><%= reply.user.username %> <%= reply.user.userlastname %></h5> 
       <p><%= time_ago_in_words(reply.created_at) %></p>
-      <a class="reply" href="#"><i class="fa fa-undo"></i>Reply</a>
+      <a class="reply" href="#"><i class="fa fa-undo"></i>Repons</a>
 
       <% if reply_author(reply) || has_role?(:admin) %>
           <%= link_to edit_discussion_reply_path(reply.discussion, reply) do %>

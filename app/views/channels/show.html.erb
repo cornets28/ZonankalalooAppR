@@ -1,17 +1,36 @@
-<div class="level">
-  <div class="level-left">
-  <h1 class="title is-2"><%= @channel.channel %></h1>
-  </div>
-  <div class="level-right">
-  <% if has_role?(:admin) %>
-    <%= link_to 'Edit Chan;;nel', edit_channel_path(@channel), class:"button" %>
-  <% end %>
+<div class="container" style="padding-top: 90px;">
+    <div class="row">  
+       <div class="col-sm-12">
+          
+           <div class="section-title text-center">
+               <h2><span><%= @channel.channel %><hr></span></h2>
+               <img src="/img/title-bottom.png" alt="">
+              
+           </div>
+       </div>
+       <% if has_role?(:admin) %>
+         <%= link_to 'Modifye Non Kategori Sa', edit_channel_path(@channel), class:"button" %>
+       <% end %>
+       </div>
+      <%= render 'shared/discussions_all_channels' %>
   </div>
 </div>
-<hr />
 
-<div class="columns">
- <%= render 'shared/discussions_all_channels' %>
 
-</div>
+              
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
 

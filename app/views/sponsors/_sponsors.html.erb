@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+    <% @sponsors.each do |sponsor| %>
+     
+        <td><%= image_tag sponsor.image if sponsor.image.attached? %>
+
+    <% end %>
+

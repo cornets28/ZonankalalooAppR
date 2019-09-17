@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :discussions, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :channels, through: :discussions
   
 end

@@ -17,21 +17,24 @@
 @import "bulma";
 @import "functions";
 
+// @import "bootstrap";
+// @import "bootstrap-social";
+@import "font-awesome";
+
+
 // nav........................
 // .container-fluid {
 //   position: relative;
 //   }
   
   #navscroll {
-  position: relative;
-  margin: auto;
-  background-color: #f72210;
-  color: #fff;
-  padding: 50px 0px 10px 0px;
-  max-width: 1310px;
-  transition: all 0.1s;
-  
-  
+    position: relative;
+    margin: auto;
+    background-color: #f72210;
+    color: #fff;
+    padding: 50px 0px 10px 0px;
+    max-width: 1310px;
+    transition: all 0.1s;
   }
   
   #navbottom {

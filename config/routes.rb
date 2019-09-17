@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :interests
+  resources :sponsors
   resources :teams
   resources :home
   resources :partners
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   end
 
   root 'discussions#index'
+  resources :likes, only: %i[create destroy]
 
   devise_for :users, controllers: { registrations: 'registrations' }
 end

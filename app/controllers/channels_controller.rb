@@ -6,14 +6,18 @@ class ChannelsController < ApplicationController
   def index
     @channels = Channel.all
     @discussions = Discussion.all.order('created_at desc')
-    @discussionss = Discussion.where('channel_id = ?', @channel.id)
+    
+    # @discussions = Discussion.where('channel_id = ?', @channel.id)
+    #working on.....................
+    # @channel_discussions_pagination = Discussion.where('channel_id = ?', @channel.id).paginate(page: params[:page], per_page: 6)
   end
 
   # GET /channels/1
   # GET /channels/1.json
   def show
-    @discussions = Discussion.where('channel_id = ?', @channel.id)
+    @discussions = Discussion.where('channel_id = ?', @channel.id).order('created_at desc')
     @channels = Channel.all
+    @discussions_ch_pagination = Discussion.where('channel_id = ?', @channel.id).paginate(page: params[:page], per_page: 9)
   end
 
   # GET /channels/new

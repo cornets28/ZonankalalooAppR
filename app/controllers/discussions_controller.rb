@@ -6,7 +6,9 @@ class DiscussionsController < ApplicationController
   # GET /discussions
   # GET /discussions.json
   def index
-    @discussions = Discussion.all.order('created_at desc')
+    @likes = Like.all
+    @discussions1 = Discussion.all.order('created_at desc')
+    @discussions = Discussion.all.order('created_at desc').paginate(page: params[:page], per_page: 8)
     @discussions_pagination = Discussion.paginate(page: params[:page], per_page: 6)
   end
 
@@ -16,7 +18,7 @@ class DiscussionsController < ApplicationController
     @discussions = Discussion.all.order('created_at desc')
     Discussion.increment_counter(:view, @discussion.id)
     @discussion.save
-    # @replies= @discussion.replies/
+    # @replies= @discussion.replies
    
   end
 

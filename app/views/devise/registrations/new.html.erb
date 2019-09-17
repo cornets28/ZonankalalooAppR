@@ -26,7 +26,7 @@
 
                                             <div class="top-row">
                                               <div class="field-wrap">
-                                                 <%= f.input :username, label: "Non", required: true, input_html: {tag: "span", class: "req"}, wrapper: false, label_html: { class: "label" } %>
+                                                 </i><%= f.input :username, label: "Non", required: true, input_html: {tag: "span", class: "req"}, wrapper: false, label_html: { class: "label" } %>
                                               </div>
 
                                               <div class="field-wrap">
@@ -70,7 +70,7 @@
                                             <%= f.input :password, required: true, label: "Modpas", input_html: {tag: "span", class: "req"}, wrapper: false, label_html: { class: "label" }, hint: ("#{@minimum_password_length} karakte pou pi piti" if @minimum_password_length) %>           
                                         </div>
 
-                                        <p class="forgot"><%= f.input :remember_me, label: "Sonje Imel Mwen",wrap_with: { tag: 'p',tag: 'a', class: 'forgot' }, wrapper: false, as: :boolean if devise_mapping.rememberable? %></p>
+                                        
                                         <!--<p class="forgot"><a href="#">Forgot Password?</a></p>-->
                                         <button class="button button-block">Rantre</button>
                                 

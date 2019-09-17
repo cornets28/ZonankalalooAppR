@@ -43,52 +43,23 @@
                         <!-- End section title -->
         				<div class="couses">
                             <!-- Start single couses -->
-        					<div class="col-sm-4">
-        						<div class="single-couses">
-        							<div class="single-couses-image-text">
-        								<div class="couses-image">
-        									<img src="img/couses/couses-one.jpg" alt="">
-        								</div>
-        								<div class="couses-text text-center">
-        									<h3>Nou Pral Ajoute Bagay</h3>
-        									<p>Lorem ipsum dolor sit amet, onsectetur adipiscing cons ectetur nulla. Sed at ullamcorper risus.</p>
-        								</div>
-        							</div>
-        				
-        						</div>
-        					</div>
-                            <!-- End single couses -->
-                            <!-- Start single couses -->
-                            <div class="col-sm-4">
-                                <div class="single-couses">
-                                    <div class="single-couses-image-text">
-                                        <div class="couses-image">
-                                            <img src="img/couses/couses-two.jpg" alt="">
-                                        </div>
-                                        <div class="couses-text text-center">
-                                            <h3>Nou Pral Ajoute Bagay</h3>
-                                            <p>Lorem ipsum dolor sit amet, onsectetur adipiscing cons ectetur nulla. Sed at ullamcorper risus.</p>
+                            <% @interests.each do |interest| %>
+                                <div class="col-sm-4">
+                                    <div class="single-couses">
+                                        <div class="single-couses-image-text">
+                                            <div class="couses-image">
+                                                <%= image_tag interest.image,  {style: "background: cover; width:100%;"} if interest.image.attached? %>
+                                            </div>
+                                            <div class="couses-text text-center">
+                                                <h3><%= interest.title %></h3>
+                                                <p><%= interest.shortdescription %></p>
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- End single couses -->
-                            <!-- Start single couses -->
-                            <div class="col-sm-4">
-                                <div class="single-couses">
-                                    <div class="single-couses-image-text">
-                                        <div class="couses-image">
-                                            <img src="img/couses/couses-three.jpg" alt="">
-                                        </div>
-                                        <div class="couses-text text-center">
-                                            <h3>Nou Pral Ajoute Bagay</h3>
-                                            <p>Lorem ipsum dolor sit amet, onsectetur adipiscing cons ectetur nulla. Sed at ullamcorper risus.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End single couses -->
+                            <% end %>
         				</div>
+
         			</div>
         		</div>
         	</section>
@@ -286,47 +257,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
+                              <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <div class="people-asy-title text-center">
-                                <h2>WHAT PEOPLE SAYS</h2>
-                                <img src="img/microoo.jpeg" alt="">
+                                <h2>KONNEN <span>PLUS</span> DE NOU</h2>
                             </div>
                             <div class="people-say-slide">
                                 <!-- Start single people -->
-                                <div class="single-people text-center">
-                                    <div class="people-say-image">
-                                        <img src="img/testimonial.jpg" alt="">
+                                <% @teams.each do |member| %>
+                                    <div class="single-people text-center">
+                                        <div class="people-say-image">
+                                            <%= image_tag member.image, {style:"width: 35%; height:35%; cover;" }if member.image.attached? %>
+                                        </div>
+                                        <div class="peoplp-say-text text-center">
+                                            <p>N ap Travay Pou Nou Pote Bon Enfomasyon Nan Tout Domen Ki Ede w Vanse!</p>
+                                            <h5><%= member.firstname %> <%= member.lastname %></h5>
+                                            <h6><%= member.position %></h6>
+                                        </div>
                                     </div>
-                                    <div class="peoplp-say-text text-center">
-                                        <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Vestibulum varius semper ligula, et molestie metus.</p>
-                                        <h5>Zafari Jamith</h5>
-                                        <h6>Director</h6>
-                                    </div>
-                                </div>
+                                <% end %>
+                                
                                 <!-- End single people -->
-                                <!-- Start single people -->
-                                <div class="single-people text-center">
-                                    <div class="people-say-image">
-                                        <img src="img/testimonial.jpg" alt="">
-                                    </div>
-                                    <div class="peoplp-say-text text-center">
-                                        <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Vestibulum varius semper ligula, et molestie metus.</p>
-                                        <h5>Zafari Jamith</h5>
-                                        <h6>Director</h6>
-                                    </div>
-                                </div>
-                                <!-- End single people -->
-                                <!-- Start single people -->
-                                <div class="single-people text-center">
-                                    <div class="people-say-image">
-                                        <img src="img/testimonial.jpg" alt="">
-                                    </div>
-                                    <div class="peoplp-say-text text-center">
-                                        <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Vestibulum varius semper ligula, et molestie metus.</p>
-                                        <h5>Zafari Jamith</h5>
-                                        <h6>Director</h6>
-                                    </div>
-                                </div>
-                                <!-- End single people -->
+                             <!-- End single people -->
                             </div>
                         </div>
                     </div>
@@ -367,7 +320,7 @@
                                                         <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                                                     </div>
                                                     <div class="comment">
-                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
+                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 88</a>
                                                         <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
                                                     </div>
                                                 </div>
@@ -426,19 +379,27 @@
                         <!-- Start section title -->
                         <div class="col-sm-12">
                             <div class="section-title text-center">
-                                <h2><span>ESPONSO</span> Nou YO</h2>
+                                <h2><span>ESPONSO</span> Nou Yo</h2>
                                 <img src="img/title-bottom.png" alt="">
                             </div>
                         </div>
                         <!-- End section title -->
-                        <!-- Start brand logo -->
-                        <div class="brand-logo">
-                            <div class="col-sm-2">
-                                <div class="b-logo">
-                                    <a href="http://psdrightsell.com/"><img src="img/brand-logo/b-logo-one.png" alt="psdrightsell"></a>
-                                </div>
-                            </div>
-                            <div class="col-sm-2">
+                      
+                                 
+                             
+                            <% if !Sponsor.nil? %>
+                               
+                               <div class="col-sm-6" style="display: flex;">
+                                   <% @sponsors.each do |sponsor| %>
+                                       <div class="b-logo">
+                                          <%= image_tag sponsor.image, size: "120x120" if sponsor.image.attached?%>      
+                                       </div>
+                                   <% end %>
+                               </div>
+                             <% end %>
+                      
+                            
+                                             <!-- <div class="col-sm-2">
                                 <div class="b-logo">
                                     <a href="http://hastech.company/"><img src="img/brand-logo/b-logo-two.png" alt="hastech"></a>
                                 </div>
@@ -463,7 +424,7 @@
                                     <a href="https://themeforest.net/user/codecarnival"><img src="img/brand-logo/b-logo-six.png" alt="codecarnival"></a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <!-- End brand logo -->
                     </div>
                 </div>

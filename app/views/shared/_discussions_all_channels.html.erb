@@ -1,7 +1,9 @@
 <div class="col-sm-12">
                 <!-- Start of loop -->
-                
-                <% @discussions.each do |discussion| %>
+            <div class="digg_pagination">
+                <%= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
+            </div>
+                <% @discussions_ch_pagination.each do |discussion| %>
                     <div class="col-sm-4"> <!--starts here -->
                         <div class="single-blog mb-30"> 
                             <div class="blo-image-and-date" id="blo-image">
@@ -21,7 +23,7 @@
                                     <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                                 </div>
                                 <div class="comment">
-                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 15</a>
+                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 105</a>
                                     <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
                                 </div>
                             </div>
@@ -68,7 +70,12 @@
                         </div> <!-- End single blog -->
                     </div>                         
                 <% end %> <!-- Loop ends here -->
+             
 
-
-
-            </div> <!-- End blog -->
+                                             
+                                                   
+    
+</div> <!-- End blog -->
+<div class="digg_pagination">
+    <%= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
+</div>

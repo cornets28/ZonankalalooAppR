@@ -7,6 +7,7 @@ class Channel < ApplicationRecord
 
   extend FriendlyId
   friendly_id :channel, use: [:slugged, :finders]
+  self.per_page = 9
 
   def should_generate_new_friendly_id?
     channel_changed?

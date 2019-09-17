@@ -4,7 +4,7 @@ class Reply < ApplicationRecord
 
   belongs_to :discussion
   belongs_to :user
-  validates :reply, presence: true
+  validates :reply, length: { maximum: 500 },  presence: true
 
   extend FriendlyId
   friendly_id :reply, use: [:slugged, :finders]
