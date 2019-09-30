@@ -134,38 +134,46 @@
                                     <ul class="nav">
                                         <li><a class="home" href="#">KATEGORI</a>
                                             <ul>
-                                                <% @channels.each do |c| %>
-                                                    <li><%= link_to c.channel, c %></li>
-                                                <% end %> 
                                                 
-                                                <% if has_role?(:admin) %>
-                                                    <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path%></li>
-                                                    <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path %></li>
-                                                    <li><%= link_to 'Ajoute Nouvo Sponso', new_sponsor_path %></li>
-                                                <% end %>    
-                                            </ul>
+                                                    <% @channels.each do |c| %>
+                                                    <li><%= link_to c.channel, c %></li>
+                                                    <% end %> 
+                                                    <li> 
+
+                                                   
+                                                        <% if has_role?(:admin) %>
+                                                        
+                                                            <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path, class:'button is-info' %></li>
+                                                            <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
+                                                            <li><%= link_to 'Ajoute Nouvo Esponso', new_sponsor_path, class:'button is-info' %></li>
+                                                           <li><%= link_to 'Ajoute Manm', new_team_path, class:'button is-info' %></li>
+                            
+                                                       
+                                                        <% end %> 
+                                                    </li> 
+                                             </ul>   
                                         </li>
-                                         <li><a href="#"><strong>KILTI</strong></a></li>
-                                        
-                                        <li class="#"><a href="#"><strong>POLOTIK</strong></a></li>
-                                        <li><a href="#"><strong>EVENMAN</strong></a></li>
-                                        <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
+                                         <li><a href="#"><strong>KIYES N0U YE</strong></a></li>
+                                         <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
                                             <ul>
                                                 <li> 
                                                     <%= link_to 'Kreye Nouvo Atik', new_discussion_path %>
                                                 </li> 
                                             </ul>
                                         </li>
-                                        <li><a href="#">POKO KONNEN</a>
+                                    
+                                        <li><a href="#"><strong>EVENMAN</strong></a></li>
+                                        
+                                        <li><a href="#">LOT BAGAY</a>
                                             <ul>
-                                                <li><a href="elements-causes.html">KOZ</a></li>
-                                                <li><a href="elements-contact-form.html">KONTATE N</a></li>
-                                                <li><a href="elements-hero-static.html">SA AP VINI</a></li>
-                                                <li><a href="elements-hero-static-left.html">SA AP VINI</a></li>
-                                                <li><a href="elements-hero-static-right.html">SA AP VINI</a></li>
-                                                <li><a href="elements-keep-in-touch.html">SA AP VINI</a></li>
-                                                <li><a href="elements-latest-blog.html">SA AP VINI</a></li>
-                                                <li><a href="elements-map.html">SA AP VINI</a></li>
+                                                <li><a href="#">KOZ</a></li>
+                                                <li><a href="#">KONTATE N</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
                                             </ul>
                                         </li>
                                     </ul>
