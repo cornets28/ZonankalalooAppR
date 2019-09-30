@@ -87,7 +87,7 @@
 
            <hr />
 
-                  
+             
           
             <div class="row">
             
@@ -100,7 +100,12 @@
                             <img src="img/title-bottom.png" alt="">
                         </div>
                         <% if ch.discussions.any? %>
-                          <%= link_to "Plis Atik Nan Kategori Sa",  channel_path(id: ch.id) %>
+                         <div class="donate-button ptb-32">
+                            <%= link_to "Plis Atik Nan Seksyon Sa",  channel_path(id: ch.id), class:"waves-effect waves-light" %>
+                             <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                    
+                        </div>
+                          <%#= link_to "Plis Atik Nan Kategori Sa",  channel_path(id: ch.id) %>
                         <% end %>
                     </div>
            
@@ -172,8 +177,11 @@
        
             
            <% if ch.discussions.any? %>
-                <%= link_to "Plis Atik Nan Kategori Sa",  channel_path(id: ch.id) %>
-            <% end %>
+           <div class="donate-button ptb-32">
+               <%= link_to "Plis Atik NaN Seksyon Sa",  channel_path(id: ch.id), class:"waves-effect waves-light" %>
+               <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+           </div>            
+           <% end %>
          
             </div>
                 <!-- Start of loop -->
