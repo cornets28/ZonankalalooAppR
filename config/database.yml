@@ -25,12 +25,16 @@
 #   database: db/production.sqlite3
 default: &default
   adapter: postgresql
-  encoding: unicode
-  host: ''
+  encoding: unicode	 
+  username: sam
+  password: 123456
+
+
+  host: localhost
 
 development:
   <<: *default
-  database: zonankalaloo
+  database: zonankalaloo1
 
 test:
   <<: *default
