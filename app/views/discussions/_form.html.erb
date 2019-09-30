@@ -1,0 +1,29 @@
+
+<%= simple_form_for(@discussion) do |f| %>
+   <%= f.error_notification %>
+ 
+     <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Ekri Tit La" }, wrapper: false %></li>
+  <li><%= f.rich_text_area :content, required: true, input_html: { class: 'textarea' } %>
+  <%= f.file_field :image, input_html: {class: "input-block-level"} %>
+  
+  <div class="field">
+      <label class="label">Kategori</label>
+      <div class="control has-icons-left">
+        <span class="select">
+            <% if !@channels.nil?%>
+              <%= f.input_field :channel_id, collection:@channels.map{ |c| [c.channel, c.id] }, prompt: "Select channel" %>
+            <% end %>
+        </span>
+        <span class="icon is-small is-left">
+          <i class="fa fa-tag"></i>
+        </span>
+      </div>
+  </div>
+
+  <div class="field">
+    <div class="control">
+      <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
+    </div>
+  </div>
+
+<% end %>

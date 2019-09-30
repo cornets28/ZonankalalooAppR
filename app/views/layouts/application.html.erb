@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discussions</title>
+    <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="/master.css">
+ 
+  <%= javascript_pack_tag 'application' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= render 'layouts/meta'%>
+    <link rel="stylesheet" href="/pagination.css">
+    <link rel="stylesheet" href="/pagination.sass">
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+    <div class="main-area">
+
+       <header>
+          <%= render 'layouts/social' %>
+          <%= render 'layouts/navbar'%>
+       </header>
+            
+    <% if flash[:notice] %>
+      <div class="notification is-success global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="notification is-danger global-notification">
+      <p class="alert"><%= alert %></p>
+    </div>
+    <% end %>
+
+    <%= yield %>
+  
+    <%= render 'layouts/js'%>
+    <%=render 'layouts/footer'%>
+   </div>
+  </body>
+</html>

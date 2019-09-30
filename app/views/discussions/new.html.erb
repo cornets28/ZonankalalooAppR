@@ -1,0 +1,21 @@
+<section class="our-blog-area pt-90 pb-60">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-8">
+                <div class="leave-reply">
+                    <h2>Nouvo Diskisyon</h2>
+                
+                    <ul>
+                     
+                       <%= render 'form', discussion: @discussion %>
+                       
+                    </ul>
+                </div>
+
+
+            <%= link_to 'Back', discussions_path %>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,185 @@
+<% if !Channel.nil? %>
+     <% @channels = Channel.all %>
+<% end %>
+
+
+ <div class="main-menu-area" id="sticker">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="logo ptb-32">
+                                    <a href="index.html">
+                                        <img src="/img/zonankalaloo.png" width="190" style="margin-top: -2rem;" alt="zonankalaloo image">
+                                    </a>
+                                </div>
+                            </div>
+
+ 
+                            <div class="col-sm-9">
+                                <div class="main-menu">
+                                    <nav>
+                                        <ul>
+                                            <li><a href=""><strong>KATEGORI</strong></a>
+                                                <ul class="drop-menu">
+                                                
+                                                    <% @channels.each do |c| %>
+                                                    <li><%= link_to c.channel, c %></li>
+                                                    <% end %> 
+                                                    <li> 
+                                                        <% if has_role?(:admin) %>
+                                                        <ul>
+                                                            <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path, class:'button is-info' %></li>
+                                                            <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
+                                                            <li><%= link_to 'Ajoute Nouvo Esponso', new_sponsor_path, class:'button is-info' %></li>
+                                                           <li><%= link_to 'Ajoute Manm', new_team_path, class:'button is-info' %></li>
+                            
+                                                        </ul>
+                                                        <% end %> 
+                                                    </li> 
+                                                </ul>
+                                            </li>
+                                            <li><a href="/home"><strong>KIYES NOU SE</strong></a></li>
+                                           
+                                            <li><a href="#"><strong>FEYTON</strong></a></li>
+                                            <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
+                                                <ul class="drop-menu">
+                                                    <li> 
+                                                        <%= link_to 'Kreye Nouvo Atik', new_discussion_path %>
+                                                    </li> 
+                                                </ul>
+                                            </li>
+                                            <li  class="mega-menu"><a href="#"><strong>DJOB</strong></a>
+                                                <div class="mega-menu-area">
+                                                    <ul class="single-mega-item">
+                                                        <li><a href="/home">About Us</a></li>
+                                                        <li><a href="#">Contact us</a></li>
+                                                        <li><a href="#">Couses</a></li>
+                                                        <li><a href="#">Couses Sidebar Right</a></li>
+                                                    </ul>
+                                                    <ul class="single-mega-item">
+                                                        <li><a href="#">Couses Sidebar Left</a></li>
+                                                        <li><a href="#">Events</a></li>
+                                                        <li><a href="#">Events Sidebar Right</a></li>
+                                                        <li><a href="#">Events Sidebar Left</a></li>
+                                                    </ul>
+                                                    <ul class="single-mega-item">
+                                                        <li><a href="#">Blog</a></li>
+                                                        <li><a href="#">Blog sidebar Right</a></li>
+                                                        <li><a href="#">Blog sidebar Left</a></li>
+                                                        <li><a href="#">Blog Details</a></li>
+                                                    </ul>
+                                                    <ul class="single-mega-item">
+                                                        <li><a href="#">Blog Details Sidebar Right</a></li>
+                                                        <li><a href="#">Blog Details Sidebar Left</a></li>
+                                                        <li><a href="#">404</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <!--<li  class="mega-menu"><a href="#"><strong>COMMING</strong></a>
+                                                <div class="mega-menu-area">
+                                                    <ul class="single-mega-item">
+                                                        <li class="shortcode-title">Shortcode 1</li>
+                                                        <li><a href="elements-causes.html">Causes</a></li>
+                                                        <li><a href="elements-contact-form.html">Contact Form</a></li>
+                                                        <li><a href="elements-hero-static.html">Hero Static</a></li>
+                                                        <li><a href="elements-hero-static-left.html">Hero Static Left</a></li>
+                                                        <li><a href="elements-hero-static-right.html">Hero Static Right</a></li>
+                                                        <li><a href="elements-keep-in-touch.html">Keep In Touch</a></li>
+                                                    </ul>
+                                                    <ul class="single-mega-item">
+                                                        <li class="shortcode-title">Shortcode 2</li>
+                                                        <li><a href="elements-latest-blog.html">Latest Blog</a></li>
+                                                        <li><a href="elements-map.html">Google Map</a></li>
+                                                        <li><a href="elements-our-gallery.html">Our Gallery</a></li>
+                                                        <li><a href="elements-our-sponsors.html">Our Sponsors</a></li>
+                                                        <li><a href="elements-our-volunteers.html">Our Volunteers</a></li>
+                                                        <li><a href="elements-page-breadcumb-right.html">Page Breadcumb Right</a></li>
+                                                    </ul>
+                                                    <ul class="single-mega-item">
+                                                        <li class="shortcode-title">Shortcode 3</li>
+                                                        <li><a href="elements-page-title-center.html">Page Title Center</a></li>
+                                                        <li><a href="elements-page-title-left.html">Page Title Left</a></li>
+                                                        <li><a href="elements-page-title-right.html">Page Title Right</a></li>
+                                                        <li><a href="elements-pagination.html">Pagination</a></li>
+                                                        <li><a href="elements-services.html">Services</a></li>
+                                                        <li><a href="elements-testimonials.html">Testimonials</a></li>
+                                                    </ul>
+                                                    <ul class="single-mega-item">
+                                                        <li class="shortcode-title">Shortcode 4</li>
+                                                        <li><a href="elements-up-comming-events.html">Up Comming Events</a></li>
+                                                        <li><a href="elements-video-gallery-2col.html">Video Gallery col 2</a></li>
+                                                        <li><a href="elements-video-gallery-3col.html">Video Gallery col 3</a></li>
+                                                        <li><a href="elements-video-gallery-4col.html">Video Gallery col 4</a></li>
+                                                        <li><a href="elements-what-we-do.html">What we do</a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>-->
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="donate-button ptb-32">
+                                    <a class="waves-effect waves-light" href="#">Donate</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End main menu area -->
+                <!-- Start mobile menu -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="nav">
+                                        <li><a class="home" href="#">KATEGORI</a>
+                                            <ul>
+                                                
+                                                    <% @channels.each do |c| %>
+                                                    <li><%= link_to c.channel, c %></li>
+                                                    <% end %> 
+                                                    <li> 
+
+                                                   
+                                                        <% if has_role?(:admin) %>
+                                                        
+                                                            <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path, class:'button is-info' %></li>
+                                                            <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
+                                                            <li><%= link_to 'Ajoute Nouvo Esponso', new_sponsor_path, class:'button is-info' %></li>
+                                                           <li><%= link_to 'Ajoute Manm', new_team_path, class:'button is-info' %></li>
+                            
+                                                       
+                                                        <% end %> 
+                                                    </li> 
+                                             </ul>   
+                                        </li>
+                                         <li><a href="#"><strong>KIYES N0U YE</strong></a></li>
+                                         <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
+                                            <ul>
+                                                <li> 
+                                                    <%= link_to 'Kreye Nouvo Atik', new_discussion_path %>
+                                                </li> 
+                                            </ul>
+                                        </li>
+                                    
+                                        <li><a href="#"><strong>EVENMAN</strong></a></li>
+                                        
+                                        <li><a href="#">LOT BAGAY</a>
+                                            <ul>
+                                                <li><a href="#">KOZ</a></li>
+                                                <li><a href="#">KONTATE N</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End mobile menu -->

@@ -1,0 +1,75 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+   datetime:
+            distance_in_words:
+              about_x_hours:
+                one: anviron 1 è
+                other: anviron %{count} è
+              about_x_months:
+                one: anviwon 1 mwa
+                other: anviwon %{count} mwa
+              about_x_years:
+                one: anviwon 1 an
+                other: anviwon %{count} an
+              almost_x_years:
+                one: preske 1 an
+                other: preske %{count} an
+              half_a_minute: 30 segond
+              less_than_x_minutes:
+                one: mwens ke 1 minit
+                other: mwens ke %{count} minit
+              less_than_x_seconds:
+                one: mwens ke 1 segond
+                other: mwens ke %{count} segond
+              over_x_years:
+                one: plis ke 1 an
+                other: plis %{count} an
+              x_days:
+                one: 1 jou
+                other: "%{count} jou"
+              x_minutes:
+                one: 1 minit
+                other: "%{count} minit"
+              x_months:
+                one: 1 mwa
+                other: "%{count} mwa"
+              x_seconds:
+                one: 1 segond
+                other: "%{count} segond"
+            prompts:
+              day: jou
+              hour: è
+              minute: minit
+              month: mwa
+              second: segond
+              year: an

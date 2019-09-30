@@ -1,0 +1,11 @@
+{
+  "name": "discussions",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^4.0.7",
+    "actiontext": "https://github.com/kobaltz/actiontext"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.8.0"
+  }
+}

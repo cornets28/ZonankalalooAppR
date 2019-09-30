@@ -1,0 +1,13 @@
+<%= simple_form_for @partner do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <li><%= f.file_field :image%></li>
+    <li><%= f.input :official_link, input_html: {class:"input", placeholder: "Lyen Sit La"}, wrapper: false %></li>
+    <li><%= f.input :company_name,  input_html: {class:"input", placeholder: "Lyen Sit La", maxlength: 20, minlength: 3 }, wrapper: false %></li>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
+  </div>
+<% end %>

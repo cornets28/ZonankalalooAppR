@@ -1,0 +1,89 @@
+
+<section class="our-blog-area pt-90 pb-60">
+    <div class="container">
+        <div class="row">
+            <!-- Start blog -->
+            <div class="blog">
+                <!-- Start single blog -->
+                <div class="col-sm-8">
+                    <div class="blog-details single-blog mb-30">
+
+                        <div class="blog-details-title">
+                            <h2><strong><%= @discussion.title %></strong></h2>
+                        </div>
+
+                        <div class="blog-info">
+                            <div class="admin">
+                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Ote:  <%= @discussion.user.username %> <%= @discussion.user.userlastname %> nan kategori <%= link_to @discussion.channel.channel, @discussion.channel %></a>
+                            </div>
+                            <div class="comment">
+                                 Atik sa gen
+                                <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><%= time_ago_in_words(@discussion.created_at) %></a>
+                                <a href="#"><i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i><%= @discussion.likes.count %></a>
+                                <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%= @discussion.replies.count %></a>
+                            </div>
+                        </div>
+                        <div class="blo-image-and-date">
+                           <%= image_tag @discussion.image, {style:"width: 100%; height:50%; object-fit: cover;" }%> 
+                        </div>
+                        <div class="blog-text">
+                            <p><%= @discussion.content %></p>
+                        </div>
+                        <br/>
+                        <div class="card-footer bg-white">
+                            <% if @discussion.likes.any? {|like| like.user == current_user}%>
+                            <h4> Retire like ou a <%= link_to "",  like_path(id: @discussion.id), 
+                                method: :delete,class:"fa fa-lg fa-thumbs-down" %> </h4>
+                            <% else %>
+                            <h4> Klike si w renmen atik/sije sa <%= link_to "", likes_path(id: @discussion.id),
+                                method: :discussion,class:"fa fa-lg fa-thumbs-up" %></h4>
+                            <% end %>
+                            
+                        </div>
+                        <hr>
+                        <br />
+                                                
+                        <div class="blog-coment-box">
+                            <div class="single0blog-coment">
+                                <h3><%= @discussion.replies.count %> Repons | <%= @discussion.likes.count %> <i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i></h3>
+
+                                <ul>
+                                   <li><%= render @discussion.replies %></li>
+                                </ul>
+                                 
+                            </div>
+                                
+                            <ul>
+                                <% if user_signed_in? %>
+                                    <%= render 'replies/form' %>
+                                <% else %> 
+                                     <p class="permission">Si 'w vle reponn, fok ou <%= link_to 'Rantre Imel Ou', new_user_session_path %> oswa
+                                    <%= link_to 'Anrejistre', new_user_registration_path %></p>
+                                <% end %>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div> <!-- ENd of col-sm-8-->
+                <!-- End single blog -->    
+            </div>
+            <!-- End blog -->   
+
+            <%= render "/shared/most_popular_discussions" %>
+        </div> <!--end of row-->
+    </div>              
+</section>
+<!-- End our blog area -->
+           
+
+
+
+
+
+
+
+
+
+
+
+

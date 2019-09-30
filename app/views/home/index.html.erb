@@ -1,0 +1,452 @@
+
+<div class="main-area">
+        	<section class="slider-animate-area pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <div class="cd-intro">
+                                <h1 class="cd-headline clip is-full-width title1 wow zoomIn animated" data-wow-duration="1s" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: zoomIn;">
+                                    <span>Nouvel </span>
+                                    <span class="cd-words-wrapper">
+                                        <b class="is-visible">AN AYITI!</b>
+                                        <b>FOUYAPOT</b>
+										<b>SAN FOSKOTE</b>
+                                        <b>NAN BON TI MAMIT</b>
+                                    </span>
+                                </h1>
+                                <p class="wow zoomIn animated" data-wow-duration="1s" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1s; animation-delay: 600ms; animation-name: zoomIn;">
+								Zonanlaloo pa fe ka de ran sosyal ou, fanmi ou fet, de relasyon, de fom kalbas tet ou. Nou bay bagay la jan l te pase a. Si 'w vle patisipe nan diskisyon yo ou byen pataje pataje yon bagay, fok ou anjisitre.</p>
+                                <div class="slider-button-area wow zoomIn animated" data-wow-duration="1s" data-wow-delay="900ms" style="visibility: visible; animation-duration: 1s; animation-delay: 900ms; animation-name: zoomIn;">
+                                    <a href="#signup" class="btn-lg">ANREJISTRE</a>
+                                    <a href="/" class="btn-lg">AKATYALITE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        	</section>
+        	<!-- End slider area -->
+            <!-- Start our couses area -->
+        	<section class="our-couses-area pt-90 pb-90">
+        		<div class="container">
+        			<div class="row">
+                        <!-- Start section title -->
+        				<div class="col-sm-12">
+        					<div class="section-title text-center">
+        						<h2>KIYES NOU <span>YE</span>?</h2>
+        						<img src="img/title-bottom.png" alt="">
+        						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        					    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ 					       </div>
+        				</div>
+                        <!-- End section title -->
+        				<div class="couses">
+                            <!-- Start single couses -->
+                            <% @interests.each do |interest| %>
+                                <div class="col-sm-4">
+                                    <div class="single-couses">
+                                        <div class="single-couses-image-text">
+                                            <div class="couses-image">
+                                                <%= image_tag interest.image,  {style: "background: cover; width:100%;"} if interest.image.attached? %>
+                                            </div>
+                                            <div class="couses-text text-center">
+                                                <h3><%= interest.title %></h3>
+                                                <p><%= interest.shortdescription %></p>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            <% end %>
+        				</div>
+
+        			</div>
+        		</div>
+        	</section>
+            <!-- End our couses area -->
+            <!-- Start help us area -->
+           
+            <!-- End help us area -->
+            <!-- Start our gallery -->
+          <!--  <section class="our-gallery pt-90 pb-60">
+                <div class="container">
+                    <div class="row">
+                        #Let me know Start section title 
+                        <div class="col-sm-12">
+                            <div class="section-title text-center">
+                                <h2>OUR <span>Gallery</span></h2>
+                                <img src="img/title-bottom.png" alt="">
+                                <p>We create events aiming to pear to the voice for children and gather for support. <br>Please update with our events and confirm you presence.</p>
+                            </div>
+                        </div>
+                        #End section title
+                        <div class="gallery-area">
+                            <div class="col-sm-12">
+                                <div class="gallery-menu text-center">
+                                    <nav>
+                                        <ul>
+                                            <li class="filter"  data-filter="all">All</li>
+                                            <li class="filter"  data-filter="Charity">Charity</li>
+                                            <li class="filter"  data-filter="Nature">Nature</li>
+                                            <li class="filter"  data-filter="Wildlife">Wildlife</li>
+                                            <li class="filter"  data-filter="Video">Video</li>
+                                            <li class="filter"  data-filter="Children">Children</li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div id="gallery-filter">
+                                #Start single gallery 
+                                <div class="col-sm-3 mb-30 single-gallery mix all Charity Wildlife ">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-one.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-one.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>
+                                #End single gallery -->
+                                <!-- Start single gallery -->
+                                <!--<div class="col-sm-3 mb-30 single-gallery mix all Nature Video">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-two.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-two.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>-->
+                                <!-- End single gallery -->
+                                <!-- Start single gallery -->
+                                <!--<div class="col-sm-3 mb-30 single-gallery mix all Charity Wildlife Children">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-three.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-three.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>
+                               # End single gallery -->
+                                <!-- Start single gallery -->
+                                <!--<div class="col-sm-3 mb-30 single-gallery mix all Nature Video">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-four.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-four.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>-->
+                                <!-- End single gallery -->
+                                <!-- Start single gallery -->
+                                <!--<div class="col-sm-3 mb-30 single-gallery mix all Charity Wildlife Video Children">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-five.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-five.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>-->
+                                <!-- End single gallery -->
+                                <!-- Start single gallery -->
+                                <!--<div class="col-sm-3 mb-30 single-gallery mix all Nature Children">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-six.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-six.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>-->
+                                <!-- End single gallery -->
+                                <!-- Start single gallery -->
+                               <!--<div class="col-sm-3 mb-30 single-gallery mix all Charity Wildlife Video">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-seven.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-seven.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>-->
+                                <!-- End single gallery -->
+                                <!-- Start single gallery -->
+                                <!--<div class="col-sm-3 mb-30 single-gallery mix all Nature Children">
+									<div class="gallery-image-and-text">
+										<img class="img-responsive" src="img/gallery/gallery-eight.jpg" alt="" />
+										<a class="image-link text-center" href="img/gallery/gallery-eight.jpg">
+											<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+											<p>Poor Nature</p>
+										</a>
+									</div>
+                                </div>-->
+                                <!-- End single gallery -->
+                           <!-- </div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+            <!-- End our gallery -->
+            <!-- Start countdown area -->
+           <!-- <section class="countdown-area pt-60 pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5 col-md-4">
+                            <div class="countdown-side-area">
+                                <div class="countdown-icon">
+                                    <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                                </div>
+                                <div class="countdown-text">
+                                    <h3>Up comming event</h3>
+                                    <p>SCHOOL OF CRITIVITY</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-md-8">
+                            <div class="count-down">
+                                <div id="simple_timer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+            <!-- End countdown area -->
+            <!-- Start our volunteers area -->
+            <section class="our-volunteers-area pt-90 pb-90">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start section title -->
+                        <div class="col-sm-12">
+                            <div class="section-title text-center">
+                                <h2><span>EKIP</span> NOU AN</h2>
+                                <img src="img/title-bottom.png" alt="">
+                                <p>Nou poko vle pale de sa dndnjdjdjkssdd d jd jdndndjnddnd  ddcdd <br>Pran 'l jan nou we l la annatandan mesye dam</p>
+                            </div>
+                        </div>
+                        <!-- End section title -->
+                        <div class="our-volunteers">
+                            <!-- Start single volunteer -->
+                            <% @teams.each do |member| %>
+                               <div class="col-sm-3">
+                                   <div class="single-volunteer">
+                                       <div class="volunteer-image-and-social">
+                                          <%= image_tag member.image, {style:"width: 100%; height:50%; cover;" }if member.image.attached? %>
+                                           <div class="volunteer-social">
+                                               <a href="<%= member.facebook_link %>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                               <a href="<%= member.twitter_link %>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                               <a href="<%= member.email %>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                           </div>
+                                       </div>
+                                       <div class="volunteer-title text-center">
+                                           <h5><%= member.firstname %> <% member.lastname %></h5>
+                                           <p><%= member.position %></p>
+                                       </div>
+                                   </div>  
+                               </div>
+                            <% end %>
+                        </div>                                                
+                    </div>
+                </div>
+            </section>
+            <!-- End our volunteers area -->
+            <!-- Start people says area -->
+            <section class="people-says-area pt-54 pb-20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                              <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="people-asy-title text-center">
+                                <h2>KONNEN <span>PLUS</span> DE NOU</h2>
+                            </div>
+                            <div class="people-say-slide">
+                                <!-- Start single people -->
+                                <% @teams.each do |member| %>
+                                    <div class="single-people text-center">
+                                        <div class="people-say-image">
+                                            <%= image_tag member.image, {style:"width: 35%; height:35%; cover;" }if member.image.attached? %>
+                                        </div>
+                                        <div class="peoplp-say-text text-center">
+                                            <p>N ap Travay Pou Nou Pote Bon Enfomasyon Nan Tout Domen Ki Ede w Vanse!</p>
+                                            <h5><%= member.firstname %> <%= member.lastname %></h5>
+                                            <h6><%= member.position %></h6>
+                                        </div>
+                                    </div>
+                                <% end %>
+                                
+                                <!-- End single people -->
+                             <!-- End single people -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End people says area -->
+            <!-- Start blog area -->
+            <section class="blog-area pt-90 pb-90">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start section title -->
+                        <div class="col-sm-12">
+                            <div class="section-title text-center" style="padding-top: 90px;">
+                                <h2> DENYE <span>DISKISYON YO</span></h2>
+                                <img src="img/title-bottom.png" alt="">
+                                <p>We create events aiming to spear the voice for children and gather for <br>support Please update with our events</p>
+                            </div>
+                        </div>
+                        <!-- End section title -->
+                       
+                    
+                            <!-- Start blog -->
+                            <div class="blog">
+                                <!-- Start of loop -->
+                                <% @discussions[0..2].each do |discussion| %>
+                                    <div class="col-sm-4">
+                                        <!-- single blog starts here -->
+                                        <div class="single-blog mb-30"> 
+                                            <div class="blo-image-and-date" id="blo-image">
+                                            
+                                                <%= image_tag discussion.image if discussion.image.attached? %>
+                                                    <% if discussion.channel %>
+                                                        <%= link_to discussion.channel.channel, discussion.channel %>
+                                                    <% end %>   
+                                                </div>
+                                                <div class="blog-info">
+                                                    <div class="admin">
+                                                        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                                    </div>
+                                                    <div class="comment">
+                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 88</a>
+                                                        <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                                                    </div>
+                                                </div>
+                                                <div class="blog-text">
+                                                <h3>
+                                                    <%= link_to discussion do %>
+                                                        <%= truncate(discussion.title, length: 35) %>
+                                                    <% end %>
+                                                </h3>
+                                                
+                                                <%= truncate(strip_tags(discussion.content.to_s), length: 180) %>
+                                                <p>
+                                                    <em>
+                                                        <small>
+                                                            Atik sa gen <%= time_ago_in_words(discussion.created_at) %>, Kategori
+                                                            <% if discussion.channel %>
+                                                                <%= link_to discussion.channel.channel, discussion.channel %>
+                                                            <% end %>
+                                                        </small>
+                                                    </em>
+                                                </p>
+                                                    <% if discussion_author(discussion) || has_role?(:admin) %>
+                                                        <div class="column has-text-left"> 
+                                                            <%= link_to edit_discussion_path(discussion) do %>
+                                                                <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                                            <% end %> |
+                                                            <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
+                                                                <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+                                                            <% end %>
+                                                        </div>
+
+                                                    <% else %>
+                                                        <div class="column has-text-left">
+                                                            <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                                                        </div>
+                                                    
+                                                    <% end %>
+                                                <%= link_to discussion do %>
+                                                    
+                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plis Detay...</p>
+                                                    
+                                                <% end %>
+                                            </div>      
+                                        </div> <!-- End single blog -->
+                                    </div>                         
+                                <% end %> <!-- Loop ends here -->
+                            </div> <!-- End blog -->
+                    </div>
+                </div>
+                
+            </section>
+            <!-- End blog area -->
+            <!-- Start brand logo area -->
+             <section class="brand-logo-area pb-90">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start section title -->
+                        <div class="col-sm-12">
+                            <div class="section-title text-center">
+                                <h2><span>ESPONSO</span> Nou Yo</h2>
+                                <img src="img/title-bottom.png" alt="">
+                            </div>
+                        </div>
+                        <!-- End section title -->
+                        <!-- Start brand logo -->
+                        <div class="brand-logo">
+                             
+                            <% if !Sponsor.nil? %>
+                               <% @sponsors = Sponsor.all %>   
+                               <div class="col-sm-6" style="display: flex;">
+                                   <% @sponsors.each do |sponsor| %>
+                                       <div class="b-logo">
+                                           <a id="logo-brand" href="">
+                                               <%= image_tag sponsor.image, size: "120x120" if sponsor.image.attached?%>
+                                           </a>
+                                   </div>
+                                   <% end %>
+                               </div>
+                             <% end %>
+                        </div>
+                        <!-- End brand logo -->
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            
+            <!-- End brand logo area -->
+           
+           
+            <section class="brand-logo-area pb-90">
+                <div class="container">
+                    <div class="row">
+                        <!-- Start section title -->
+                        <div class="col-sm-12">
+                            <div class="section-title text-center">
+                                <h2><span>PATNE</span> Nou yo</h2>
+                                <img src="img/title-bottom.png" alt="">
+                            </div>
+                        </div>
+                        <!-- End section title -->
+                        <!-- Start brand logo -->
+                        <div class="brand-logo">
+                             
+                            <% if !Partner.nil? %>
+                               <% @partners = Partner.all %>   
+                               <div class="col-sm-6" style="display: flex;">
+                                   <% @partners.each do |partner| %>
+                                       <div class="b-logo">
+                                           <a id="logo-brand" href="<%= partner.official_link %>">
+                                               <%= image_tag partner.image, size: "120x120" if partner.image.attached?%>
+                                           </a>
+                                   </div>
+                                   <% end %>
+                               </div>
+                             <% end %>
+                        </div>
+                        <!-- End brand logo -->
+                    </div>
+                </div>
+            </section>
+            <!-- Start footer -->
+</div>
+        <!-- End main area -->
+
+      
+

@@ -1,0 +1,32 @@
+ <div class="col-sm-4">
+    <div class="blog-sidebar">
+        <div class="event-sidebar">
+            <!-- Start event popular post -->
+            <div class="event-popular-post">
+                <div class="event-sidt-title">
+                    <h3>ATIK KI PI POLPILE YO</h3>
+                </div>
+                <!-- Start popular item -->
+                <% Discussion.all.order('view desc')[0..9].each do |discussion| %>
+                    <div class="popular-idget mb-30 row">
+                        <%= link_to discussion do %>
+                            <div class="col-sm-4">
+                                <div class="post-thum">
+                                <%= image_tag discussion.image %> 
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="ev-post-text">
+                                    <p><%= truncate(discussion.title, length: 29) %></p>
+                                
+                                    <span><%= (discussion.created_at).strftime "%d/%m/%Y"  %> <br /> <%= discussion.view%> Vues</span>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                  
+                <% end %>
+            </div>   <!-- End popular views --> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+
+<div class="leave-reply">
+    <%= simple_form_for([@discussion, @discussion.replies.build], remote: true) do |f| %>
+      <h2>Bay Opinyon w</h2>
+      <ul>
+          <li>
+            <%= f.rich_text_area :reply, input_html: { tag:"textarea" }, wrapper: false, label_html: {  class: "input-block-level" } %>
+        </li>
+        <li>
+          <%= f.button :submit, 'Voye l ale', class:"btn-style btn-md bo-ra-5" %>
+        </li>
+      <ul>
+    <% end %>
+</div>
