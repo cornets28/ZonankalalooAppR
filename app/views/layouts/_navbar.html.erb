@@ -8,7 +8,7 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="logo ptb-32">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img src="/img/zonankalaloo.png" width="190" style="margin-top: -2rem;" alt="zonankalaloo image">
                                     </a>
                                 </div>
@@ -19,6 +19,14 @@
                                 <div class="main-menu">
                                     <nav>
                                         <ul>
+                                            <li><a href="/home"><strong>KIYES NOU SE</strong></a></li>
+                                            <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
+                                                <ul class="drop-menu">
+                                                    <li> 
+                                                        <%= link_to 'Kreye Nouvo Atik', new_discussion_path %>
+                                                    </li> 
+                                                </ul>
+                                            </li>
                                             <li><a href=""><strong>KATEGORI</strong></a>
                                                 <ul class="drop-menu">
                                                 
@@ -38,40 +46,35 @@
                                                     </li> 
                                                 </ul>
                                             </li>
-                                            <li><a href="/home"><strong>KIYES NOU SE</strong></a></li>
+                           
                                            
                                             <li><a href="#"><strong>FEYTON</strong></a></li>
-                                            <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
-                                                <ul class="drop-menu">
-                                                    <li> 
-                                                        <%= link_to 'Kreye Nouvo Atik', new_discussion_path %>
-                                                    </li> 
-                                                </ul>
-                                            </li>
+                                            
                                             <li  class="mega-menu"><a href="#"><strong>DJOB</strong></a>
                                                 <div class="mega-menu-area">
                                                     <ul class="single-mega-item">
-                                                        <li><a href="/home">About Us</a></li>
+                                                        <li><a href="/home">NAP TRAVAY SOU SA</a></li>
                                                         <li><a href="#">Contact us</a></li>
-                                                        <li><a href="#">Couses</a></li>
-                                                        <li><a href="#">Couses Sidebar Right</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
                                                     </ul>
                                                     <ul class="single-mega-item">
-                                                        <li><a href="#">Couses Sidebar Left</a></li>
-                                                        <li><a href="#">Events</a></li>
-                                                        <li><a href="#">Events Sidebar Right</a></li>
-                                                        <li><a href="#">Events Sidebar Left</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
                                                     </ul>
                                                     <ul class="single-mega-item">
-                                                        <li><a href="#">Blog</a></li>
-                                                        <li><a href="#">Blog sidebar Right</a></li>
-                                                        <li><a href="#">Blog sidebar Left</a></li>
-                                                        <li><a href="#">Blog Details</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
                                                     </ul>
                                                     <ul class="single-mega-item">
-                                                        <li><a href="#">Blog Details Sidebar Right</a></li>
-                                                        <li><a href="#">Blog Details Sidebar Left</a></li>
-                                                        <li><a href="#">404</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
+                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
                                                     </ul>
                                                 </div>
                                             </li>
@@ -132,49 +135,44 @@
                             <div class="mobile-menu">
                                 <nav id="dropdown">
                                     <ul class="nav">
-                                        <li><a class="home" href="#">KATEGORI</a>
-                                            <ul>
+                                       <li><a href="/home"><strong>KIYES N0U YE</strong></a></li>
+                                       <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
+                                          <ul>
+                                             <li> 
+                                                <%= link_to 'Kreye Nouvo Atik', new_discussion_path %>
+                                            </li> 
+                                          </ul>
+                                      </li>
                                                 
-                                                    <% @channels.each do |c| %>
-                                                    <li><%= link_to c.channel, c %></li>
-                                                    <% end %> 
-                                                    <li> 
+                                     <li><a class="home" href="#">KATEGORI</a>
+                                        <ul>  
+                                            <% @channels.each do |c| %>
+                                                <li><%= link_to c.channel, c %></li>
+                                            <% end %> 
+                                            <li> 
+                                                <% if has_role?(:admin) %>
+                                                    <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path, class:'button is-info' %></li>
+                                                        <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
+                                                        <li><%= link_to 'Ajoute Nouvo Esponso', new_sponsor_path, class:'button is-info' %></li>
+                                                    <li><%= link_to 'Ajoute Manm', new_team_path, class:'button is-info' %></li>
+                                                <% end %> 
+                                            </li> 
+                                        </ul>   
+                                     </li>
 
-                                                   
-                                                        <% if has_role?(:admin) %>
-                                                        
-                                                            <li><%= link_to 'Kreye Nouvo Kategori', new_channel_path, class:'button is-info' %></li>
-                                                            <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
-                                                            <li><%= link_to 'Ajoute Nouvo Esponso', new_sponsor_path, class:'button is-info' %></li>
-                                                           <li><%= link_to 'Ajoute Manm', new_team_path, class:'button is-info' %></li>
-                            
-                                                       
-                                                        <% end %> 
-                                                    </li> 
-                                             </ul>   
-                                        </li>
-                                         <li><a href="#"><strong>KIYES N0U YE</strong></a></li>
-                                         <li><strong><a href="/discussions"><strong>DISKISYION</strong></a>
-                                            <ul>
-                                                <li> 
-                                                    <%= link_to 'Kreye Nouvo Atik', new_discussion_path %>
-                                                </li> 
-                                            </ul>
-                                        </li>
-                                    
-                                        <li><a href="#"><strong>EVENMAN</strong></a></li>
+                                     <li><a href="#"><strong>EVENMAN</strong></a></li>
                                         
-                                        <li><a href="#">LOT BAGAY</a>
-                                            <ul>
-                                                <li><a href="#">KOZ</a></li>
-                                                <li><a href="#">KONTATE N</a></li>
-                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
-                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
-                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
-                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
-                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
-                                                <li><a href="#">Nou Pral Ajoute Sa</a></li>
-                                            </ul>
+                                     <li><a href="#">DJOB</a>
+                                         <ul>
+                                             <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                             <li><a href="#">KONTATE N</a></li>
+                                             <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                             <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                             <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                             <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                             <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                             <li><a href="#">Nou Pral Ajoute Sa</a></li>
+                                         </ul>
                                         </li>
                                     </ul>
                                 </nav>
