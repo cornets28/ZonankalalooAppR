@@ -19,7 +19,7 @@ gem 'file_validators'
 gem "fog-aws"
 
 gem 'activestorage'
-gem 'pg', '>= 0.18', '< 2.0'
+# gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-social-rails'
@@ -74,6 +74,9 @@ group :development, :test do
   gem 'guard-livereload', '~> 2.5', require: false
 end
 
+group :production do
+  gem 'pg'
+end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
