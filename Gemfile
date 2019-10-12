@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+ruby '2.5.6'
 gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
 gem 'image_processing'
 
@@ -63,6 +63,7 @@ gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'figaro'
+
 
 
 group :development, :test do
