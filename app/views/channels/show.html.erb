@@ -9,9 +9,9 @@
            </div>
        </div>
        <% if has_role?(:admin) %>
-         <%= link_to 'Modifye Non Kategori Sa', edit_channel_path(@channel), class:"button" %>
+         <%= link_to 'Chanje Non Kategori', edit_channel_path(@channel), class:"button"%>
        <% end %>
-       </div>
+       </div> <br />
       <%= render 'shared/discussions_all_channels' %>
   </div>
 </div>

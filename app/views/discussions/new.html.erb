@@ -4,18 +4,16 @@
 
             <div class="col-sm-8">
                 <div class="leave-reply">
-                    <h2>Nouvo Diskisyon</h2>
-                
+                   <h2>Nouvo Diskisyon   
+                       <%= link_to discussions_path, :class=> "IIII" do %>
+                         <i class="fa fa-remove" style="float:right"></i>
+                       <% end %>
+                    </h2>
                     <ul>
-                     
-                       <%= render 'form', discussion: @discussion %>
-                       
+                       <%= render 'form', discussion: @discussion %> 
                     </ul>
                 </div>
-
-
-            <%= link_to 'Back', discussions_path %>
-
+           </div>
         </div>
-    </div>
+     </div>
 </section>

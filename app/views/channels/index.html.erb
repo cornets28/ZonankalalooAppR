@@ -1,37 +1,136 @@
-<h1 class="title is-2">Channels</h1>
+<section class="blog-area pt-90 pb-90">
+    <div style="margin-top:-8rem">
+        <div class="row">
+            <!-- Start section title -->
+            <div class="col-sm-12">
+                <div class="section-title text-center" style="padding-top: 90px;">
+                    <h2> Lis <span>Kategori Yo</span></h2>
+                    <img src="/img/title-bottom.png" alt="">
+                </div>
+            </div>
 
-<% if has_role?(:admin) %>
-<div class="level">
-  <div class="level-left"></div>
-  <div class="level-right">
-    <%= link_to 'New Channel', new_channel_path, class:'button is-dark' %>
-  </div>
-</div>
 
-<table class="table is-fullwidth">
-  <thead>
-    <tr>
-      <th>Channel</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @channels.each do |channel| %>
-    <tr>
-      <td><%= link_to channel.channel, channel %></td>
-      <td>
-        <div class="buttons is-right">
-          <%= link_to 'View Channel', channel, class:'button' %>
-          <%= link_to 'Edit Channel', edit_channel_path(channel), class:'button' %>
-          <%= link_to 'Delete', channel, class:'button is-danger', method: :delete, data: { confirm: "Are you sure you want to delete this channel? " } %>
+            <% if has_role?(:admin) %>
+              <div class="level">
+                <%= link_to 'Ajoute Nouvo Kategori', new_channel_path, class:'button is-dark' %>
+              </div>
+          
+              <table class="container" id="tableBody">
+                <thead>
+                    <tr>
+                      <th><h1>KATEGORI</h1></th>
+                      <th><h1>VERIFIKASYON</h1></th>
+                      <th><h1>MODIFIKASYON</h1></th>
+                      <th><h1>EFASE</h1></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <% @channels.each do |channel| %>
+                    <tr>
+                      <td><%= link_to channel.channel, channel %></td>
+                      <td><%= link_to channel do %>
+                        Gade l<i class="fa fa-eye" aria-hidden="true"></i>
+                    <% end %> </td>
+                   
+                      <td> <%= link_to edit_channel_path(channel) do  %>
+                      <i class="fa fa-pencil"></i>
+                      </td>
+                      <% end %> </td>
+                      
+                    <td><%= link_to channel, method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
+                        <i class="fa fa-trash fa-2x"></i>
+                    <% end %> </td>
+                   
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+
+            <% else %>
+               <div class="section-title text-center" style="padding-top: 90px;">
+                    <h2 style="color:red"> Dezole. Ou pa gen akse pou w ale la!<br><br>
+                    Seksyon sa rezeve pou adminitration.</h2>
+                </div>
+            <% end %>
         </div>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
+    </div>
+</section>
 
-</table>
 
-<% else %>
-  <p class="has-text-center">Sorry! You don't have access this page.</p>
-<% end %>
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+#tableBody{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#A7A1AE;
+  background-color:#1F2739;
+}
+
+
+.container th h1 {
+	font-weight: bold;
+	font-size: 1em;
+  text-align: left;
+  color: #white;
+}
+
+.container td {
+	  font-weight: normal;
+	  font-size: 1em;
+  -webkit-box-shadow: 0 1px 1px -1px #0E1119;
+	   -moz-box-shadow: 0 1px 1px -1px #0E1119;
+	        box-shadow: 0 1px 1px -1px #0E1119;
+}
+
+
+
+.container td, .container th {
+	  padding-bottom: 1%;
+	  padding-top: 1%;
+    padding-left:1%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: #363636;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color:  #cccccc;
+}
+
+.container th {
+	  background-color: #0AAAA0;
+}
+
+.container td:first-child { color: #FB667A; }
+
+.container tr:hover {
+   background-color: #464A52;
+   -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #0AAAA0;
+  color: #white;
+  font-weight: bold;
+  
+  box-shadow: # rgb(8, 69, 80) -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) 
+}
+</style>

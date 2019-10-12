@@ -27,7 +27,7 @@
                                                     </li> 
                                                 </ul>
                                             </li>
-                                            <li><a href=""><strong>KATEGORI</strong></a>
+                                            <li><a href="/channels"><strong>KATEGORI</strong></a>
                                                 <ul class="drop-menu">
                                                 
                                                     <% @channels.each do |c| %>
@@ -40,6 +40,7 @@
                                                             <li><%= link_to 'Ajoute Nouvo Patne', new_partner_path, class:'button is-info' %></li>
                                                             <li><%= link_to 'Ajoute Nouvo Esponso', new_sponsor_path, class:'button is-info' %></li>
                                                            <li><%= link_to 'Ajoute Manm', new_team_path, class:'button is-info' %></li>
+                                                           <li><%= link_to 'Ajoute Djob', new_job_path, class:'button is-info' %></li>
                             
                                                         </ul>
                                                         <% end %> 
@@ -50,7 +51,7 @@
                                            
                                             <li><a href="#"><strong>FEYTON</strong></a></li>
                                             
-                                            <li  class="mega-menu"><a href="#"><strong>DJOB</strong></a>
+                                            <li  class="mega-menu"><a href="/jobs"><strong>DJOB</strong></a>
                                                 <div class="mega-menu-area">
                                                     <ul class="single-mega-item">
                                                         <li><a href="/home">NAP TRAVAY SOU SA</a></li>
@@ -78,50 +79,11 @@
                                                     </ul>
                                                 </div>
                                             </li>
-                                            <!--<li  class="mega-menu"><a href="#"><strong>COMMING</strong></a>
-                                                <div class="mega-menu-area">
-                                                    <ul class="single-mega-item">
-                                                        <li class="shortcode-title">Shortcode 1</li>
-                                                        <li><a href="elements-causes.html">Causes</a></li>
-                                                        <li><a href="elements-contact-form.html">Contact Form</a></li>
-                                                        <li><a href="elements-hero-static.html">Hero Static</a></li>
-                                                        <li><a href="elements-hero-static-left.html">Hero Static Left</a></li>
-                                                        <li><a href="elements-hero-static-right.html">Hero Static Right</a></li>
-                                                        <li><a href="elements-keep-in-touch.html">Keep In Touch</a></li>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                        <li class="shortcode-title">Shortcode 2</li>
-                                                        <li><a href="elements-latest-blog.html">Latest Blog</a></li>
-                                                        <li><a href="elements-map.html">Google Map</a></li>
-                                                        <li><a href="elements-our-gallery.html">Our Gallery</a></li>
-                                                        <li><a href="elements-our-sponsors.html">Our Sponsors</a></li>
-                                                        <li><a href="elements-our-volunteers.html">Our Volunteers</a></li>
-                                                        <li><a href="elements-page-breadcumb-right.html">Page Breadcumb Right</a></li>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                        <li class="shortcode-title">Shortcode 3</li>
-                                                        <li><a href="elements-page-title-center.html">Page Title Center</a></li>
-                                                        <li><a href="elements-page-title-left.html">Page Title Left</a></li>
-                                                        <li><a href="elements-page-title-right.html">Page Title Right</a></li>
-                                                        <li><a href="elements-pagination.html">Pagination</a></li>
-                                                        <li><a href="elements-services.html">Services</a></li>
-                                                        <li><a href="elements-testimonials.html">Testimonials</a></li>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                        <li class="shortcode-title">Shortcode 4</li>
-                                                        <li><a href="elements-up-comming-events.html">Up Comming Events</a></li>
-                                                        <li><a href="elements-video-gallery-2col.html">Video Gallery col 2</a></li>
-                                                        <li><a href="elements-video-gallery-3col.html">Video Gallery col 3</a></li>
-                                                        <li><a href="elements-video-gallery-4col.html">Video Gallery col 4</a></li>
-                                                        <li><a href="elements-what-we-do.html">What we do</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>-->
                                         </ul>
                                     </nav>
                                 </div>
                                 <div class="donate-button ptb-32">
-                                    <a class="waves-effect waves-light" href="#">Donate</a>
+                                    <a class="waves-effect waves-light" href="">Donate</a>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +124,7 @@
 
                                      <li><a href="#"><strong>EVENMAN</strong></a></li>
                                         
-                                     <li><a href="#">DJOB</a>
+                                     <li><a href="/jobs">DJOB</a>
                                          <ul>
                                              <li><a href="#">Nou Pral Ajoute Sa</a></li>
                                              <li><a href="#">KONTATE N</a></li>

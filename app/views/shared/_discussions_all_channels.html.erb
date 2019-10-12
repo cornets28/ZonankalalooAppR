@@ -30,11 +30,11 @@
                             <div class="blog-text">
                             <h3>
                                 <%= link_to discussion do %>
-                                    <%= truncate(discussion.title, length: 35) %>
+                                    <%= truncate(discussion.title, length: 32) %>
                                 <% end %>
                             </h3>
                             
-                            <%= truncate(strip_tags(discussion.content.to_s), length: 180) %>
+                            <%= truncate(strip_tags(discussion.content.to_s), length: 190) %>
                             <p>
                                 <em>
                                     <small>

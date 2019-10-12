@@ -1,4 +1,18 @@
-<h1 class="title is-3">Editing Discussion</h1>
-
-<%= render 'form', discussion: @discussion %>
-
+<section class="our-blog-area pt-90 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="leave-reply">
+                    <h2>Modifye Atik Sa
+                       <%= link_to discussions_path, :class=> "IIII" do %>
+                         <i class="fa fa-remove" style="float:right"></i>
+                       <% end %>
+                    </h2>
+                    <ul>
+                      <%= render 'form', discussion: @discussion %>  
+                    </ul>
+                </div>
+           </div>
+        </div>
+    </div>
+</section>
