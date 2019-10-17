@@ -1,6 +1,6 @@
 <%= simple_form_for(@team) do |f| %>
   <%= f.error_notification %>
-
+ 
   <div class="form-inputs">
     <li><%= f.input :firstname, input_html: {class:"input", placeholder: "Non"}, wrapper: false %></li>
     <li><%= f.input :lastname, input_html: {class:"input", placeholder: "Siyati"}, wrapper: false %></li>
@@ -10,9 +10,10 @@
     <li><%= f.input :email, input_html: {class:"input", placeholder: "Email"}, wrapper: false %></li>
     <li><%= f.file_field :image, input_html: {class:"input", placeholder: "Imaj"}, wrapper: false %></li>
   </div>
-
+  
   <div class="form-actions">
     <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
   </div>
+  
 <% end %>
 

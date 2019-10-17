@@ -19,7 +19,7 @@
                                 <div class="main-menu">
                                     <nav>
                                         <ul>
-                                            <li><a href="/home"><strong>KIYES NOU SE</strong></a></li>
+                                            <li><a href="/home"><strong>KIYES NOU YE</strong></a></li>
                                             <li ><a href="/discussions"><strong>DISKISYION</strong></a>
                                                 <ul class="drop-menu">
                                                     <li> 
@@ -51,45 +51,12 @@
                                             </li>
                                             <li><a href="#"><strong>FEYTON</strong></a></li>
                                             <li><a href="/jobs"><strong>DJOB</strong></a>
-                                                
-                                                <ul class="drop-menu">
-                                                    <li> 
-                                                        
-                                                        <ul>
-                                                          <% if has_role?(:admin) %>
-                                                           <li><%= link_to 'Ajoute Nouvo Djob', new_job_path, class:'' %></li>                            
-                                                        <% end %> 
-                                                        </ul>
-                                                        
-                                                    </li> 
-                                                <!--<li class="mega-menu"><a href="/jobs"><strong>DJOB</strong></a>-->
-                                                <!--<div class="mega-menu-area">
-                                                    <ul class="single-mega-item">
-                                                        <li><a href="/home">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">Contact us</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                        <li><a href="#">NAP TRAVAY SOU SA</a></li>
-                                                    </ul>
-                                                </div>
-                                            </li>-->
+                                                <% if has_role?(:admin) %>
+                                                  <ul class="drop-menu">
+                                                    <li><%= link_to 'Ajoute Nouvo Djob', new_job_path, class:'' %></li> 
+                                                  </ul>                          
+                                                <% end %> 
+                                            </li> 
                                         </ul>
                                     </nav>
                                 </div>

@@ -1,18 +1,24 @@
-
 <section class="our-blog-area pt-90 pb-60">
     <div class="container">
         <div class="row">
 
             <div class="col-sm-8">
                 <div class="leave-reply">
-                    <h2>Ajoute Manm</h2>
+                    <h2>Ajoute Nouvo Manm
+                       <%= link_to teams_path, :class=> "IIII" do %>
+                         <i class="fa fa-remove" style="float:right"></i>
+                       <% end %>
+                    </h2>
                 
                     <ul>
-                       <%= render 'form', team: @team %>
+                      <li>
+                         <%= render 'form', team: @team %>
+                       </li>
                     </ul>
                 </div>
-            <%= link_to 'Back', teams_path %>
-
+            </div>
+            
         </div>
     </div>
 </section>
+

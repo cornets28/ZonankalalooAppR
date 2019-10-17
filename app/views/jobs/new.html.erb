@@ -4,7 +4,11 @@
 
             <div class="col-sm-8">
                 <div class="leave-reply">
-                    <h2>Ajoute Nouvo Djob</h2>
+                    <h2>Ajoute Nouvo Djob
+                      <%= link_to jobs_path, :class=> "IIII" do %>
+                         <i class="fa fa-remove" style="float:right"></i>
+                       <% end %>
+                    </h2>
                     <ul>
                         <li>
                            <%= render 'form', job: @job %>
@@ -15,4 +19,3 @@
         </div>
    </div>
 </section>
-<%= link_to 'Back', jobs_path %>

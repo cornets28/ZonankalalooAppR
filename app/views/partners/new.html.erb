@@ -1,12 +1,14 @@
-
-
 <section class="our-blog-area pt-90 pb-60">
     <div class="container">
         <div class="row">
 
             <div class="col-sm-8">
                 <div class="leave-reply">
-                    <h2> Ajoute Nouvo Patne</h2>
+                    <h2> Ajoute Nouvo Patne
+                        <%= link_to discussions_path, :class=> "IIII" do %>
+                         <i class="fa fa-remove" style="float:right"></i>
+                       <% end %>
+                    </h2>
                 
                     <ul>
                       <li>
@@ -14,10 +16,6 @@
                        </li>
                     </ul>
                 </div>
-
-
-            <%= link_to 'Back', discussions_path %>
-
         </div>
     </div>
 </section>

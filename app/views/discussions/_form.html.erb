@@ -3,9 +3,9 @@
    <%= f.error_notification %>
  
      <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Ekri Tit La" }, wrapper: false %></li>
-  <li><%= f.rich_text_area :content, required: true, input_html: { class: 'textarea' } %>
-  <%= f.file_field :image, input_html: {class: "input-block-level"} %>
-  
+     <li><%= f.rich_text_area :content, required: true, input_html: { class: 'textarea' } %>
+     <%= f.file_field :image, input_html: {class: "input-block-level"} %>
+    
   <div class="field">
       <label class="label">Kategori</label>
       <div class="control has-icons-left">
