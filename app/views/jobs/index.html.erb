@@ -35,13 +35,13 @@
                     <td><%= job.opening_date %></td>
                     <td><%= job.closingdate %></td>
                     <td><%= job.location %></td>
-                      <td><%= job.link%></td>
+                      
                     <% if has_role?(:admin) %>
                       <td><%= link_to 'Show', job %></td>
                       <td><%= link_to 'Edit', edit_job_path(job) %></td>
                       <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% else %>
-                    
+                      <td><%= job.link%></td>
                     <% end %>
                    </tr>
                 <% end %>
