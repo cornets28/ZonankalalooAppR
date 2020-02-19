@@ -7,8 +7,7 @@ class HomeController < ApplicationController
     @discussions = Discussion.all.order('created_at desc')
     @teams = Team.all.order('created_at asc')
     @sponsors = Sponsor.all.order('created_at asc')
-    @interests = Interest.all.order('created_at asc')
-
+    @interests = Interest.all.order('created_at asc') 
   end
 end
 

@@ -35,9 +35,9 @@
                                                         <% end %>
                                                     </ul>
                                                     <ul class="single-mega-item">
-                                                        <% @channels[4..7].each do |c| %>
-                                                            <a><li><%= link_to c.channel, c %></li></a>
-                                                        <% end %>
+                                                        <%# @channels[4..7].each do |c| %>
+                                                            <a><li><%#= link_to c.channel, c %></li></a>
+                                                        <%# end %>
                                                     </ul>
                                                     <ul class="single-mega-item">
                                                         <% if has_role?(:admin) %>

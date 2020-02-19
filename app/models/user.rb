@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_one_attached :avatar
 
@@ -10,5 +12,4 @@ class User < ApplicationRecord
   has_many :discussions, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :channels, through: :discussions
-  
 end
