@@ -92,3 +92,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# @user = User.find(1)
+# @user.add_role 'admin'
+# @user.save
+# @user.roles to see all the admin users
