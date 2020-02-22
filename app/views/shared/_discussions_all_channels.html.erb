@@ -1,5 +1,4 @@
 <div class="col-sm-12">
-                <!-- Start of loop -->
             <div class="digg_pagination">
                 <%= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
             </div>
@@ -9,11 +8,6 @@
                             <div class="blo-image-and-date" id="blo-image">
                             
                             <%= image_tag discussion.image if discussion.image.attached? %>
-        
-                        
-                        
-                                
-                                <!--<img src="/img/mic.jpeg" width="356px"alt="Discussion Image">-->
                                 <% if discussion.channel %>
                                     <%= link_to discussion.channel.channel, discussion.channel %>
                                 <% end %>   
@@ -67,14 +61,13 @@
                                 
                             <% end %>
                             </div>      
-                        </div> <!-- End single blog -->
+                        </div>
                     </div>                         
-                <% end %> <!-- Loop ends here -->
+                <% end %>
              
 
                                              
-                                                   
-    
+                                         
 </div> <!-- End blog -->
 <div class="digg_pagination">
     <%= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
