@@ -3,9 +3,14 @@ local:
   root: <%= Rails.root.join("storage") %>
 amazon:
   service: S3
-  access_key_id: "AKIA3PWIUNLHO7BHCMMG"
-  secret_access_key: "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"
+  access_key_id: ""
+  secret_access_key: ""
   bucket: "zonankalaloo"
   region: "us-east-2"
-  # access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-  # secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+#   local:
+#   service: Disk
+#   root: <%= Rails.root.join("storage") %>
+
+# test:
+#   service: Disk
+#   root: <%= Rails.root.join("tmp/storage") %>
