@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   # GET /jobs
@@ -10,8 +12,7 @@ class JobsController < ApplicationController
 
   # GET /jobs/1
   # GET /jobs/1.json
-  def show
-  end
+  def show; end
 
   # GET /jobs/new
   def new
@@ -19,8 +20,7 @@ class JobsController < ApplicationController
   end
 
   # GET /jobs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /jobs
   # POST /jobs.json
@@ -63,13 +63,14 @@ class JobsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job
-      @job = Job.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def job_params
-      params.require(:job).permit(:company, :job_title, :position, :description, :opening_date, :closingdate, :location)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_job
+    @job = Job.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def job_params
+    params.require(:job).permit(:company, :job_title, :position, :description, :opening_date, :closingdate, :location)
+  end
 end

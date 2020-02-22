@@ -1,0 +1,10 @@
+AllCops:
+  Include:
+    - foo.unusual_extension
+    - "**/*.rb"
+    - "**/*.gemfile"
+    - "**/*.gemspec"
+    - "**/*.rake"
+    - "**/*.ru"
+    - "**/Gemfile"
+    - "**/Rakefile"

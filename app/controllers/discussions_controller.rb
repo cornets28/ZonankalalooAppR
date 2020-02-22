@@ -1,10 +1,10 @@
-class DiscussionsController < ApplicationController
-  before_action :set_discussion, only: [:show, :edit, :update, :destroy]
-  before_action :find_channels, only: [:index, :show, :new, :edit]
-  before_action :authenticate_user!, except: [:index, :show]
+# frozen_string_literal: true
 
-  # GET /discussions
-  # GET /discussions.json
+class DiscussionsController < ApplicationController
+  before_action :set_discussion, only: %i[show edit update destroy]
+  before_action :find_channels, only: %i[index show new edit]
+  before_action :authenticate_user!, except: %i[index show]
+
   def index
     @likes = Like.all
     @discussions1 = Discussion.all.order('created_at desc')
@@ -12,27 +12,19 @@ class DiscussionsController < ApplicationController
     @discussions_pagination = Discussion.paginate(page: params[:page], per_page: 6)
   end
 
-  # GET /discussions/1
-  # GET /discussions/1.json
   def show
     @discussions = Discussion.all.order('created_at desc')
     Discussion.increment_counter(:view, @discussion.id)
     @discussion.save
     # @replies= @discussion.replies
-   
   end
 
-  # GET /discussions/new
   def new
     @discussion = current_user.discussions.build
   end
 
-  # GET /discussions/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /discussions
-  # POST /discussions.json
   def create
     @discussion = current_user.discussions.build(discussion_params)
 
@@ -47,8 +39,6 @@ class DiscussionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /discussions/1
-  # PATCH/PUT /discussions/1.json
   def update
     respond_to do |format|
       if @discussion.update(discussion_params)
@@ -61,8 +51,6 @@ class DiscussionsController < ApplicationController
     end
   end
 
-  # DELETE /discussions/1
-  # DELETE /discussions/1.json
   def destroy
     @discussion.destroy
     respond_to do |format|
@@ -72,17 +60,16 @@ class DiscussionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_discussion
-      @discussion = Discussion.find(params[:id])
-    end
 
-    def find_channels
-      @channels = Channel.all.order('created_at desc')
-    end
+  def set_discussion
+    @discussion = Discussion.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def discussion_params
-      params.require(:discussion).permit(:title, :content, :image, :channel_id)
-    end
+  def find_channels
+    @channels = Channel.all.order('created_at desc')
+  end
+
+  def discussion_params
+    params.require(:discussion).permit(:title, :content, :image, :channel_id)
+  end
 end

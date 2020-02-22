@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SponsorsController < ApplicationController
-  before_action :set_sponsor, only: [:show, :edit, :update, :destroy]
+  before_action :set_sponsor, only: %i[show edit update destroy]
 
   # GET /sponsors
   # GET /sponsors.json
@@ -9,8 +11,7 @@ class SponsorsController < ApplicationController
 
   # GET /sponsors/1
   # GET /sponsors/1.json
-  def show
-  end
+  def show; end
 
   # GET /sponsors/new
   def new
@@ -18,8 +19,7 @@ class SponsorsController < ApplicationController
   end
 
   # GET /sponsors/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sponsors
   # POST /sponsors.json
@@ -62,13 +62,14 @@ class SponsorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sponsor
-      @sponsor = Sponsor.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def sponsor_params
-      params.require(:sponsor).permit(:image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sponsor
+    @sponsor = Sponsor.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def sponsor_params
+    params.require(:sponsor).permit(:image)
+  end
 end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class InterestsController < ApplicationController
-  before_action :set_interest, only: [:show, :edit, :update, :destroy]
+  before_action :set_interest, only: %i[show edit update destroy]
 
   # GET /interests
   # GET /interests.json
@@ -9,8 +11,7 @@ class InterestsController < ApplicationController
 
   # GET /interests/1
   # GET /interests/1.json
-  def show
-  end
+  def show; end
 
   # GET /interests/new
   def new
@@ -18,8 +19,7 @@ class InterestsController < ApplicationController
   end
 
   # GET /interests/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /interests
   # POST /interests.json
@@ -62,13 +62,14 @@ class InterestsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_interest
-      @interest = Interest.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def interest_params
-      params.require(:interest).permit(:title, :image, :shortdescription)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_interest
+    @interest = Interest.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def interest_params
+    params.require(:interest).permit(:title, :image, :shortdescription)
+  end
 end

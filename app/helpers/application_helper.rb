@@ -1,19 +1,20 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   require 'redcarpet/render_strip'
-  
 
   def has_role?(role)
-    current_user && current_user.has_role?(role)
+    current_user&.has_role?(role)
   end
 
   class CodeRayify < Redcarpet::Render::HTML
     def block_code(code, language)
-      CodeRay.scan(code,language).div
+      CodeRay.scan(code, language).div
     end
   end
 
   def markdown(text)
-    coderayified = CodeRayify.new(:filter_html => true, :hard_wrap => true)
+    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)
     options = {
       fenced_code_blocks: true,
       no_intra_emphasis: true,
@@ -22,23 +23,18 @@ module ApplicationHelper
     }
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
-    
   end
 
   def strip_markdown(text)
     # markdown_to_plain_text = Redcarpet::Markdown.new(Redcarpet::Render::StripDown)
     # markdown_to_plain_text.render(text).html_safe
   end
-  
-  def user_avatar(user, size=40)
-    
-    if user.avatar.attached? 
-        user.avatar.variant(resize: "#{size}x#{size}!") 
-     else 
-        gravatar_image_url(user.email, size: size) 
-    end 
+
+  def user_avatar(user, size = 40)
+    if user.avatar.attached?
+      user.avatar.variant(resize: "#{size}x#{size}!")
+    else
+      gravatar_image_url(user.email, size: size)
+    end
   end
-  
 end
-
-

@@ -28,6 +28,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-social-rails'
 gem 'font-awesome-rails'
+gem 'rubocop', '~> 0.80.0', require: false
 
 gem 'will_paginate', '~> 3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

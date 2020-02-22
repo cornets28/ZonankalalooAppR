@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class InterestsControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +7,17 @@ class InterestsControllerTest < ActionDispatch::IntegrationTest
     @interest = interests(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get interests_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_interest_url
     assert_response :success
   end
 
-  test "should create interest" do
+  test 'should create interest' do
     assert_difference('Interest.count') do
       post interests_url, params: { interest: { details: @interest.details, image: @interest.image, shortdescription: @interest.shortdescription, title: @interest.title } }
     end
@@ -23,22 +25,22 @@ class InterestsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to interest_url(Interest.last)
   end
 
-  test "should show interest" do
+  test 'should show interest' do
     get interest_url(@interest)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_interest_url(@interest)
     assert_response :success
   end
 
-  test "should update interest" do
+  test 'should update interest' do
     patch interest_url(@interest), params: { interest: { details: @interest.details, image: @interest.image, shortdescription: @interest.shortdescription, title: @interest.title } }
     assert_redirected_to interest_url(@interest)
   end
 
-  test "should destroy interest" do
+  test 'should destroy interest' do
     assert_difference('Interest.count', -1) do
       delete interest_url(@interest)
     end
