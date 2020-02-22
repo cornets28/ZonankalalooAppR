@@ -374,7 +374,8 @@
             </section>
             <!-- End blog area -->
             <!-- Start brand logo area -->
-             <section class="brand-logo-area pb-90">
+
+            <section class="brand-logo-area pb-90">
                 <div class="container">
                     <div class="row">
                         <!-- Start section title -->
@@ -389,11 +390,11 @@
                         <div class="brand-logo">
                              
                             <% if !Sponsor.nil? %>
-                               <% @sponsors = Sponsor.all %>   
+                               <% @sponsors = Sponsor.all %>    
                                <div class="col-sm-6" style="display: flex;">
                                    <% @sponsors.each do |sponsor| %>
                                        <div class="b-logo">
-                                           <a id="logo-brand" href="">
+                                           <a id="logo-brand" href="<%= sponsor.official_link %>">
                                                <%= image_tag sponsor.image, size: "120x120" if sponsor.image.attached?%>
                                            </a>
                                    </div>
@@ -406,7 +407,8 @@
                 </div>
             </section>
 
-
+             
+    
 
 
             
