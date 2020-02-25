@@ -5,12 +5,8 @@
                 <div class="top-social">
                     <nav>
                         <ul>
-                            <li><a href="#">Swiv Nou Sou:</a></li>
+                            <li><a href="#">Swivez nous sur:</a></li>
                             <li><a href="https://www.facebook.com/samuel.cornet"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                           <!-- <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
-                           <!-- <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>-->
-                           <!--<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>-->
-                            <!--<li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>-->
                             <li><a href="www.linkedin.com/in/samuel-cornet-465b1783"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                              <li><a href="https://wa.me/50937061376"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
                         </ul>
@@ -24,16 +20,16 @@
                         <li><a href="mailto:corsam@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i> Email: corsam@gmail.com</a></li>
                         <li><a href="https://wa.me/50937061376"><i class="fa fa-phone" aria-hidden="true"></i> Phone: +(509) 3706-1376</a></li>
                        <% if user_signed_in? %>
-                        <li style="color: white"><a href=""><%= current_user.username%><span>  </span>  <i class="fa fa-angle-down" aria-hidden="true"></a></i>
+                        <li style="color: white"><a href=""><strong><%= current_user.username%></strong><span>  </span>  <i class="fa fa-angle-down" aria-hidden="true"></a></i>
                             <ul>
-                                <li><%= link_to "Pwofil", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
-                                <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
+                                <li><%#= link_to "Pwofil", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
+                                <li><%= link_to "Deconnecter", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
                             </ul>
                         <% else %>
-                          <li><a href=""><strong>Kontekte </strong><i class="fa fa-angle-down" aria-hidden="true"></a></i>
+                          <li><a href=""><strong>Connecter </strong><i class="fa fa-angle-down" aria-hidden="true"></a></i>
                             <ul>
-                                <li><%= link_to "Rantre", new_user_session_path, class:"navbar-item sign_in"%></li>
-                               <li><%= link_to "Anrejitre", new_user_registration_path, class:"navbar-item" %></li>
+                                <li><%= link_to "Connecter", new_user_session_path, class:"navbar-item sign_in"%></li>
+                               <li><%= link_to "Anregister", new_user_registration_path, class:"navbar-item" %></li>
                             </ul>
                         <% end %>
                     </ul>

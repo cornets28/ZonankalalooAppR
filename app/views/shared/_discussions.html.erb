@@ -39,7 +39,7 @@
                             <p>
                                 <em>
                                     <small>
-                                        Atik sa gen <%= time_ago_in_words(discussion.created_at) %>, Kategori
+                                        Publie il y a <%= time_ago_in_words(discussion.created_at) %>, Categorie
                                         <% if discussion.channel %>
                                             <%= link_to discussion.channel.channel, discussion.channel %>
                                         <% end %>
@@ -61,7 +61,7 @@
                                 </div>    
                             <% end %>
                             <%= link_to discussion do %>
-                                <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plis Detay...</p> 
+                                <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plus Details...</p> 
                             <% end %>
                         </div>      
                     </div> <!-- End single blog -->
@@ -146,7 +146,7 @@
                                         </div>
                                     <% end %>
                                 <%= link_to discussion do %>
-                                    <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plis Detay...</p>
+                                    <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plus Details...</p>
                                 <% end %>
                             </div>      
                         </div> <!-- End single blog -->
