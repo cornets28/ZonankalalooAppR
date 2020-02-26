@@ -191,6 +191,9 @@
 	.container {
 		width: 395px;
 	}
+	.digg_pagination {
+		margin-left: 5rem;
+	}
 	.call-to-action ul li {
 		float: none;
 		text-align: center;
@@ -317,8 +320,12 @@
 	.event-text > h3 {
 		margin-top: 15px;
 	}
+	.event-popular-post {
+		margin-left: 3rem;
+	}
 	.post-thum img {
-		width: inherit;
+		width: 50%;
+		/* width: inherit; */
 	}
 
 	.mobile-menu-area {
