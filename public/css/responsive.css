@@ -190,13 +190,16 @@
 @media (max-width: 767px) {
 	.container {
 		width: 395px;
-		overflow-x: hidden;
+		/* overflow-x: hidden; */
+	}
+	.top-social ul {
+		margin-left: 2.5rem;
 	}
 	.digg_pagination {
-		padding-left: 3.5rem;
+		padding-left: 4.5rem;
 	}
 	.newslater {
-		width: 90%;
+		width: 100%;
 	}
 	.call-to-action ul li {
 		float: none;
