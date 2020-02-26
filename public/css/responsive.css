@@ -196,8 +196,8 @@
 		margin-left: 2.5rem;
 	}
 	.mean-container {
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
+		padding-left: 1.5rem; /* added */
+		padding-right: 1.5rem; /* added */
 	}
 	.digg_pagination {
 		padding-left: 4.5rem;
