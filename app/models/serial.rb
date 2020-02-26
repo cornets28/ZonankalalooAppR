@@ -6,10 +6,11 @@ class Serial < ApplicationRecord
   resourcify
 
   extend FriendlyId
-  friendly_id :serial, use: %i[slugged finders]
+  friendly_id :mainTitle, use: %i[slugged finders]
+  validates :mainTitle, length: { minimum: 15 }, presence: true
   self.per_page = 3
 
   def should_generate_new_friendly_id?
-    serial_changed?
+    mainTitle_changed?
   end
 end

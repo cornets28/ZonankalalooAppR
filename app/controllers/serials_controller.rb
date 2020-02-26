@@ -24,7 +24,7 @@ class SerialsController < ApplicationController
 
     respond_to do |format|
       if @serial.save
-        format.html { redirect_to @serial, notice: 'Vouz venez tout just de creer une nouvelles serie!' }
+        format.html { redirect_to @serial, notice: 'Vouz venez tout juste de creer une nouvelles serie!' }
         format.json { render :show, status: :created, location: @serial }
       else
         format.html { render :new }
@@ -33,8 +33,6 @@ class SerialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /serials/1
-  # PATCH/PUT /serials/1.json
   def update
     respond_to do |format|
       if @serial.update(serial_params)
