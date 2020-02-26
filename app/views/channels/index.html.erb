@@ -9,19 +9,18 @@
                 </div>
             </div>
 
-
             <% if has_role?(:admin) %>
               <div class="level">
-                <%= link_to 'Ajoute Nouvo Kategori', new_channel_path, class:'button is-dark' %>
+                <%= link_to 'Nouvelle Categorie', new_channel_path, class:'button is-dark' %>
               </div>
           
               <table class="container" id="tableBody">
                 <thead>
                     <tr>
-                      <th><h1>KATEGORI</h1></th>
-                      <th><h1>VERIFIKASYON</h1></th>
-                      <th><h1>MODIFIKASYON</h1></th>
-                      <th><h1>EFASE</h1></th>
+                      <th><h1>CATEGORIE</h1></th>
+                      <th><h1>VERIFIER</h1></th>
+                      <th><h1>MODIFIER</h1></th>
+                      <th><h1>SUPRIMER</h1></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,7 +36,7 @@
                       </td>
                       <% end %> </td>
                       
-                    <td><%= link_to channel, method: :delete, data: { confirm: 'Are you sure?' }, class: 'user' do %>
+                    <td><%= link_to channel, method: :delete, data: { confirm: ' En Etes vous sure' }, class: 'user' do %>
                         <i class="fa fa-trash fa-2x"></i>
                     <% end %> </td>
                    
