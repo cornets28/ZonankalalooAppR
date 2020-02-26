@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :models
   resources :serials
   resources :scenes
   resources :jobs

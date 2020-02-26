@@ -2,8 +2,8 @@
 
 class ScenesController < ApplicationController
   before_action :set_scene, only: %i[show edit update destroy]
-  before_action :find_serials, only: %i[index show new edit]
-  before_action :authenticate_user!, except: %i[index show]
+  # before_action :find_serials, only: %i[index show new edit]
+  # before_action :authenticate_user!, except: %i[index show]
 
   def index
     @likes = Like.all
@@ -63,7 +63,6 @@ class ScenesController < ApplicationController
     @scene = Scene.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def scene_params
     params.require(:scene).permit(:title, :content, :image, :serial_id)
   end

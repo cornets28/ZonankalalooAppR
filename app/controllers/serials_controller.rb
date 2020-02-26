@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 class SerialsController < ApplicationController
   before_action :set_serial, only: %i[show edit update destroy]
+  before_action :find_serials, only: %i[index show new edit]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @serials = Serial.all
@@ -16,8 +20,7 @@ class SerialsController < ApplicationController
     @serial = Serial.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @serial = Serial.new(serial_params)
@@ -54,12 +57,16 @@ class SerialsController < ApplicationController
   end
 
   private
-   
-    def set_serial
-      @serial = Serial.find(params[:id])
-    end
 
-    def serial_params
-      params.require(:serial).permit(:mainTitle)
-    end
+  def find_serials
+    @channels = Channel.all.order('created_at desc')
+  end
+
+  def set_serial
+    @serial = Serial.find(params[:id])
+  end
+
+  def serial_params
+    params.require(:serial).permit(:mainTitle)
+  end
 end
