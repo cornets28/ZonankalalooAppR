@@ -195,6 +195,9 @@
 		justify-content: center;
 		/* padding-left: 4.5rem; */
 	}
+	.newslater {
+		margin-left: 0px;
+	}
 	.call-to-action ul li {
 		float: none;
 		text-align: center;
@@ -236,7 +239,7 @@
 		margin-bottom: 30px;
 	}
 	.single-blog {
-		margin-bottom: 30px; /*change this to 10px*/
+		margin-bottom: 30px;
 	}
 
 	.people-say-slide .owl-prev {
