@@ -26,7 +26,6 @@
 default: &default
   adapter: postgresql
   encoding: unicode	 
-  # username: sam
   password: 123456
 
 
