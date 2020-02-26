@@ -192,11 +192,10 @@
 		width: 395px;
 	}
 	.digg_pagination {
-		justify-content: center;
-		/* padding-left: 4.5rem; */
+		padding-left: 4.5rem;
 	}
 	.newslater {
-		margin-left: 0px;
+		width: 80%;
 	}
 	.call-to-action ul li {
 		float: none;
