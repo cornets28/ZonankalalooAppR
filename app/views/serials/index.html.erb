@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Serials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Maintitle</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @serials.each do |serial| %>
+      <tr>
+        <td><%= serial.mainTitle %></td>
+        <td><%= link_to 'Show', serial %></td>
+        <td><%= link_to 'Edit', edit_serial_path(serial) %></td>
+        <td><%= link_to 'Destroy', serial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Serial', new_serial_path %>

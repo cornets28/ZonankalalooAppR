@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @scene.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @scene.content %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @scene.image %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @scene.serial_id %>
+</p>
+
+<%= link_to 'Edit', edit_scene_path(@scene) %> |
+<%= link_to 'Back', scenes_path %>

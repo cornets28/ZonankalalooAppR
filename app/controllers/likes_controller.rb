@@ -11,6 +11,7 @@ class LikesController < ApplicationController
     @status = params[:status]
     if @status == 'show'
       redirect_to discussion_path(params[:id])
+
     else
       redirect_back(fallback_location: root_path)
     end
@@ -26,4 +27,4 @@ class LikesController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
-  end
+end
