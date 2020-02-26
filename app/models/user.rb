@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  validates :user, uniqueness: true
   has_one_attached :avatar
 
   rolify

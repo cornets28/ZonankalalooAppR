@@ -59,7 +59,7 @@ class SerialsController < ApplicationController
   private
 
   def find_serials
-    @channels = Channel.all.order('created_at desc')
+    @channels = Serial.all.order('created_at desc')
   end
 
   def set_serial
