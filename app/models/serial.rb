@@ -7,7 +7,7 @@ class Serial < ApplicationRecord
 
   extend FriendlyId
   friendly_id :serial, use: %i[slugged finders]
-  self.per_page = 9
+  self.per_page = 3
 
   def should_generate_new_friendly_id?
     serial_changed?
