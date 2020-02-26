@@ -4,9 +4,7 @@
         <!-- Start blog -->
         
         <div class="col-sm-8">
-           <div class="digg_pagination">
-               <%= will_paginate @discussions_pagination, inner_window: 3, outer_window:1, "previous_label": "Précédente", "next_label": "Suivant"%>
-            </div>
+          
               <!-- Start of loop -->
                 
             <% @discussions[0..9].each do |discussion| %>
@@ -71,10 +69,7 @@
 
         <%= render "/shared/most_popular_discussions" %>
     </div> <!-- End blog -->
-    <div class="digg_pagination">
-        <%= will_paginate @discussions_pagination, inner_window: 3, outer_window:1, "previous_label": "Précédente", "next_label": "Suivant"%>
-    </div>
-           
+ 
     <hr />
 
              

@@ -192,7 +192,8 @@
 		width: 395px;
 	}
 	.digg_pagination {
-		padding-left: 4.5rem;
+		justify-content: center;
+		/* padding-left: 4.5rem; */
 	}
 	.call-to-action ul li {
 		float: none;
