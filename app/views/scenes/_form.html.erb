@@ -1,14 +1,34 @@
+
 <%= simple_form_for(@scene) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :image %>
-    <%= f.input :serial_id %>
+   <%= f.error_notification %>
+ 
+     <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Ekri Tit La" }, wrapper: false %></li>
+     <li><%= f.rich_text_area :content, required: true, input_html: { class: 'textarea' } %>
+     <%= f.file_field :image, input_html: {class: "input-block-level"} %>
+    
+  <div class="field">
+      <label class="label">Serie</label>
+      <div class="control has-icons-left">
+        <span class="select">
+            <% if !@serials.nil?%>
+              <%= f.input_field :serial_id, collection:@serials.map{ |c| [c.serial, c.id] }, prompt: "Choisissez la Serie conrespondente" %>
+            <% end %>
+        </span>
+        <span class="icon is-small is-left">
+          <i class="fa fa-tag"></i>
+        </span>
+      </div>
+    
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <div class="field">
+    <div class="control">
+      <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
+    </div>
+</li>
 <% end %>
+    <%= link_to scenes_path, :class=> "IIII" do %>
+    <i class="fa fa-remove" style="color:red;  position:relative; bottom:5rem; left:93%; right:4%;font-size: 1.73em";></i>
+   
+  <% end %>
+  </div>

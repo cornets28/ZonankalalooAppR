@@ -1,11 +1,20 @@
 <%= simple_form_for(@serial) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :mainTitle %>
-  </div>
+ <div class="field">
+   <div class="input-block-level">
+     <%= f.input :mainTitle, input_html: { class: 'input', placeholder:"LE Titre De La Serie" }, wrapper: false, label_html: { class: 'label' } %>
+   </div>
+ </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="field" style="margin-bottom:12%;">
+    <div class="control">
+      <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
+    </div>
   </div>
 <% end %>
+
+
+
+
+
