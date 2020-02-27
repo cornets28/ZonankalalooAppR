@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Discussions</title>
+    <title><%= yield(:title) %> | Zonankalaoo</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,6 +12,7 @@
      <%= render 'layouts/meta'%>
     <link rel="stylesheet" href="/pagination.css">
     <link rel="stylesheet" href="/pagination.sass">
+    
   </head>
 
   <body>
