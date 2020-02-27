@@ -189,38 +189,7 @@
 /* small mobile :320px. */
 @media (max-width: 767px) {
 	.container {
-		width: 400px;
-		/* padding-right: 1rem; */
-		/* margin-left: 0.1rem; */
-		overflow-x: hidden;
-	}
-	.row {
-		margin-left: 0px;
-	}
-	.col-sm-8 {
-		margin-left: -1rem;
-	}
-	.col-sm-12 {
-		padding-left: 0px;
-	}
-
-	.top-social ul {
-		margin-left: 2.5rem;
-	}
-	.mean-container {
-		padding-left: 1.5rem; /* added */
-		padding-right: 1.5rem; /* added */
-	}
-	.digg_pagination {
-		padding-left: 4.5rem;
-	}
-	.newslater {
-		width: 100%;
-		/* overflow-x: hidden; */
-	}
-
-	.mc-form {
-		width: 100%;
+		width: 300px;
 	}
 	.call-to-action ul li {
 		float: none;
@@ -264,9 +233,7 @@
 	}
 	.single-blog {
 		margin-bottom: 30px;
-		margin-left: -1rem;
 	}
-
 	.people-say-slide .owl-prev {
 		left: -10px;
 	}
@@ -349,12 +316,8 @@
 	.event-text > h3 {
 		margin-top: 15px;
 	}
-	.event-popular-post {
-		margin-left: 3rem;
-	}
 	.post-thum img {
-		width: 50%;
-		/* width: inherit; */
+		width: inherit;
 	}
 
 	.mobile-menu-area {
