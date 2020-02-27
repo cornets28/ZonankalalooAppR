@@ -189,7 +189,7 @@
 /* small mobile :320px. */
 @media (max-width: 767px) {
 	.container {
-		width: 300px;
+		width: 380px;
 	}
 	.call-to-action ul li {
 		float: none;
