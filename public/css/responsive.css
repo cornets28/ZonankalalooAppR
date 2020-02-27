@@ -192,7 +192,7 @@
 		width: 400px;
 		/* padding-right: 1rem; */
 		/* margin-left: 0.1rem; */
-		/* overflow-x: hidden; */
+		overflow-x: hidden;
 	}
 	.row {
 		margin-left: 0px;
