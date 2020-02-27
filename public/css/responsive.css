@@ -189,7 +189,19 @@
 /* small mobile :320px. */
 @media (max-width: 767px) {
 	.container {
-		width: 380px;
+		width: auto;
+		overflow-x: hidden;
+	}
+	.blog-sidebar {
+		width: 60%;
+		margin-left: 1.6rem;
+	}
+	.newslater {
+		width: auto;
+		margin-right: 2rem;
+	}
+	#small-screen-position {
+		margin-left: 2rem;
 	}
 	.call-to-action ul li {
 		float: none;
