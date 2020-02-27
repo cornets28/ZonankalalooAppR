@@ -2,14 +2,14 @@
 
 <%= simple_form_for(@interest) do |f| %>
    <%= f.error_notification %>
-     <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Sekte Nou Vle" }, wrapper: false %></li>
-     <li> <%= f.input :shortdescription, input_html: { class: "input", type: "text",placeholder:"You Ti Deskripsyon" }, wrapper: false %></li>
+     <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Votre seteur" }, wrapper: false %></li>
+     <li> <%= f.input :shortdescription, input_html: { class: "input", type: "text",placeholder:"Description" }, wrapper: false %></li>
      <%= f.file_field :image, input_html: {class: "input-block-level"} %>
 
 
   <div class="field">
     <div class="control">
-      <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
+      <%= f.button :submit, "Creer Un Interet" class:"btn-style btn-md bo-ra-5" %>
     </div>
   </div>
 
