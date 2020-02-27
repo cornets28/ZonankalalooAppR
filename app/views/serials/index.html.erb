@@ -1,15 +1,11 @@
 <% provide(:title, "Series") %>
+
+
+<div class="main-area">
 <p id="notice"><%= notice %></p>
 
-<h1>Serials</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Maintitle</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
 
   <tbody>
     <% @serials.each do |serial| %>
@@ -21,8 +17,84 @@
       </tr>
     <% end %>
   </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Serial', new_serial_path %>
+   <section class="our-gallery pt-90 pb-60">
+      <div class="container">
+          <div class="row">       
+              <div class="col-sm-12">
+                  <div class="section-title text-center">
+                      <h2>Series <span>Ecrites</span></h2>
+                      <img src="img/title-bottom.png" alt="">
+                  </div>
+              </div>
+                     
+              <div class="gallery-area">
+                  <div class="col-sm-12">
+                      <div class="gallery-menu text-center">
+                          <nav>
+                              <ul>
+                                  <li class="filter"  data-filter="all">Toutes</li>
+                                  <li class="filter"  data-filter="Charity">Politique</li>
+                                  <li class="filter"  data-filter="Nature">Humours</li>
+                                  <li class="filter"  data-filter="Wildlife">Policier</li>
+                                  <li class="filter"  data-filter="Video">Actions</li>
+                                  <li class="filter"  data-filter="Children">Dessins Animes</li>
+                                </ul>
+                           </nav>
+                      </div>
+                  </div>
+                  <div id="gallery-filter">
+                      <!--<div class="col-sm-3 mb-30 single-gallery mix all Charity Wildlife ">-->
+									        
+                          <!-- Start blog -->
+                            <div class="blog">
+                                <!-- Start of loop -->
+                                <% @serials.each do |serial| %>
+                                <div class="gallery-image-and-text">
+                                    <div class="col-sm-4">
+                                        <!-- single blog starts here -->
+                                        <div class="single-blog mb-30"> 
+                                      
+                                            <div class="blo-image-and-date text-center" id="blo-image">
+                                                <%= image_tag serial.image if serial.image.attached? %>
+                                                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                            </div>
+                                               
+                                            <div class="blog-text">
+                                                <h3>
+                                                    <%= link_to serial do %>
+                                                        <%= truncate(serial.mainTitle, length: 35) %>
+                                                    <% end %>
+                                                </h3>
+                                                
+                                            
+                                                
+                                                    
+                                
+                                                <%= link_to serial do %>
+                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> A Propos </p>
+                                                <% end %> <br />
+                                                <br />
+                                                <%= link_to serial do %>
+                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Episodes</p>
+                                                <% end %>
+                                            </div>      
+                                        </div> <!-- End single blog -->
+                                    </div>                         
+                                <% end %> <!-- Loop ends here -->
+                            </div> <!-- End blog -->
+										          <!--<img class="img-responsive" src="img/info.jpeg" alt="" />-->
+										          <!--<a class="image-link text-center" href="img/gallery/gallery-one.jpg">
+                                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                <p>Poor Nature</p>
+									          	</a>-->
+									        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>
+             

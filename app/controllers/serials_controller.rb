@@ -2,6 +2,7 @@
 
 class SerialsController < ApplicationController
   before_action :set_serial, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @serials = Serial.all
@@ -11,17 +12,19 @@ class SerialsController < ApplicationController
   def show
     @scenes = Scene.where('serial_id = ?', @serial.id).order('created_at desc')
     @serials = Serial.all
-    @scenes_ch_pagination = Scene.where('serial_id = ?', @serial.id).paginate(page: params[:page], per_page: 1)
+    @scenes_ch_pagination = Scene.where('serial_id = ?', @serial.id).paginate(page: params[:page], per_page: 3)
   end
 
   def new
-    @serial = Serial.new
+    @serial = current_user.serials.build
+    # @serial = Serial.new
   end
 
   def edit; end
 
   def create
-    @serial = Serial.new(serial_params)
+    @serial = current_user.serials.build(serial_params)
+    # @serial = Serial.new(serial_params)
 
     respond_to do |format|
       if @serial.save
@@ -61,6 +64,6 @@ class SerialsController < ApplicationController
   end
 
   def serial_params
-    params.require(:serial).permit(:mainTitle)
+    params.require(:serial).permit(:mainTitle, :image)
   end
 end

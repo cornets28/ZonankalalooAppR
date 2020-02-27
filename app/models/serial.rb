@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Serial < ApplicationRecord
+  has_one_attached :image
   has_many :scenes
   has_many :users, through: :scenes
   resourcify
