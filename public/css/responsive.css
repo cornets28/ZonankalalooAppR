@@ -189,9 +189,21 @@
 /* small mobile :320px. */
 @media (max-width: 767px) {
 	.container {
-		width: 395px;
+		width: 400px;
+		/* padding-right: 1rem; */
+		/* margin-left: 0.1rem; */
 		/* overflow-x: hidden; */
 	}
+	.row {
+		margin-left: 0px;
+	}
+	.col-sm-8 {
+		margin-left: -1rem;
+	}
+	.col-sm-12 {
+		padding-left: 0px;
+	}
+
 	.top-social ul {
 		margin-left: 2.5rem;
 	}
@@ -203,6 +215,11 @@
 		padding-left: 4.5rem;
 	}
 	.newslater {
+		width: 100%;
+		/* overflow-x: hidden; */
+	}
+
+	.mc-form {
 		width: 100%;
 	}
 	.call-to-action ul li {
@@ -247,6 +264,7 @@
 	}
 	.single-blog {
 		margin-bottom: 30px;
+		margin-left: -1rem;
 	}
 
 	.people-say-slide .owl-prev {
