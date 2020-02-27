@@ -2,7 +2,7 @@
 <%= simple_form_for(@scene) do |f| %>
    <%= f.error_notification %>
  
-     <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Ekri Tit La" }, wrapper: false %></li>
+     <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Titre de 'episode" }, wrapper: false %></li>
      <li><%= f.rich_text_area :content, required: true, input_html: { class: 'textarea' } %>
      <%= f.file_field :image, input_html: {class: "input-block-level"} %>
     
@@ -11,7 +11,7 @@
       <div class="control has-icons-left">
         <span class="select">
             <% if !@serials.nil?%>
-              <%= f.input_field :serial_id, collection:@serials.map{ |c| [c.serial, c.id] }, prompt: "Choisissez la Serie conrespondente" %>
+              <%= f.input_field :serial_id, collection:@serials.map{ |c| [c.mainTitle, c.id] }, prompt: "Choisissez la Serie" %>
             <% end %>
         </span>
         <span class="icon is-small is-left">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <div class="control">
-      <%= f.button :submit, 'Creer Une Scene', class:"btn-style btn-md bo-ra-5" %>
+      <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
     </div>
 </li>
 <% end %>

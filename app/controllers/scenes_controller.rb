@@ -2,12 +2,12 @@
 
 class ScenesController < ApplicationController
   before_action :set_scene, only: %i[show edit update destroy]
-  # before_action :find_serials, only: %i[index show new edit]
-  # before_action :authenticate_user!, except: %i[index show]
+  before_action :find_serials, only: %i[index show new edit]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @likes = Like.all
-    @scenes = Scene.all.order('created_at desc').paginate(page: params[:page], per_page: 8)
+    @scenes = Scene.all.order('created_at desc').paginate(page: params[:page], per_page: 4)
     @scenes_pagination = Scene.paginate(page: params[:page], per_page: 2)
   end
 
@@ -27,12 +27,12 @@ class ScenesController < ApplicationController
     @scene = current_user.scenes.build(scene_params)
 
     respond_to do |format|
-      if @discussion.save
-        format.html { redirect_to @discussion, notice: 'Vous aviez creez cette avec succes!' }
-        format.json { render :show, status: :created, location: @discussion }
+      if @scene.save
+        format.html { redirect_to @scene, notice: 'Vous aviez creez cette avec succes!' }
+        format.json { render :show, status: :created, location: @scene }
       else
         format.html { render :new }
-        format.json { render json: @discussion.errors, status: :unprocessable_entity }
+        format.json { render json: @scene.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,6 +61,10 @@ class ScenesController < ApplicationController
 
   def set_scene
     @scene = Scene.find(params[:id])
+  end
+
+  def find_serials
+    @serials = Serial.all.order('created_at desc')
   end
 
   def scene_params

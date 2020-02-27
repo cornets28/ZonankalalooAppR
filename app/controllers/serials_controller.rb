@@ -5,13 +5,13 @@ class SerialsController < ApplicationController
 
   def index
     @serials = Serial.all
-    @scences = Scene.all.order('created_at desc')
+    @scenes = Scene.all.order('created_at desc')
   end
 
   def show
-    @scences = Scene.where('serial_id = ?', @serial.id).order('created_at desc')
+    @scenes = Scene.where('serial_id = ?', @serial.id).order('created_at desc')
     @serials = Serial.all
-    @scences_ch_pagination = Scene.where('serial_id = ?', @serial.id).paginate(page: params[:page], per_page: 1)
+    @scenes_ch_pagination = Scene.where('serial_id = ?', @serial.id).paginate(page: params[:page], per_page: 1)
   end
 
   def new

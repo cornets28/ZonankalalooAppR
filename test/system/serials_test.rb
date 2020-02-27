@@ -1,43 +1,45 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class SerialsTest < ApplicationSystemTestCase
   setup do
     @serial = serials(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit serials_url
-    assert_selector "h1", text: "Serials"
+    assert_selector 'h1', text: 'Serials'
   end
 
-  test "creating a Serial" do
+  test 'creating a Serial' do
     visit serials_url
-    click_on "New Serial"
+    click_on 'New Serial'
 
-    fill_in "Maintitle", with: @serial.mainTitle
-    click_on "Create Serial"
+    fill_in 'Maintitle', with: @serial.mainTitle
+    click_on 'Create Serial'
 
-    assert_text "Serial was successfully created"
-    click_on "Back"
+    assert_text 'Serial was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Serial" do
+  test 'updating a Serial' do
     visit serials_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    fill_in "Maintitle", with: @serial.mainTitle
-    click_on "Update Serial"
+    fill_in 'Maintitle', with: @serial.mainTitle
+    click_on 'Update Serial'
 
-    assert_text "Serial was successfully updated"
-    click_on "Back"
+    assert_text 'Serial was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Serial" do
+  test 'destroying a Serial' do
     visit serials_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Serial was successfully destroyed"
+    assert_text 'Serial was successfully destroyed'
   end
 end

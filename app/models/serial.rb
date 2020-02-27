@@ -7,7 +7,7 @@ class Serial < ApplicationRecord
 
   extend FriendlyId
   friendly_id :mainTitle, use: %i[slugged finders]
-  validates :mainTitle, length: { minimum: 15 }, presence: true
+  validates :mainTitle, length: { minimum: 5, maximum: 15 }, presence: true
   self.per_page = 3
 
   def should_generate_new_friendly_id?
