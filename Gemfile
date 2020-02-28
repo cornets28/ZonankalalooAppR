@@ -23,7 +23,7 @@ gem 'fog-aws'
 gem 'activestorage'
 gem 'aws-sdk-s3', require: false
 
-gem 'pg', '>= 0.18', '< 2.0'
+# gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-social-rails'
