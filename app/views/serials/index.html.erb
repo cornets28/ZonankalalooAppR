@@ -58,7 +58,6 @@
                                       
                                             <div class="blo-image-and-date text-center" id="blo-image">
                                                 <%= image_tag serial.image if serial.image.attached? %>
-                                                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
                                             </div>
                                                
                                             <div class="blog-text">
@@ -67,29 +66,32 @@
                                                         <%= truncate(serial.mainTitle, length: 35) %>
                                                     <% end %>
                                                 </h3>
-                                                
-                                            
-                                                
-                                                    
-                                
-                                                <%= link_to serial do %>
-                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> A Propos </p>
+                                                  
+                                   
+
+
+        
+                            <%= link_to "Plis Scene Nan Serie Sa",  serial_path(id: serial.id), class:"waves-effect waves-light" %>
+                                        
+                        
+                        <%#= link_to "Plis Atik Nan Kategori Sa",  channel_path(id: serial.id) %>  <%#This one ##############%>
+            
+                                                 <%= link_to serial do %>
+                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> A propos <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span> </p>
                                                 <% end %> <br />
                                                 <br />
+                                              
                                                 <%= link_to serial do %>
-                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Episodes</p>
+                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Episodes <span> <i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
+                                                        </p>
                                                 <% end %>
                                             </div>      
                                         </div> <!-- End single blog -->
                                     </div>                         
                                 <% end %> <!-- Loop ends here -->
                             </div> <!-- End blog -->
-										          <!--<img class="img-responsive" src="img/info.jpeg" alt="" />-->
-										          <!--<a class="image-link text-center" href="img/gallery/gallery-one.jpg">
-                                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-                                <p>Poor Nature</p>
-									          	</a>-->
-									        </div>
+										         
+						</div>
                       </div>
                   </div>
               </div>

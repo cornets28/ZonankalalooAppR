@@ -25,9 +25,8 @@
 #   database: db/production.sqlite3
 default: &default
   adapter: postgresql
-  encoding: unicode	 
+  encoding: unicode
   password: 123456
-
 
   host: localhost
 
@@ -37,8 +36,8 @@ development:
 
 test:
   <<: *default
-  database: zonankalaloo-on-rails_test
-  
+  database: zonankalaloo_on_rails_test
+
 production:
   <<: *default
   database: zonankalaloo-on-production

@@ -6,7 +6,7 @@ class CreateScenes < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :content
       t.string :image
-      t.string :serial_id
+      t.integer :serial_id
 
       t.timestamps
     end
