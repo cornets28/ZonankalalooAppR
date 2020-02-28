@@ -35,11 +35,11 @@
                                                         <% end %>
                                                     </ul>
                                                     <ul class="single-mega-item">
-                                                    <% if !@channels.any? %>
-                                                        <% @channels[4..7].each do |c| %>
-                                                            <a><li><%= link_to c.channel, c %></li></a>
-                                                        <% end %>
-                                                    <% end %>
+                                                    <% #if !@channels.any? %>
+                                                        <%# @channels[4..7].each do |c| %>
+                                                            <a><li><%#= link_to c.channel, c %></li></a>
+                                                        <%# end %>
+                                                    <% #end %>
                                                     </ul>
                                                     <ul class="single-mega-item">
                                                         <% if has_role?(:admin) %>
