@@ -203,6 +203,12 @@
 	#small-screen-position {
 		margin-left: 2rem;
 	}
+	.top-social {
+		padding-left: 2.5rem;
+	}
+	.mean-bar {
+		margin-left: 1.5%;
+	}
 	.call-to-action ul li {
 		float: none;
 		text-align: center;
