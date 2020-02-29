@@ -616,6 +616,9 @@ h1.title1 {
 	margin: 0 3px;
 	width: 13px;
 }
+#centerScenes {
+	margin-left: 17rem;
+}
 /*----------------------------------------*/
 /*  4. Our couses area CSS
 /*----------------------------------------*/
@@ -2242,7 +2245,5 @@ h1.title1 {
 	padding-bottom: 8px;
 	text-transform: capitalize;
 }
-
-
 
 /* table */
