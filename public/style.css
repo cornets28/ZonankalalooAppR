@@ -617,7 +617,7 @@ h1.title1 {
 	width: 13px;
 }
 #centerScenes {
-	margin-left: 18rem;
+	margin-left: 20.5rem;
 }
 /*----------------------------------------*/
 /*  4. Our couses area CSS
@@ -896,8 +896,9 @@ h1.title1 {
 /*----------------------------------------*/
 /*  9. People says area CSS
 /*----------------------------------------*/
-.people-says-area {
-	background: rgba(0, 0, 0, 0) url("img/globe2.jpg") repeat scroll 0 0 / cover;
+.people-says-area2 {
+	background: rgba(0, 0, 0, 0) url("img/gradienBg.jpeg") repeat scroll 0 0 /
+		cover;
 }
 .single-people {
 	margin: auto;
