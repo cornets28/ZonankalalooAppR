@@ -2,101 +2,80 @@
 
 
 <div class="main-area">
-<p id="notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
+
+    <tbody>
+        <% @serials.each do |serial| %>
+        <tr>
+            <td><%= serial.mainTitle %></td>
+            <td><%= link_to 'Show', serial %></td>
+            <td><%= link_to 'Edit', edit_serial_path(serial) %></td>
+            <td><%= link_to 'Destroy', serial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
 
 
-
-
-  <tbody>
-    <% @serials.each do |serial| %>
-      <tr>
-        <td><%= serial.mainTitle %></td>
-        <td><%= link_to 'Show', serial %></td>
-        <td><%= link_to 'Edit', edit_serial_path(serial) %></td>
-        <td><%= link_to 'Destroy', serial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-
-
-   <section class="our-gallery pt-90 pb-60">
-      <div class="container">
-          <div class="row">       
-              <div class="col-sm-12">
-                  <div class="section-title text-center">
-                      <h2>Series <span>Ecrites</span></h2>
-                      <img src="img/title-bottom.png" alt="">
-                  </div>
-              </div>
+    <section class="our-gallery pt-90 pb-60">
+        <div class="container">
+            <div class="row">       
+                <div class="col-sm-12">
+                    <div class="section-title text-center">
+                        <h2>Series <span>Ecrites</span></h2>
+                        <img src="img/title-bottom.png" alt="">
+                    </div>
+                </div>
                      
-              <div class="gallery-area">
-                  <div class="col-sm-12">
-                      <div class="gallery-menu text-center">
-                          <nav>
-                              <ul>
-                                  <li class="filter"  data-filter="all">Toutes</li>
-                                  <li class="filter"  data-filter="Charity">Politique</li>
-                                  <li class="filter"  data-filter="Nature">Humours</li>
-                                  <li class="filter"  data-filter="Wildlife">Policier</li>
-                                  <li class="filter"  data-filter="Video">Actions</li>
-                                  <li class="filter"  data-filter="Children">Dessins Animes</li>
+                <div class="gallery-area">
+                    <div class="col-sm-12">
+                        <div class="gallery-menu text-center">
+                            <nav>
+                                <ul>
+                                    <li class="filter"  data-filter="all">Toutes</li>
+                                    <li class="filter"  data-filter="Charity">Politique</li>
+                                    <li class="filter"  data-filter="Nature">Humours</li>
+                                    <li class="filter"  data-filter="Wildlife">Policier</li>
+                                    <li class="filter"  data-filter="Video">Actions</li>                                  <li class="filter"  data-filter="Children">Dessins Animes</li>
                                 </ul>
-                           </nav>
-                      </div>
-                  </div>
-                  <div id="gallery-filter">
-                      <!--<div class="col-sm-3 mb-30 single-gallery mix all Charity Wildlife ">-->
-									        
-                          <!-- Start blog -->
-                            <div class="blog">
-                                <!-- Start of loop -->
-                                <% @serials.each do |serial| %>
+                            </nav>
+                        </div>
+                    </div>
+                    <div id="gallery-filter">
+                        <div class="blog"><!-- Start blog -->
+                            <% @serials.each do |serial| %><!-- Start of loop -->
                                 <div class="gallery-image-and-text">
                                     <div class="col-sm-4">
-                                        <!-- single blog starts here -->
-                                        <div class="single-blog mb-30"> 
-                                      
+                                        <div class="single-blog mb-30"> <!-- single blog starts here -->
                                             <div class="blo-image-and-date text-center" id="blo-image">
                                                 <%= image_tag serial.image if serial.image.attached? %>
                                             </div>
-                                               
                                             <div class="blog-text">
                                                 <h3>
                                                     <%= link_to serial do %>
                                                         <%= truncate(serial.mainTitle, length: 35) %>
                                                     <% end %>
                                                 </h3>
-                                                  
-                                   
+                                                  <%= link_to serial do %>
+                                                    <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Description <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span> </p>
+                                                <% end %> 
+                                                <br /><br />
 
-
-        
-                            <%= link_to "Plis Scene Nan Serie Sa",  serial_path(id: serial.id), class:"waves-effect waves-light" %>
-                                        
-                        
-                        <%#= link_to "Plis Atik Nan Kategori Sa",  channel_path(id: serial.id) %>  <%#This one ##############%>
-            
-                                                 <%= link_to serial do %>
-                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> A propos <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span> </p>
-                                                <% end %> <br />
-                                                <br />
-                                              
-                                                <%= link_to serial do %>
-                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Episodes <span> <i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
-                                                        </p>
-                                                <% end %>
+                                                  <%= link_to serial_path(id: serial.id) do %>
+                                                     <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Les Episodes <span> <i class="fa fa-plus-square-o" aria-hidden="true"></i></span></p>
+                                               <% end %>
                                             </div>      
                                         </div> <!-- End single blog -->
                                     </div>                         
                                 <% end %> <!-- Loop ends here -->
                             </div> <!-- End blog -->
-										         
-						</div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
              
+
+    
+    

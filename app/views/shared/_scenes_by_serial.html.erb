@@ -1,75 +1,96 @@
-<div class="col-sm-12">
-            <div class="digg_pagination">
-                <%#= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
-            </div>
-                <% @scenes.each do |scene| %>
-                    <div class="col-sm-4"> <!--starts here -->
-                        <div class="single-blog mb-30"> 
-                            <div class="blo-image-and-date" id="blo-image">
-                            
-                            <%= image_tag scene.image if scene.image.attached? %>
-                                <% if scene.serial %>
-                                    <%= link_to scene.serial.mainTitle, scene.serial %>
-                                <% end %>   
-                            </div>
-                            <div class="blog-info">
-                                <div class="admin">
-                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= scene.user.username %> <%= scene.user.userlastname %> </a>
-                                </div>
-                                <div class="comment">
-                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 105</a>
-                                    <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
-                                </div>
-                            </div>
-                            <div class="blog-text">
-                            <h3>
-                                <%= link_to scene do %>
-                                    <%= truncate(scene.title, length: 32) %>
-                                <% end %>
-                            </h3>
-                            
-                            <%= truncate(strip_tags(scene.content.to_s), length: 190) %>
-                            <p>
-                                <em>
-                                    <small>
-                                        Publie il y a <%= time_ago_in_words(scene.created_at) %>, Categorie
-                                        <% if scene.serial %>
-                                            <%#= link_to scene.channel.channel, scene.channel %>
-                                            <%= link_to scene.serial.mainTitle, scene.serial %>
-                                        <% end %>
-                                    </small>
-                                </em>
-                            </p>
-                                <% if scene_author(scene) || has_role?(:admin) %>
-                                    <div class="column has-text-left"> 
-                                        <%= link_to edit_scene_path(scene) do %>
-                                            <span class="icon is-small"><i class="fa fa-pencil"></i></span>
-                                        <% end %> |
-                                        <%= link_to scene, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
-                                            <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
-                                        <% end %>
-                                    </div>
 
-                                <% else %>
-                                    <div class="column has-text-left">
-                                        <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
-                                    </div>
-                                
-                                <% end %>
-                            <%= link_to scene do %>
-                                
-                                    <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plus Details...</p>
-                                
-                            <% end %>
-                            </div>      
+
+<!--TO BE ERASED -->
+<section class="people-says-area pt-54 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                               
+                                <div class="people-say-slide">
+                                    <!-- Start single people -->
+                                    
+                                        <% @scenes.each do |scene| %>
+                                        <div class="col-sm-12">
+                                            <!--<div class="col-sm-4">--> <!--starts here -->
+                                                <div class="single-blog mb-30"> 
+                                                    <div class="blo-image-and-date" id="blo-image">
+                                                        <%= image_tag scene.image if scene.image.attached? %>
+                                                        <% if scene.serial %>
+                                                            <%= link_to scene.serial.mainTitle, scene.serial %>
+                                                        <% end %>   
+                                                    </div>
+                                                    <div class="blog-info">
+                                                        <div class="admin">
+                                                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= scene.user.username %> <%= scene.user.userlastname %> </a>
+                                                        </div>
+                                                        <div class="comment">
+                                                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 105</a>
+                                                            <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="blog-text">
+                                                        <h3>
+                                                            <%= link_to scene do %>
+                                                                <%= truncate(scene.title, length: 32) %>
+                                                            <% end %>
+                                                        </h3>
+                                                        <%= truncate(strip_tags(scene.content.to_s), length: 190) %>
+                                                        <p>
+                                                            <em>
+                                                                <small>
+                                                                    Publie il y a <%= time_ago_in_words(scene.created_at) %>, Categorie
+                                                                    <% if scene.serial %>
+                                                                        <%= link_to scene.serial.mainTitle, scene.serial %>
+                                                                    <% end %>
+                                                                </small>
+                                                            </em>
+                                                        </p>
+                                                        <% if scene_author(scene) || has_role?(:admin) %>
+                                                            <div class="column has-text-left"> 
+                                                                <%= link_to edit_scene_path(scene) do %>
+                                                                    <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                                                <% end %> |
+                                                                <%= link_to scene, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
+                                                                    <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+                                                                <% end %>
+                                                            </div>
+                                                        <% else %>
+                                                            <div class="column has-text-left">
+                                                                <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                                                                </div>
+                                                        <% end %>
+                                                        <%= link_to scene do %>
+                                                            <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plus Details...</p>   
+                                                        <% end %>
+                                                    </div>      
+                                                <!--</div>-->
+                                            </div>     
+                                             </div> <!-- End blog -->                    
+                                        <% end %>
+                                   
+                                    <!-- End single people -->
+                                </div>
+                            </div>
                         </div>
-                    </div>                         
-                <% end %>
-             
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                             
-                                         
-</div> <!-- End blog -->
-<div class="digg_pagination">
-    <%#= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
