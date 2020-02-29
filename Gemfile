@@ -8,13 +8,10 @@ git_source(:github) do |repo_name|
 end
 ruby '2.6.3'
 gem 'actiontext', github: 'kobaltz/actiontext', branch: 'archive', require: 'action_text'
-gem 'image_processing'
-
-gem 'webpacker', '>= 4.0.x'
-# brew install imagemagickvips
-
 gem 'carrierwave', '~> 1.1'
+gem 'image_processing'
 gem 'mini_magick'
+gem 'webpacker', '>= 4.0.x'
 # checking a file's type and extension, let's enforce it to be less than 1 megabyte.
 gem 'file_validators'
 
@@ -23,7 +20,7 @@ gem 'fog-aws'
 gem 'activestorage'
 gem 'aws-sdk-s3', require: false
 
-# gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '>= 0.18', '< 2.0'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-social-rails'

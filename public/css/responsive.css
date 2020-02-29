@@ -368,6 +368,9 @@
 	.stick {
 		position: inherit;
 	}
+	#centerScenes {
+		margin-left: 0rem;
+	}
 }
 
 /* Large Mobile :480px. */
