@@ -2248,6 +2248,9 @@ h1.title1 {
 }
 
 /* table */
-.btn-small-screen {
-	margin: 7rem;
+#btn-small-screen {
+	margin-left: 3rem;
+	border-radius: 5px;
+	height: 30px;
+	font-size: medium;
 }

@@ -434,6 +434,12 @@
 		width: 100%;
 		height: 20%;
 	}
+	/*btn to change discussion and scene name*/
+	#btn-small-screen {
+		margin: auto;
+		/* align-items: center; */
+		/* margin-left: 2rem; */
+	}
 	/* .popular-idget */
 	/* .col-sm-12 {
 		margin-right: -0.37rem;

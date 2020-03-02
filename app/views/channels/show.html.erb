@@ -10,7 +10,7 @@
            </div>
        </div>
        <% if has_role?(:admin) %>
-         <%= link_to 'Chanje Non Kategori', edit_channel_path(@channel), class:"button", id:"btn-small-screen"%>
+         <%= link_to 'Change le nom', edit_channel_path(@channel), class:"button", id:"btn-small-screen"%>
        <% end %>
        </div> <br />
       <%= render 'shared/discussions_all_channels' %>
