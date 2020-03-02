@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="container">
+                    <!--<div class="container">-->
                         <div class="row">
                             <div class="col-sm-12">
                                
@@ -15,7 +15,7 @@
                                         <% @scenes.each do |scene| %>
                                         <div class="col-sm-12">
                                             <div class="col-sm-5" id="centerScenes"> <!--starts here -->
-                                                <div class="single-blog mb-30"> 
+                                                <div class="single-blog mb-30" id="no-margin-scene"> 
                                                     <div class="blo-image-and-date" id="blo-image">
                                                         <%= image_tag scene.image if scene.image.attached? %>
                                                         <% if scene.serial %>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <!--</div>-->
                 </div>
             </div>
         </div>

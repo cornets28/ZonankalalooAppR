@@ -11,12 +11,15 @@
            <div class="section-title text-center">
                <h2><span><%= @serial.mainTitle %><hr></span></h2>
                <img src="/img/title-bottom.png" alt="">
+                 
            </div>
+            <% if has_role?(:admin) %>
+                   <%= link_to 'Changer le nom', edit_serial_path(@serial), class:"button"%>
+                <% end %>
+         
        </div>
-       <% if has_role?(:admin) %>
-         <%= link_to 'Chanje Non Kategori', edit_serial_path(@serial), class:"button"%>
-       <% end %>
-       </div> <br />
+       </div>
+       <br />
       <%= render 'shared/scenes_by_serial' %>
 </div>
 

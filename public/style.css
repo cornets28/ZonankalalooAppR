@@ -1766,7 +1766,7 @@ h1.title1 {
 }
 /* popular post */
 .ev-post-text > p {
-	color: #8a8a8a;
+	color: #000;
 	margin-bottom: 0;
 }
 /* event categoris */
@@ -2248,3 +2248,6 @@ h1.title1 {
 }
 
 /* table */
+.btn-small-screen {
+	margin: 7rem;
+}

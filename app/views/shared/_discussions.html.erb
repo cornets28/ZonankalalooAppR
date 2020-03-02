@@ -10,7 +10,7 @@
               <!-- Start of loop -->
                 
             <% @discussions[0..9].each do |discussion| %>
-                <div class="col-sm-6">
+                <div class="col-sm-6" id="no-margin-discus">
                     <!-- single blog starts here -->
                     <div class="single-blog mb-30"> 
                         <div class="blo-image-and-date" id="blo-image">
@@ -80,7 +80,7 @@
              
     <div class="row">
         <% @channels.each do |ch| %>   
-            <div class="col-sm-12">
+            <div class="col-sm-12" id="no-margin-discus">
                 <div class="col-sm-12">
                     <div class="section-title text-center">
                         <h2><span><%= ch.channel %><hr></span></h2>

@@ -8,17 +8,16 @@
                 </div>
                 <!-- Start popular item -->
                 <% Discussion.all.order('view desc')[0..9].each do |discussion| %>
-                    <div class="popular-idget mb-30 row">
+                    <div class="popular-idget mb-30 row blog-text">
                         <%= link_to discussion do %>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" id="left-div">
                                 <div class="post-thum">
                                 <%= image_tag discussion.image %> 
                                 </div>
                             </div>
                             <div class="col-sm-8">
-                                <div class="ev-post-text">
-                                    <p><%= truncate(discussion.title, length: 29) %></p>
-                                
+                                <div class="ev-post-text" id="right-div">
+                                    <p><%= truncate(discussion.title, length: 25) %></p>
                                     <span><%= (discussion.created_at).strftime "%d/%m/%Y"  %> <br /> <%= discussion.view%> Vues</span>
                                 </div>
                             </div>
