@@ -2,8 +2,9 @@
 
 class ScenesController < ApplicationController
   before_action :set_scene, only: %i[show edit update destroy]
-  before_action :find_serials, only: %i[index show new edit]
+  before_action :find_serials, only: %i[index show new edit create]
   before_action :authenticate_user!, except: %i[index show]
+  before_action :set_serial, only: %i[new]
 
   def index
     @likes = Like.all
@@ -20,6 +21,7 @@ class ScenesController < ApplicationController
 
   def new
     @scene = current_user.scenes.build
+    redirect to serial_new unless set_serial
   end
 
   def edit; end
@@ -66,6 +68,10 @@ class ScenesController < ApplicationController
 
   def find_serials
     @serials = Serial.all.order('created_at desc')
+  end
+
+  def set_serial
+    @serial = Serial.find_by(params[:id])
   end
 
   def scene_params

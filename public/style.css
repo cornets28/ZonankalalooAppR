@@ -2247,10 +2247,15 @@ h1.title1 {
 	text-transform: capitalize;
 }
 
-/* table */
+/* button */
 #btn-small-screen {
 	margin-left: 3rem;
 	border-radius: 5px;
 	height: 30px;
 	font-size: medium;
+}
+
+.scenes-input-restrictions {
+	margin-bottom: 5rem;
+	color: red;
 }

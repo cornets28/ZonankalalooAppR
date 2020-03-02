@@ -4,19 +4,26 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
-                <div class="leave-reply">
-                    <h2> Ajoutez un scene
-                        <%= link_to scenes_path, :class=> "IIII" do %>
-                         <i class="fa fa-remove" style="float:right"></i>
-                       <% end %>
-                    </h2>
-                
-                    <ul>
-                      <li>
-                      <%= render 'form', scene: @scene %>
-                    </ul>
-                </div>
+                <% if  @serials.any? && (serial_author(@serial) || has_role?(:admin))%>
+                    <div class="leave-reply">
+                        <h2> Ajoutez un scene
+                            <%= link_to scenes_path, :class=> "IIII" do %>
+                            <i class="fa fa-remove" style="float:right"></i>
+                        <% end %>
+                        </h2>
+                        <ul>
+                            <li>
+                                <%= render 'form', scene: @scene %>
+                            </li>
+                        </ul>
+                    <% else %>
+                    
+                    <h4 class="scenes-input-restrictions">Vous Devez D'abord creer une <a href="/serials/new"><strong>Serie</strong></a></h4>
+                    </div>
+                <% end %>   
             </div>
         </div>
     </div>
 </section>
+
+

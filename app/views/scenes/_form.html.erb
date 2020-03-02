@@ -10,9 +10,10 @@
       <label class="label">Serie</label>
       <div class="control has-icons-left">
         <span class="select">
-            <% if !@serials.nil?%>
-              <%= f.input_field :serial_id, collection:@serials.map{ |c| [c.mainTitle, c.id] }, prompt: "Choisissez la Serie" %>
-            <% end %>
+        <% if !@serials.nil? && (serial_author(@serial) || has_role?(:admin))  %>
+            <%= f.input_field :serial_id, collection:@serials.map{ |c| [c.mainTitle, c.id] }, prompt: "Choisissez la Serie" %>
+       <% end %>
+        
         </span>
         <span class="icon is-small is-left">
           <i class="fa fa-tag"></i>
