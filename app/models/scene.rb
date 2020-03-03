@@ -9,7 +9,7 @@ class Scene < ApplicationRecord
   belongs_to :user
   has_many :replies, dependent: :destroy
   has_many :likes, dependent: :destroy
-  validates :content, length: { maximum: 1500, minimum: 100 }, presence: true
+  validates :content, length: { maximum: 150, minimum: 10 }, presence: true
 
   validates :title, length: { minimum: 15 }, presence: true
   resourcify
