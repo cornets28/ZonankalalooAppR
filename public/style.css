@@ -694,7 +694,7 @@ h1.title1 {
 /*----------------------------------------*/
 .help-us-area {
 	/* background: #0AAAA0; */
-	background: url("img/globe2.jpg") no-repeat;
+	background: url("img/background.jpg") no-repeat;
 	color: #fff;
 	height: 100%;
 	width: 100%;
@@ -896,6 +896,9 @@ h1.title1 {
 /*----------------------------------------*/
 /*  9. People says area CSS
 /*----------------------------------------*/
+.people-says-area {
+	background: rgba(0, 0, 0, 0) url("img/globe2.jpg") repeat scroll 0 0 / cover;
+}
 .people-says-area2 {
 	background: rgba(0, 0, 0, 0) url("img/n2.jpg") repeat scroll 0 0 / cover;
 }
