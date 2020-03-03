@@ -22,3 +22,4 @@ class Scene < ApplicationRecord
     title_changed?
   end
 end
+
