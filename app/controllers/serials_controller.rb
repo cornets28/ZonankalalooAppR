@@ -7,11 +7,11 @@ class SerialsController < ApplicationController
 
   def index
     @serials = Serial.all
-    @scenes = Scene.all.order('created_at desc')
+    @scenes = Scene.all.order('created_at ASC')
   end
 
   def show
-    @scenes = Scene.where('serial_id = ?', @serial.id).order('created_at desc')
+    @scenes = Scene.where('serial_id = ?', @serial.id).order('created_at ASC')
 
     # @serials = Serial.all
     @scenes_ch_pagination = Scene.where('serial_id = ?', @serial.id).paginate(page: params[:page], per_page: 3)

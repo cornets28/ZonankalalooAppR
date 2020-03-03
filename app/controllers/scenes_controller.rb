@@ -9,7 +9,7 @@ class ScenesController < ApplicationController
   def index
     @likes = Like.all
     @scenes = Scene.all.order('created_at asc')
-    @scenes_pagination = Scene.paginate(page: params[:page], per_page: 2)
+    # @scenes_pagination = Scene.paginate(page: params[:page], per_page: 2)
   end
 
   def show
