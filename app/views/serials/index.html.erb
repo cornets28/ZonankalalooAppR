@@ -4,18 +4,6 @@
 <div class="main-area">
     <p id="notice"><%= notice %></p>
 
-    <tbody>
-        <% @serials.each do |serial| %>
-        <tr>
-            <td><%= serial.mainTitle %></td>
-            <td><%= link_to 'Show', serial %></td>
-            <td><%= link_to 'Edit', edit_serial_path(serial) %></td>
-            <td><%= link_to 'Destroy', serial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-    </tbody>
-
-
     <section class="our-gallery pt-90 pb-60">
         <div class="container">
             <div class="row">       
@@ -31,11 +19,12 @@
                         <div class="gallery-menu text-center">
                             <nav>
                                 <ul>
-                                    <li class="filter"  data-filter="all">Toutes</li>
-                                    <li class="filter"  data-filter="Charity">Politique</li>
-                                    <li class="filter"  data-filter="Nature">Humours</li>
-                                    <li class="filter"  data-filter="Wildlife">Policier</li>
-                                    <li class="filter"  data-filter="Video">Actions</li>                                  <li class="filter"  data-filter="Children">Dessins Animes</li>
+                                    <li class="filter" data-filter="all">Toutes</li>
+                                    <li class="filter" data-filter="Charity">Politique</li>
+                                    <li class="filter" data-filter="Nature">Humours</li>
+                                    <li class="filter" data-filter="Wildlife">Policier</li>
+                                    <li class="filter" data-filter="Video">Actions<li>                                                                
+                                    <li class="filter" data-filter="Children">Dessins Animes</li>
                                 </ul>
                             </nav>
                         </div>
@@ -52,17 +41,45 @@
                                             <div class="blog-text">
                                                 <h3>
                                                     <%= link_to serial do %>
-                                                        <%= truncate(serial.mainTitle, length: 35) %>
+                                                        <%= serial.mainTitle %>
                                                     <% end %>
                                                 </h3>
                                                   <%= link_to serial do %>
                                                     <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Description <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span> </p>
                                                 <% end %> 
-                                                <br /><br />
+                                              
 
-                                                  <%= link_to serial_path(id: serial.id) do %>
-                                                     <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Les Episodes <span> <i class="fa fa-plus-square-o" aria-hidden="true"></i></span></p>
-                                               <% end %>
+                                                    <p id="para">
+                                                        <em>
+                                                            <small>
+                                                                Publie il y a <%= time_ago_in_words(serial.created_at) %>, par: <%= serial.user.username %> <%= serial.user.userlastname %> 
+                                                            </small>
+                                                        </em>
+                                                    </p>
+                                                       
+                                             
+                                                   
+                                                  <% if serial_author(serial) || has_role?(:admin) %>
+                                                    <div class="column has-text-left"> 
+                                                        <%= link_to edit_serial_path(serial) do %>
+                                                            <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                                        <% end %> |
+                                                        <%= link_to serial, method: :delete, data: {confirm: "En etes vous sure?" } do %>
+                                                            <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+                                                        <% end %>
+                                                    </div>
+                                                    <% else %>
+                                                        <div class="column has-text-left">
+                                                            <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                                                        </div>
+                                                    <% end %>
+
+                                                    <%= link_to serial do %>
+                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Les Episodes
+                                                            <span> <i class="fa fa-plus-square-o" aria-hidden="true"></i></span>
+                                                        </p>
+                                                    <% end %>
+                                                     
                                             </div>      
                                         </div> <!-- End single blog -->
                                     </div>                         

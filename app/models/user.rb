@@ -13,5 +13,5 @@ class User < ApplicationRecord
   has_many :scenes, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :channels, through: :discussions
-  has_many :serials
+  has_many :serials, dependent: :destroy
 end
