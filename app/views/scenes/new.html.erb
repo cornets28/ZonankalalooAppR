@@ -1,29 +1,39 @@
 <% provide(:title, "Nouvelle Episode") %>
 
-<section class="our-blog-area pt-90 pb-60">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8">
-                <% if  @serials.any? && (serial_author(@serial) || has_role?(:admin))%>
+<% if !@serials.any? %>
+   <section class="our-blog-area pt-90 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h4 class="scenes-input-restrictions">Vous Devez D'abord Ajouter Une <a href="/serials/new"> <strong>Serie</strong></a>       <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+  <% else %>
+    <section class="our-blog-area pt-90 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
                     <div class="leave-reply">
-                        <h2> Ajoutez un scene
+                        <h2> Ajoutez une scène
                             <%= link_to scenes_path, :class=> "IIII" do %>
                             <i class="fa fa-remove" style="float:right"></i>
-                        <% end %>
+                            <% end %>
                         </h2>
                         <ul>
                             <li>
                                 <%= render 'form', scene: @scene %>
                             </li>
                         </ul>
-                    <% else %>
-                    
-                    <h4 class="scenes-input-restrictions">Vous Devez D'abord creer une <a href="/serials/new"><strong>Serie</strong></a></h4>
                     </div>
-                <% end %>   
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+ <% end %>
+             
+
+
 
 

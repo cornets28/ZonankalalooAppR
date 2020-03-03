@@ -897,8 +897,7 @@ h1.title1 {
 /*  9. People says area CSS
 /*----------------------------------------*/
 .people-says-area2 {
-	background: rgba(0, 0, 0, 0) url("img/gradienBg.jpeg") repeat scroll 0 0 /
-		cover;
+	background: rgba(0, 0, 0, 0) url("img/n2.jpg") repeat scroll 0 0 / cover;
 }
 .single-people {
 	margin: auto;
@@ -2256,6 +2255,11 @@ h1.title1 {
 }
 
 .scenes-input-restrictions {
-	margin-bottom: 5rem;
+	margin-left: 0.7rem;
+	margin-bottom: 4rem;
 	color: red;
+}
+
+.is-small2 {
+	margin-left: 1rem;
 }

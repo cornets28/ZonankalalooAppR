@@ -9,7 +9,6 @@ class ScenesController < ApplicationController
   def index
     @likes = Like.all
     @scenes = Scene.all.order('created_at desc')
-    # @scenes = Scene.all.order('created_at desc').paginate(page: params[:page], per_page: 4)
     @scenes_pagination = Scene.paginate(page: params[:page], per_page: 2)
   end
 
@@ -20,13 +19,14 @@ class ScenesController < ApplicationController
   end
 
   def new
+    @serials = current_user.serials.all
     @scene = current_user.scenes.build
-    redirect to serial_new unless set_serial
   end
 
   def edit; end
 
   def create
+    @serials = current_user.serials.all
     @scene = current_user.scenes.build(scene_params)
 
     respond_to do |format|
@@ -55,7 +55,7 @@ class ScenesController < ApplicationController
   def destroy
     @scene.destroy
     respond_to do |format|
-      format.html { redirect_to scenes_url, notice: 'Vous aviez supprime cette scene avec succes!' }
+      format.html { redirect_to scenes_url, notice: 'Vous aviez supprimez cette scene avec succes!' }
       format.json { head :no_content }
     end
   end
