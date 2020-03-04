@@ -11,4 +11,5 @@ class HomeController < ApplicationController
     @sponsors = Sponsor.all.order('created_at asc')
     @interests = Interest.all.order('created_at asc')
   end
+
 end

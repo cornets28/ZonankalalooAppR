@@ -1,8 +1,23 @@
 <% provide(:title, "Modifiez") %>
 
-<h1>Editing Partner</h1>
-
-<%= render 'form', partner: @partner %>
-
-<%= link_to 'Show', @partner %> |
-<%= link_to 'Back', partners_path %>
+<section class="our-blog-area pt-90 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="leave-reply">
+                    <h2> Modifiez Ce Partenaire
+                        <%= link_to home_index_path, :class=> "IIII" do %>
+                         <i class="fa fa-remove" style="float:right"></i>
+                       <% end %>
+                    </h2>
+                
+                    <ul>
+                      <li>
+                       <%= render 'form', partner: @partner %>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
