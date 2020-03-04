@@ -1,12 +1,8 @@
 <% provide(:title, "#{@partner.company_name }") %>
 
-<p id="notice"><%= notice %></p>
+<h1><span>A Propos Du Partenaire</span></h1>
 
-
-
-
-<h1><span>A Propos de Partenaire</span></h1>
-
+<% if has_role?(:admin) %>
 <table class="responstable">
   <tr>
     <th>Nom</th>
@@ -16,13 +12,26 @@
   
   <tr>
     <td><%= @partner.company_name %> <br />
-     <%= link_to 'Modifier', edit_partner_path(@partner) %> |
-<%= link_to 'Retour', partners_path %>
+     <span>
+      <%= link_to edit_partner_path(@partner), :class=> "IIII" do %>
+          <i class="icon is-small"><i class="fa fa-trash-o"></i>
+      <% end %> 
+       |  
+      <%= link_to home_index_path, :class=> "IIII" do %>
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      <% end %>
+      </span>
     </td>
     <td><%= @partner.official_link %></td>
     <td><%= image_tag @partner.image if @partner.image.attached? %></td>
   </tr>
 </table>
+
+<% else %>
+<h1 class="scenes-input-restrictions">Vous N'avez Pas A Cet Endroit!</h1>
+    
+<% end %>
+
 
 <style>
 .responstable {

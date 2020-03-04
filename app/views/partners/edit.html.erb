@@ -1,10 +1,12 @@
 <% provide(:title, "Modifiez") %>
 
+<% if has_role?(:admin) %>
 <section class="our-blog-area pt-90 pb-60">
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
                 <div class="leave-reply">
+                <% if has_role?(:admin) %>
                     <h2> Modifiez Ce Partenaire
                         <%= link_to home_index_path, :class=> "IIII" do %>
                          <i class="fa fa-remove" style="float:right"></i>
@@ -16,6 +18,9 @@
                        <%= render 'form', partner: @partner %>
                        </li>
                     </ul>
+                    <% else %>
+                        <h1 class="scenes-input-restrictions">Vous N'avez Pas A Cet Endroit!</h1>   
+                     <% end %>
                 </div>
             </div>
         </div>
