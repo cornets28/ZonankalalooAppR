@@ -3,12 +3,9 @@
 <section class="our-blog-area pt-90 pb-60">
     <div class="container">
         <div class="row">
-            <!-- Start blog -->
             <div class="blog">
-                <!-- Start single blog -->
                 <div class="col-sm-8">
                     <div class="blog-details single-blog mb-30">
-
                         <div class="blog-details-title">
                             <h2><strong><%= @discussion.title %></strong></h2>
                         </div>
@@ -33,48 +30,39 @@
                         <br/>
                         <div class="card-footer bg-white">
                             <% if @discussion.likes.any? {|like| like.user == current_user}%>
-                            <h4> Retire like ou a <%= link_to "",  like_path(id: @discussion.id), 
+                            <h4> Otez votre Like <%= link_to "",  like_path(id: @discussion.id), 
                                 method: :delete,class:"fa fa-lg fa-thumbs-down" %> </h4>
                             <% else %>
-                            <h4> Klike si w renmen atik/sije sa <%= link_to "", likes_path(id: @discussion.id),
+                            <h4> Like si tu aimes <%= link_to "", likes_path(id: @discussion.id),
                                 method: :discussion,class:"fa fa-lg fa-thumbs-up" %></h4>
                             <% end %>
-                            
                         </div>
                         <hr>
-                        <br />
-                                                
+                        <br />                     
                         <div class="blog-coment-box">
                             <div class="single0blog-coment">
-                                <h3><%= @discussion.replies.count %> Repons | <%= @discussion.likes.count %> <i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i></h3>
-
+                                <h3><%= @discussion.replies.count %> Repondez | <%= @discussion.likes.count %> <i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i></h3>
                                 <ul>
                                    <li><%= render @discussion.replies %></li>
                                 </ul>
-                                 
-                            </div>
-                                
+                            </div>    
                             <ul>
                                 <% if user_signed_in? %>
                                     <%= render 'replies/form' %>
                                 <% else %> 
-                                     <p class="permission">Si 'w vle reponn, fok ou <%= link_to 'Rantre Imel Ou', new_user_session_path %> oswa
-                                    <%= link_to 'Anrejistre', new_user_registration_path %></p>
+                                     <p class="permission">Pour Repondre, Vous Devez <%= link_to 'Rentrez Votre Email', new_user_session_path %> ou
+                                    <%= link_to 'Enrigistrez-vous', new_user_registration_path %></p>
                                 <% end %>
                             </ul>
                         </div>
-
                     </div>
-                </div> <!-- ENd of col-sm-8-->
-                <!-- End single blog -->    
+                </div> 
             </div>
-            <!-- End blog -->   
-
             <%= render "/shared/most_popular_discussions" %>
-        </div> <!--end of row-->
+        </div> 
     </div>              
 </section>
-<!-- End our blog area -->
+
            
 
 

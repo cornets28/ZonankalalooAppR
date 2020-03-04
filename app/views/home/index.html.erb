@@ -1,300 +1,261 @@
 <% provide(:title, "Accueil") %>
 
 <div class="main-area">
-        	<section class="slider-animate-area pb-60">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 text-center">
-                            <div class="cd-intro">
-                                <h1 class="cd-headline clip is-full-width title1 wow zoomIn animated" data-wow-duration="1s" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: zoomIn;">
-                                    <span>ACTUALITES </span>
-                                    <span class="cd-words-wrapper">
-                                        <b class="is-visible">EN HAITI!</b>
-                                        <b>VERIFABLES</b>
-										<b>AUTHENTIFIABLES</b>
-                                        <b>IMPATIALES</b>
-                                    </span>
-                                </h1>
-                                <p class="wow zoomIn animated" data-wow-duration="1s" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1s; animation-delay: 600ms; animation-name: zoomIn;">
-								Zonanlaloo pa fe ka de ran sosyal ou, fanmi ou fet, de relasyon, de fom kalbas tet ou. Nou bay bagay la jan l te pase a. Si 'w vle patisipe nan diskisyon yo ou byen pataje pataje yon bagay, fok ou anjisitre.</p>
-                                <div class="slider-button-area wow zoomIn animated" data-wow-duration="1s" data-wow-delay="900ms" style="visibility: visible; animation-duration: 1s; animation-delay: 900ms; animation-name: zoomIn;">
-                                    <a href="/users/sign_up" class="btn-lg">ENRESGITRER</a>
-                                    <a href="#recentdiscussion" class="btn-lg">ACTUALITES</a>
-                                </div>
-                            </div>
+    <section class="slider-animate-area pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div class="cd-intro">
+                        <h1 class="cd-headline clip is-full-width title1 wow zoomIn animated" data-wow-duration="1s" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1s; animation-delay: 300ms; animation-name: zoomIn;">
+                        <span>ACTUALITES </span>
+                       <span class="cd-words-wrapper">
+                            <b class="is-visible">EN HAITI!</b>
+                            <b>VERIFABLES</b>
+							<b>AUTHENTIFIABLES</b>
+                            <b>IMPATIALES</b>
+                        </span>
+                        </h1>
+                        <p class="wow zoomIn animated" data-wow-duration="1s" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1s; animation-delay: 600ms; animation-name: zoomIn;">
+						    Zonanlaloo pa fe ka de ran sosyal ou, fanmi ou fet, de relasyon, de fom kalbas tet ou. Nou bay bagay la jan l te pase a. Si 'w vle patisipe nan diskisyon yo ou byen pataje pataje yon bagay, fok ou anjisitre.
+                        </p>
+                        <div class="slider-button-area wow zoomIn animated" data-wow-duration="1s" data-wow-delay="900ms" style="visibility: visible; animation-duration: 1s; animation-delay: 900ms; animation-name: zoomIn;">
+                            <a href="/users/sign_up" class="btn-lg">ENRESGITRER<a>                                                                                       <a href="#recentdiscussion" class="btn-lg">ACTUALITES</a>
                         </div>
                     </div>
                 </div>
-        	</section>
-        	<!-- End slider area -->
-            <!-- Start our couses area -->
-        	<section class="our-couses-area pt-90 pb-90">
-        		<div class="container">
-        			<div class="row">
-                        <!-- Start section title -->
-        				<div class="col-sm-12">
-        					<div class="section-title text-center">
-        						<h2>QUI SOMMES <span>NOUS</span>?</h2>
-        						<img src="img/title-bottom.png" alt="">
-        						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        					    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
- 					       </div>
-        				</div>
-                        <!-- End section title -->
-        				<div class="couses">
-                            <!-- Start single couses -->
-                            <% @interests.each do |interest| %>
-                                <div class="col-sm-4">
-                                    <div class="single-couses">
-                                        <div class="single-couses-image-text">
-                                            <div class="couses-image">
-                                                <%= image_tag interest.image,  {style: "background: cover; width:100%;"} if interest.image.attached? %>
-                                            </div>
-                                            <div class="couses-text text-center">
-                                                <h3><%= interest.title %></h3>
-                                                <p><%= interest.shortdescription %></p>
-                                            </div> 
-                                        </div>
+            </div>
+        </div>    
+    </section>
+        	
+    <section class="our-couses-area pt-90 pb-90">
+		<div class="container">
+        	<div class="row">
+        		<div class="col-sm-12">
+    				<div class="section-title text-center">
+    					<h2>QUI SOMMES <span>NOUS</span>?</h2>
+    					<img src="img/title-bottom.png" alt="">
+    					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>        					    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ 					</div>
+        		</div>
+                
+        		<div class="couses">
+                    <% @interests.each do |interest| %>
+                        <div class="col-sm-4">
+                            <div class="single-couses">
+                                <div class="single-couses-image-text">
+                                    <div class="couses-image">
+                                        <%= image_tag interest.image,  {style: "background: cover; width:100%;"} if interest.image.attached? %>
+                                    </div>
+                                    <div class="couses-text text-center">
+                                        <h3><%= interest.title %></h3>
+                                        <p><%= interest.shortdescription %></p>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+        		</div>
+            </div>
+    	</div>
+    </section>
+          
+    <section class="our-volunteers-area pt-90 pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title text-center">
+                        <h2>NOTRE <span>EQUIPE</span></h2>
+                        <img src="img/title-bottom.png" alt="">
+                        <p>L'equipe est composee de puls de 70 personnes.<br>lesquelles travailles jours et nuits pour pouvoir donner des information fiables et verifiables. </p>
+                    </div>
+                </div>
+                        
+                <div class="our-volunteers">
+                    <% @teams.each do |member| %>
+                        <div class="col-sm-3">
+                            <div class="single-volunteer">
+                                <div class="volunteer-image-and-social">
+                                    <%= image_tag member.image, {style:"width: 100%; height:50%; cover;" }if member.image.attached? %>
+                                    <div class="volunteer-social">
+                                        <a href="<%= member.facebook_link %>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="<%= member.twitter_link %>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="<%= member.email %>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
-                            <% end %>
-        				</div>
-
-        			</div>
-        		</div>
-        	</section>
-          
-            <section class="our-volunteers-area pt-90 pb-90">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start section title -->
-                        <div class="col-sm-12">
-                            <div class="section-title text-center">
-                                <h2>NOTRE <span>EQUIPE</span></h2>
-                                <img src="img/title-bottom.png" alt="">
-                                <p>L'equipe est composee de puls de 70 personnes.<br>lesquelles travailles jours et nuits pour pouvoir donner des information fiables et verifiables. </p>
+                                <div class="volunteer-title text-center">
+                                    <h5><%= member.firstname %> <% member.lastname %></h5>
+                                    <p><%= member.position %></p>
+                                </div>
+                            </div>  
+                        </div>
+                    <% end %>
+                </div>                                                
+            </div>
+        </div>
+    </section>
+            
+    <section class="people-says-area pt-54 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="people-asy-title text-center">
+                                    <h2> NOUS CONNAITRE <span>DAVANTAGE</span></h2>
+                                </div>
+                                <div class="people-say-slide">
+                                    <% @teams.each do |member| %>
+                                        <div class="single-people text-center">
+                                            <div class="people-say-image">
+                                                <%= image_tag member.image, {style:"width: 35%; height:35%; cover;" }if member.image.attached? %>
+                                            </div>
+                                            <div class="peoplp-say-text text-center">
+                                                <p>Notre equipe est en train de travailler avec riguer afin de vous faire savoir les actualites</p>
+                                                <h5><%= member.firstname %> <%= member.lastname %></h5>
+                                                <h6><%= member.position %></h6>
+                                            </div>
+                                        </div>
+                                    <% end %>
+                                </div>
                             </div>
                         </div>
-                        <!-- End section title -->
-                        <div class="our-volunteers">
-                            <!-- Start single volunteer -->
-                            <% @teams.each do |member| %>
-                               <div class="col-sm-3">
-                                   <div class="single-volunteer">
-                                       <div class="volunteer-image-and-social">
-                                          <%= image_tag member.image, {style:"width: 100%; height:50%; cover;" }if member.image.attached? %>
-                                           <div class="volunteer-social">
-                                               <a href="<%= member.facebook_link %>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                               <a href="<%= member.twitter_link %>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                               <a href="<%= member.email %>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                           </div>
-                                       </div>
-                                       <div class="volunteer-title text-center">
-                                           <h5><%= member.firstname %> <% member.lastname %></h5>
-                                           <p><%= member.position %></p>
-                                       </div>
-                                   </div>  
-                               </div>
-                            <% end %>
-                        </div>                                                
                     </div>
                 </div>
-            </section>
-            <!-- End our volunteers area -->
-            <!-- Start people says area -->
-            <section class="people-says-area pt-54 pb-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                              <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="people-asy-title text-center">
-                                <h2> NOUS CONNAITRE <span>DAVANTAGE</span></h2>
-                            </div>
-                            <div class="people-say-slide">
-                                <!-- Start single people -->
-                                <% @teams.each do |member| %>
-                                    <div class="single-people text-center">
-                                        <div class="people-say-image">
-                                            <%= image_tag member.image, {style:"width: 35%; height:35%; cover;" }if member.image.attached? %>
+            </div>
+        </div>
+    </section>
+            
+    <section class="blog-area pt-90 pb-90" id="recentdiscussion" >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title text-center" style="padding-top: 90px;">
+                        <h2> LES PLUS RECENTES <span>DISCUSSIONS</span></h2>
+                        <img src="img/title-bottom.png" alt="">
+                        <p>Il y en a d'autres articles et discussions. Cliquez sur <a href="/discussions">DISCUSSIONS</a> pour les voir.</p>
+                    </div>
+                </div>
+                       
+                <div class="blog">
+                    <% @discussions[0..2].each do |discussion| %>
+                        <div class="col-sm-4">
+                            <div class="single-blog mb-30"> 
+                                <div class="blo-image-and-date" id="blo-image">
+                                    <%= image_tag discussion.image if discussion.image.attached? %>
+                                    <% if discussion.channel %>
+                                        <%= link_to discussion.channel.channel, discussion.channel %>
+                                    <% end %>   
+                                </div>
+                                <div class="blog-info">
+                                    <div class="admin">
+                                        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                    </div>
+                                    <div class="comment">
+                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 88</a>
+                                        <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                                    </div>
+                                </div>
+                                <div class="blog-text">
+                                    <h3>
+                                        <%= link_to discussion do %>
+                                            <%= truncate(discussion.title, length: 35) %>
+                                        <% end %>
+                                    </h3>
+                                    <%= truncate(strip_tags(discussion.content.to_s), length: 180) %>
+                                    <p>
+                                        <em>
+                                            <small>
+                                                Cet articles est ecrit depuis <%= time_ago_in_words(discussion.created_at) %>, Categorie
+                                                <% if discussion.channel %>
+                                                    <%= link_to discussion.channel.channel, discussion.channel %>
+                                                <% end %>
+                                            </small>
+                                        </em>
+                                    </p>
+                                    <% if discussion_author(discussion) || has_role?(:admin) %>
+                                        <div class="column has-text-left"> 
+                                            <%= link_to edit_discussion_path(discussion) do %>
+                                                <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                            <% end %> |
+                                            <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
+                                                <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+                                            <% end %>
                                         </div>
-                                        <div class="peoplp-say-text text-center">
-                                            <p>Notre equipe est en train de travailler avec riguer afin de vous faire savoir les actualites</p>
-                                            <h5><%= member.firstname %> <%= member.lastname %></h5>
-                                            <h6><%= member.position %></h6>
-                                        </div>
+                                    <% else %>
+                                        <div class="column has-text-left">
+                                            <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                                        </div> 
+                                    <% end %>
+                                    <%= link_to discussion do %>
+                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Les Details...</p>
+                                    <% end %>
+                                </div>      
+                            </div> 
+                        </div>                         
+                    <% end %> 
+                </div>
+            </div>
+        </div>
+    </section>
+           
+
+    <section class="brand-logo-area pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title text-center">
+                        <h2>NOS <span>SPONSORS</span></h2>
+                        <img src="img/title-bottom.png" alt="">            
+                    </div>
+                </div>
+                <div class="brand-logo">       
+                    <% if !Sponsor.nil? %>
+                        <% @sponsors = Sponsor.all %>    
+                        <div class="col-sm-6" style="display: flex; margin-right: 2rem;">
+                            <% @sponsors.each do |sponsor| %>
+                                <div class="b-logo">
+                                    <a id="logo-brand" href="/">
+                                        <%= image_tag sponsor.image, size: "150x150" if sponsor.image.attached?%>
+                                    </a>
+                                </div>
+                            <% end %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brand-logo-area pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="section-title text-center">
+                        <h2>NOS <span>PARTENAIRES</span></h2>
+                        <img src="img/title-bottom.png" alt="">
+                    </div>
+                </div>
+                <div class="brand-logo"> 
+                    <% if !Partner.nil? %>
+                        <% @partners = Partner.all %>   
+                            <div class="col-sm-6" style="display: flex;">
+                                <% @partners.each do |partner| %>
+                                    <div class="b-logo">
+                                        <a id="logo-brand" href="<%= partner.official_link %>">
+                                            <%= image_tag partner.image, size: "120x120" if partner.image.attached?%>
+                                        </a>
                                     </div>
                                 <% end %>
-                                
-                                <!-- End single people -->
-                             <!-- End single people -->
                             </div>
-                        </div>
-                    </div>
+                    <% end %>
                 </div>
-            </section>
-            <!-- End people says area -->
-            <!-- Start blog area -->
-            <section class="blog-area pt-90 pb-90" id="recentdiscussion" >
-                <div class="container">
-                    <div class="row">
-                        <!-- Start section title -->
-                        <div class="col-sm-12">
-                            <div class="section-title text-center" style="padding-top: 90px;">
-                                <h2> LES PLUS RECENTES <span>DISCUSSIONS</span></h2>
-                                <img src="img/title-bottom.png" alt="">
-                                <p>Il y en a d'autres articles et discussions. Cliquez sur <a href="/discussions">DISCUSSIONS</a> pour les voir.</p>
-                            </div>
-                        </div>
-                        <!-- End section title -->
-                       
-                    
-                            <!-- Start blog -->
-                            <div class="blog">
-                                <!-- Start of loop -->
-                                <% @discussions[0..2].each do |discussion| %>
-                                    <div class="col-sm-4">
-                                        <!-- single blog starts here -->
-                                        <div class="single-blog mb-30"> 
-                                            <div class="blo-image-and-date" id="blo-image">
-                                            
-                                                <%= image_tag discussion.image if discussion.image.attached? %>
-                                                    <% if discussion.channel %>
-                                                        <%= link_to discussion.channel.channel, discussion.channel %>
-                                                    <% end %>   
-                                                </div>
-                                                <div class="blog-info">
-                                                    <div class="admin">
-                                                        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
-                                                    </div>
-                                                    <div class="comment">
-                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 88</a>
-                                                        <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
-                                                    </div>
-                                                </div>
-                                                <div class="blog-text">
-                                                <h3>
-                                                    <%= link_to discussion do %>
-                                                        <%= truncate(discussion.title, length: 35) %>
-                                                    <% end %>
-                                                </h3>
-                                                
-                                                <%= truncate(strip_tags(discussion.content.to_s), length: 180) %>
-                                                <p>
-                                                    <em>
-                                                        <small>
-                                                            Cet articles est ecrit depuis <%= time_ago_in_words(discussion.created_at) %>, Categorie
-                                                            <% if discussion.channel %>
-                                                                <%= link_to discussion.channel.channel, discussion.channel %>
-                                                            <% end %>
-                                                        </small>
-                                                    </em>
-                                                </p>
-                                                    <% if discussion_author(discussion) || has_role?(:admin) %>
-                                                        <div class="column has-text-left"> 
-                                                            <%= link_to edit_discussion_path(discussion) do %>
-                                                                <span class="icon is-small"><i class="fa fa-pencil"></i></span>
-                                                            <% end %> |
-                                                            <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
-                                                                <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
-                                                            <% end %>
-                                                        </div>
-
-                                                    <% else %>
-                                                        <div class="column has-text-left">
-                                                            <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
-                                                        </div>
-                                                    
-                                                    <% end %>
-                                                <%= link_to discussion do %>
-                                                    
-                                                        <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Les Details...</p>
-                                                    
-                                                <% end %>
-                                            </div>      
-                                        </div> <!-- End single blog -->
-                                    </div>                         
-                                <% end %> <!-- Loop ends here -->
-                            </div> <!-- End blog -->
-                    </div>
-                </div>
-                
-            </section>
-            <!-- End blog area -->
-            <!-- Start brand logo area -->
-
-            <section class="brand-logo-area pb-90">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="section-title text-center">
-                                <h2>NOS <span>SPONSORS</span></h2>
-                                <img src="img/title-bottom.png" alt="">
-                            </div>
-                        </div>
-                        <div class="brand-logo">       
-                            <% if !Sponsor.nil? %>
-                               <% @sponsors = Sponsor.all %>    
-                               <div class="col-sm-6" style="display: flex; margin-right: 2rem;">
-                                   <% @sponsors.each do |sponsor| %>
-                                       <div class="b-logo">
-                                           <a id="logo-brand" href="/">
-                                               <%= image_tag sponsor.image, size: "150x150" if sponsor.image.attached?%>
-                                           </a>
-                                   </div>
-                                   <% end %>
-                               </div>
-                             <% end %>
-                        </div>
-                        <!-- End brand logo -->
-                    </div>
-                </div>
-            </section>
-
-             
-    
-
-
-            
-            <!-- End brand logo area -->
-           
-           
-            <section class="brand-logo-area pb-90">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start section title -->
-                        <div class="col-sm-12">
-                            <div class="section-title text-center">
-                                <h2>NOS <span>PARTENAIRES</span></h2>
-                                <img src="img/title-bottom.png" alt="">
-                            </div>
-                        </div>
-                        <!-- End section title -->
-                        <!-- Start brand logo -->
-                        <div class="brand-logo">
-                             
-                            <% if !Partner.nil? %>
-                               <% @partners = Partner.all %>   
-                               <div class="col-sm-6" style="display: flex;">
-                                   <% @partners.each do |partner| %>
-                                       <div class="b-logo">
-                                           <a id="logo-brand" href="<%= partner.official_link %>">
-                                               <%= image_tag partner.image, size: "120x120" if partner.image.attached?%>
-                                           </a>
-                                   </div>
-                                   <% end %>
-                               </div>
-                             <% end %>
-                        </div>
-                        <!-- End brand logo -->
-                    </div>
-                </div>
-            </section>
-            <!-- Start footer -->
+            </div>
+        </div>
+    </section>
 </div>
-        <!-- End main area -->
+       
 
       
 

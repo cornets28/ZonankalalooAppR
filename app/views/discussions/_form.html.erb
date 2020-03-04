@@ -1,34 +1,29 @@
 
 <%= simple_form_for(@discussion) do |f| %>
-   <%= f.error_notification %>
- 
-     <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Ekri Tit La" }, wrapper: false %></li>
-     <li><%= f.rich_text_area :content, required: true, input_html: { class: 'textarea' } %>
-     <%= f.file_field :image, input_html: {class: "input-block-level"} %>
-    
-  <div class="field">
-      <label class="label">Kategori</label>
-      <div class="control has-icons-left">
-        <span class="select">
-            <% if !@channels.nil?%>
-              <%= f.input_field :channel_id, collection:@channels.map{ |c| [c.channel, c.id] }, prompt: "Chwazi Kategori" %>
-            <% end %>
-        </span>
-        <span class="icon is-small is-left">
-          <i class="fa fa-tag"></i>
-        </span>
-      </div>
-    
-  </div>
+    <%= f.error_notification %>
+    <li> <%= f.input :title, input_html: { class: "input", type: "text",placeholder:"Le titre" }, wrapper: false %></li>
+    <li><%= f.rich_text_area :content, required: true, input_html: { class: 'textarea' } %>
+        <%= f.file_field :image, input_html: {class: "input-block-level"} %>
+        <div class="field">
+            <div class="control has-icons-left">
+                <span class="select">
+                    <% if !@channels.nil?%>
+                      <%= f.input_field :channel_id, collection:@channels.map{ |c| [c.channel, c.id] }, prompt: "Choisissez Une Categorie" %>
+                    <% end %>
+                </span>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-tag"></i>
+                </span>
+            </div>
+        </div>
 
-  <div class="field">
-    <div class="control">
-      <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
-    </div>
-</li>
+        <div class="field">
+            <div class="control">
+                <%= f.button :submit, class:"btn-style btn-md bo-ra-5" %>
+            </div>
+    </li>
 <% end %>
-    <%= link_to discussions_path, :class=> "IIII" do %>
-    <i class="fa fa-remove" style="color:red;  position:relative; bottom:5rem; left:93%; right:4%;font-size: 1.73em";></i>
-   
-  <% end %>
-  </div>
+          <%= link_to discussions_path, :class=> "IIII" do %>
+              <i class="fa fa-remove" style="color:red;  position:relative; bottom:5rem; left:93%; right:4%;font-size: 1.73em";></i>
+          <% end %>
+      </div>
