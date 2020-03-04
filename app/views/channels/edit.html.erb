@@ -1,5 +1,23 @@
 <% provide(:title, "Modifiez Categorie") %>
 
-<h1 class="title is-3">Editing Channel</h1>
-
-<%= render 'form', channel: @channel %>
+<section class="our-blog-area pt-90 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="leave-reply">
+                    <h2>Modifiez Cette Categorie
+                      <%= link_to discussions_path, :class=> "IIII" do %>
+                         <i class="fa fa-remove" style="float:right"></i>
+                       <% end %>
+                    </h2>
+                    
+                    <ul>
+                        <li>
+                          <%= render 'form', channel: @channel %>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -15,6 +15,7 @@
                     <div class="single-blog mb-30"> 
                         <div class="blo-image-and-date" id="blo-image">
                             <%= image_tag discussion.image if discussion.image.attached? %>
+                            
                             <% if discussion.channel %>
                                 <%= link_to discussion.channel.channel, discussion.channel %>
                             <% end %>   
