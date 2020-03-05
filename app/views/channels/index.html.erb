@@ -49,8 +49,12 @@
 
             <% else %>
                <div class="section-title text-center" style="padding-top: 90px;">
-                    <h2 style="color:red"> Vous n'avez aucun  access pour y franchir !<br><br>
-                    C'est reserve seulement a l'administration.</h2>
+                  
+                    <h2 style="color:red">reservee a l'administration!<br/><br/> Retournez aux discussions 
+                      <%= link_to discussions_path, :class=> "IIII" do %>
+                          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                       <% end %>
+                    </h2>
                 </div>
             <% end %>
         </div>

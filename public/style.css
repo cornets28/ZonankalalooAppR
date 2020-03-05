@@ -2270,3 +2270,15 @@ h1.title1 {
 #para {
 	margin-bottom: -0.5rem;
 }
+
+.paraHome,
+.paraHome2 {
+	font-weight: 300 !important;
+}
+.paraHome {
+	color: #0aaaa0 !important;
+}
+.paraHome2 {
+	color: black !important;
+	font-weight: 300 !important;
+}
