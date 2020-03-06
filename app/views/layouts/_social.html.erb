@@ -26,10 +26,10 @@
                                 <li><%= link_to "Deconnecter", destroy_user_session_path, method: :delete, class:"navbar-item" %></li>
                             </ul>
                         <% else %>
-                          <li><a href=""><strong>Connecter </strong><i class="fa fa-angle-down" aria-hidden="true"></a></i>
+                          <li><a href="/users/sign_in"><strong>Connectez </strong><i class="fa fa-angle-down" aria-hidden="true"></a></i>
                             <ul>
-                                <li><%= link_to "Connecter", new_user_session_path, class:"navbar-item sign_in"%></li>
-                               <li><%= link_to "Anregister", new_user_registration_path, class:"navbar-item" %></li>
+                                <li><%= link_to "Connectez", new_user_session_path, class:"navbar-item sign_in"%></li>
+                               <li><%= link_to "Enregistrez-Vous", new_user_registration_path, class:"navbar-item" %></li>
                             </ul>
                         <% end %>
                     </ul>
@@ -38,6 +38,6 @@
         </div>
     </div>
 </div>
-              
+
 
             
