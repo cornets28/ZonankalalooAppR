@@ -2,8 +2,6 @@
 
 
 <div class="main-area">
-    
-
     <section class="our-gallery pt-90 pb-60">
         <div class="container">
             <div class="row">       
@@ -36,6 +34,8 @@
                                     <div class="col-sm-4">
                                         <div class="single-blog mb-30"> <!-- single blog starts here -->
                                             <div class="blo-image-and-date text-center" id="blo-image">
+                                             <% parameterizeTitle = '/serials/' %>
+                                            <a class="transparent-cover" style="background: transparent; z-index: 0; width: 100%; height: 100%;" href="<%= parameterizeTitle += serial.mainTitle.parameterize %>" ></a> 
                                                 <%= image_tag serial.image if serial.image.attached? %>
                                             </div>
                                             <div class="blog-text">

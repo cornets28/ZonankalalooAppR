@@ -11,122 +11,15 @@
                 </div>
             </div>
 
-            <table class="container" id="tableBody">
-              <thead>
-                <tr>
-                  <th>KONPAYI</th>
-                  <th>POZISYON</th>
-                  <th>DESKRIPSYON</th>
-                  <th>OUVRI</th>
-                  <th>FEMEN</th>
-                  <th>ADRES</th>
-                  <% if has_role?(:admin) %>
-                    <th colspan="3"></th>
-                  <% else %>
-                    <th>LYEN</th>
-                  <% end %>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% @jobs.each do |job| %>
-                  <tr>
-                    <td><%= job.company %></td>
-                    <td><%= job.position %></td>
-                    <td><%= job.description %></td>
-                    <td><%= job.opening_date %></td>
-                    <td><%= job.closingdate %></td>
-                    <td><%= job.location %></td>
-                      
-                    <% if has_role?(:admin) %>
-                      <td><%= link_to 'Show', job %></td>
-                      <td><%= link_to 'Edit', edit_job_path(job) %></td>
-                      <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    <% else %>
-                      <td><%= job.link%></td>
-                    <% end %>
-                   </tr>
-                <% end %>
-              </tbody>
-            </table>
+            <div class="section-title text-center" style="padding-top: 90px;">
+                  
+                    <h2 style="color:red">Pour Bientot!<br/><br/> Retournez aux discussions 
+                      <%= link_to discussions_path, :class=> "IIII" do %>
+                          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                       <% end %>
+                    </h2>
+                </div>
         </div>
     </div>
 </section>
 
-
-<style>
-  @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-
-#tableBody{
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color:  #fff;
-  background-color:#1F2739;
-}
-
-
-.container th h1 {
-	font-weight: bold;
-	font-size: 1em;
-  text-align: left;
-  color: white;
-}
-
-.container td {
-	  font-weight: normal;
-	  font-size: 1em;
-  -webkit-box-shadow: 0 1px 1px -1px #0E1119;
-	   -moz-box-shadow: 0 1px 1px -1px #0E1119;
-	        box-shadow: 0 1px 1px -1px #0E1119;
-}
-
-
-.container td, .container th {
-	  padding-bottom: .1%;
-	  padding-top: .1%;
-    padding-left: .1%;  
-}
-
-/* Background-color of the odd rows */
-.container tr:nth-child(odd) {
-	  background-color: #363636;
-}
-
-/* Background-color of the even rows */
-.container tr:nth-child(even) {
-	  background-color: #413838;
-}
-
-.container th {
-	  background-color: #0AAAA0;
-}
-
-.container td:first-child { color: ##dad6d6; }
-
-.container tr:hover {
-   background-color: #464A52;
-   -webkit-box-shadow: 0 6px 6px -6px #0E1119;
-	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
-	        box-shadow: 0 6px 6px -6px #0E1119;
-}
-
-.container td:hover {
-  background-color: #0AAAA0;
-  color: #white;
-  font-weight: bold;
-  
-  box-shadow: # rgb(8, 69, 80) -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
-  transform: translate3d(6px, -6px, 0);
-  
-  transition-delay: 0s;
-	  transition-duration: 0.4s;
-	  transition-property: all;
-  transition-timing-function: line;
-}
-
-@media (max-width: 800px) {
-.container td:nth-child(4),
-.container th:nth-child(4) 
-}
-</style>
