@@ -8,7 +8,7 @@
             <div class="control has-icons-left">
                 <span class="select">
                     <% if !@channels.nil?%>
-                      <%= f.input_field :channel_id, collection:@channels.map{ |c| [c.channel, c.id] }, prompt: "Choisissez Une Categorie" %>
+                      <%= f.input_field :channel_id, collection:@channels.map{ |c| [c.channel, c.id] }, prompt: "Choisissez Une Catégorie" %>
                     <% end %>
                 </span>
                 <span class="icon is-small is-left">
