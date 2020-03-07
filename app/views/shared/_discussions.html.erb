@@ -14,6 +14,8 @@
                     <!-- single blog starts here -->
                     <div class="single-blog mb-30"> 
                         <div class="blo-image-and-date" id="blo-image">
+                         <% parameterizeTitle = '/discussions/' %>
+                            <a class="transparent-cover" style="background: transparent; z-index: 0; width: 100%; height: 100%;" href="<%= parameterizeTitle += discussion.title.parameterize%>" ></a>
                             <%= image_tag discussion.image if discussion.image.attached? %>
                             
                             <% if discussion.channel %>
@@ -22,7 +24,7 @@
                         </div>
                         <div class="blog-info">
                             <div class="admin">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                             </div>
                             <div class="comment">
                                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i><%= discussion.likes.count %></a>
@@ -99,7 +101,11 @@
                 <% ch.discussions[0..5].each do |discussion| %>
                     <div class="col-sm-4"> <!--starts here -->
                         <div class="single-blog mb-30"> 
-                            <div class="blo-image-and-date" id="blo-image">                
+                            <div class="blo-image-and-date" id="blo-image">  
+                               
+                                <% parameterizeTitle = '/discussions/' %>
+                                <a class="transparent-cover" style="background: transparent; z-index: 0; width: 100%; height: 100%;" href="<%= parameterizeTitle += discussion.title.parameterize %>" ></a> 
+                               
                                 <%= image_tag discussion.image if discussion.image.attached? %>
                                     <% if discussion.channel %>
                                         <%= link_to discussion.channel.channel, discussion.channel %>

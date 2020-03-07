@@ -1,72 +1,64 @@
 <div class="col-sm-12">
-            <div class="digg_pagination">
-                <%= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
-            </div>
-                <% @discussions_ch_pagination.each do |discussion| %>
-                    <div class="col-sm-4"> <!--starts here -->
-                        <div class="single-blog mb-30"> 
-                            <div class="blo-image-and-date" id="blo-image">
-                            
-                            <%= image_tag discussion.image if discussion.image.attached? %>
-                                <% if discussion.channel %>
-                                    <%= link_to discussion.channel.channel, discussion.channel %>
-                                <% end %>   
-                            </div>
-                            <div class="blog-info">
-                                <div class="admin">
-                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
-                                </div>
-                                <div class="comment">
-                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 105</a>
-                                    <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
-                                </div>
-                            </div>
-                            <div class="blog-text">
-                            <h3>
-                                <%= link_to discussion do %>
-                                    <%= truncate(discussion.title, length: 32) %>
-                                <% end %>
-                            </h3>
-                            
-                            <%= truncate(strip_tags(discussion.content.to_s), length: 190) %>
-                            <p>
-                                <em>
-                                    <small>
-                                        Publie il y a <%= time_ago_in_words(discussion.created_at) %>, Categorie
-                                        <% if discussion.channel %>
-                                            <%= link_to discussion.channel.channel, discussion.channel %>
-                                        <% end %>
-                                    </small>
-                                </em>
-                            </p>
-                                <% if discussion_author(discussion) || has_role?(:admin) %>
-                                    <div class="column has-text-left"> 
-                                        <%= link_to edit_discussion_path(discussion) do %>
-                                            <span class="icon is-small"><i class="fa fa-pencil"></i></span>
-                                        <% end %> |
-                                        <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
-                                            <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
-                                        <% end %>
-                                    </div>
-
-                                <% else %>
-                                    <div class="column has-text-left">
-                                        <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
-                                    </div>
-                                
-                                <% end %>
-                            <%= link_to discussion do %>
-                                    <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plus Details...</p>
-                            <% end %>
-                            </div>      
+    <div class="digg_pagination">
+        <%= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
+    </div>
+    <% @discussions_ch_pagination.each do |discussion| %>
+        <div class="col-sm-4"> <!--starts here -->
+            <%= link_to discussion do %>
+                <div class="single-blog mb-30"> 
+                    <div class="blo-image-and-date" id="blo-image">
+                        <%= image_tag discussion.image if discussion.image.attached? %>
+                    </div>
+                    <div class="blog-info">
+                        <div class="admin">
+                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                         </div>
-                    </div>                         
-                <% end %>
-             
+                        <div class="comment">
+                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 105</a>
+                            <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                        </div>
+                    </div>
+                    <div class="blog-text">
+                        <h3>
+                            <%= link_to discussion do %>
+                                <%= truncate(discussion.title, length: 32) %>
+                            <% end %>
+                        </h3>    
+                        <%= truncate(strip_tags(discussion.content.to_s), length: 190) %>
+                        <p>
+                            <em>
+                                <small>
+                                    Publie il y a <%= time_ago_in_words(discussion.created_at) %>, Categorie
+                                    <% if discussion.channel %>
+                                        <%= link_to discussion.channel.channel, discussion.channel %>
+                                    <% end %>
+                                </small>
+                            </em>
+                        </p>
+                        <% if discussion_author(discussion) || has_role?(:admin) %>
+                            <div class="column has-text-left"> 
+                                <%= link_to edit_discussion_path(discussion) do %>
+                                    <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                <% end %> |
+                                 <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
+                                    <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
+                                <% end %>
+                            </div>
+                        <% else %>
+                            <div class="column has-text-left">
+                                <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
+                            </div> 
+                        <% end %>
+                        <%= link_to discussion do %>
+                            <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plus Details...</p>
+                        <% end %>
+                    </div>      
+                </div>
+            <% end %>
+        </div>                         
+    <% end %>                                                  
+</div> 
 
-                                             
-                                         
-</div> <!-- End blog -->
 <div class="digg_pagination">
     <%= will_paginate @discussions_ch_pagination, inner_window: 7, outer_window:1 %>
 </div>

@@ -18,6 +18,7 @@ class Discussion < ApplicationRecord
   friendly_id :title, use: %i[slugged finders]
 
   self.per_page = 5
+ 
   def should_generate_new_friendly_id?
     title_changed?
   end
