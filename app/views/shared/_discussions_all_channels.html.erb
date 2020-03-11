@@ -11,11 +11,14 @@
                     </div>
                     <div class="blog-info">
                         <div class="admin">
-                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                            <a><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                         </div>
                         <div class="comment">
-                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 105</a>
-                            <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                            <style>
+                                .fa-heart { color: #F70A80!important; }
+                            </style>
+                            <a><i class="fa fa-heart" aria-hidden="true"></i><%= discussion.likes.count %></a>
+                            <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%= discussion.replies.count %></a>
                         </div>
                     </div>
                     <div class="blog-text">

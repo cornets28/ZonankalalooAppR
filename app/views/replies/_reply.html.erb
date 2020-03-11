@@ -8,14 +8,14 @@
    <div class="comment-heading">
       <h5><%= reply.user.username %> <%= reply.user.userlastname %></h5> 
       <p><%= time_ago_in_words(reply.created_at) %></p>
-      <a class="reply" href="#"><i class="fa fa-undo"></i>Repons</a>
+      <a class="reply" href="#"><i class="fa fa-undo"></i>Reponse</a>
 
       <% if reply_author(reply) || has_role?(:admin) %>
           <%= link_to edit_discussion_reply_path(reply.discussion, reply) do %>
             <span class="icon is-small"><i class="fa fa-pencil"></i></span>
           <% end %> <span> | </span>
           <%= link_to [reply.discussion, reply],
-               method: :delete, data: {confirm: "Are you sure ?" } do %>
+               method: :delete, data: {confirm: "Etes vous sure ?" } do %>
                <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
           <% end %>
       <% end %>

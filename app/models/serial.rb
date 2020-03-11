@@ -9,9 +9,7 @@ class Serial < ApplicationRecord
 
   extend FriendlyId
   friendly_id :mainTitle, use: %i[slugged finders]
-  validates :mainTitle, length: { minimum: 5, maximum: 20 }, presence: true
-
-  # validates_attachment_content_type :avatar, content_type: ['image/jpeg', 'image/pjpeg', 'image/png', 'image/x-png', 'image/gif']
+  validates :mainTitle, length: { minimum: 5, maximum: 20, too_short: 'Le titre doit avoir 5 Characters min et 20 characters max' }, presence: true
 
   def should_generate_new_friendly_id?
     mainTitle_changed?

@@ -134,7 +134,7 @@
                     <div class="section-title text-center" style="padding-top: 90px;">
                         <h2> LES PLUS RECENTES <span>DISCUSSIONS</span></h2>
                         <img src="img/title-bottom.png" alt="">
-                        <p>Il y en a d'autres articles et discussions. Cliquez sur <a href="/discussions">DISCUSSIONS</a> pour les voir.</p>
+                        <p>Cliquez sur <a href="/discussions">DISCUSSIONS</a> pour davantage.</p>
                     </div>
                 </div>
                        
@@ -153,11 +153,14 @@
                                     </div>
                                     <div class="blog-info">
                                         <div class="admin">
-                                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Otè: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                            <a><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                                         </div>
                                         <div class="comment">
-                                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> 88</a>
-                                            <a href="#"><i class="fa fa-comment" aria-hidden="true"></i> 25</a>
+                                            <style>
+                                                .fa-heart { color: #F70A80!important; }
+                                            </style>
+                                            <a><i class="fa fa-heart" aria-hidden="true"></i><%= discussion.likes.count %></a>
+                                            <a><i class="fa fa-comment" aria-hidden="true"></i><%= discussion.replies.count %></a>
                                         </div>
                                     </div>
                                     <div class="blog-text">
@@ -170,7 +173,7 @@
                                         <p>
                                             <em>
                                                 <small>
-                                                    Cet articles est ecrit depuis <%= time_ago_in_words(discussion.created_at) %>, Catégorie
+                                                    Publié, il y a <%= time_ago_in_words(discussion.created_at) %>, Catégorie
                                                     <% if discussion.channel %>
                                                         <%= link_to discussion.channel.channel, discussion.channel %>
                                                     <% end %>
@@ -182,7 +185,7 @@
                                                 <%= link_to edit_discussion_path(discussion) do %>
                                                     <span class="icon is-small"><i class="fa fa-pencil"></i></span>
                                                 <% end %> |
-                                                <%= link_to discussion, method: :delete, data: {confirm: "Wap efase 'l tout bon?" } do %>
+                                                <%= link_to discussion, method: :delete, data: {confirm: "En etes vous sure" } do %>
                                                     <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
                                                 <% end %>
                                             </div>

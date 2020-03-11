@@ -22,7 +22,8 @@
                             </div>
                         </div>
                         <div class="blo-image-and-date">
-                           <%= image_tag @discussion.image, {style:"width: 100%; height:50%; object-fit: cover;" }%> 
+                           <%= image_tag @discussion.image if @discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%> 
+                            <%= default_discussion_img(@discussion)if !@discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%> 
                         </div>
                         <div class="blog-text">
                             <p><%= @discussion.content %></p>
@@ -50,7 +51,7 @@
                                 <% if user_signed_in? %>
                                     <%= render 'replies/form' %>
                                 <% else %> 
-                                     <p class="permission">Pour Repondre, Vous Devez <%= link_to 'Rentrez Votre Email', new_user_session_path %> ou
+                                     <p class="permission">Pour Participer, Vous Devez <%= link_to 'Rentrez Votre Email', new_user_session_path %> ou
                                     <%= link_to 'Enrigistrez-vous', new_user_registration_path %></p>
                                 <% end %>
                             </ul>

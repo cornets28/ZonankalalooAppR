@@ -2282,3 +2282,9 @@ h1.title1 {
 	color: black !important;
 	font-weight: 300 !important;
 }
+#madotory-field {
+	color: red !important;
+}
+/* #mc-submit {
+	padding-left: 4rem;
+} */

@@ -13,7 +13,7 @@
                             <div class="col-sm-4" id="left-div">
                                 <div class="post-thum">
                                 
-                                <%= image_tag discussion.image %> 
+                                   <%= image_tag discussion.image if discussion.image.attached? %> 
                                 </div>
                             </div>
                             <div class="col-sm-8">

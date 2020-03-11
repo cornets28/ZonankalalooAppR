@@ -8,4 +8,8 @@ module DiscussionsHelper
   def reply_author(reply)
     user_signed_in? && current_user.id == reply.user_id
   end
+
+  def default_discussion_img(_discussion)
+    image_tag('/img/zonankalaloo.png')
+ end
 end

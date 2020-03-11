@@ -16,7 +16,11 @@
                         <div class="blo-image-and-date" id="blo-image">
                          <% parameterizeTitle = '/discussions/' %>
                             <a class="transparent-cover" style="background: transparent; z-index: 0; width: 100%; height: 100%;" href="<%= parameterizeTitle += discussion.title.parameterize%>" ></a>
-                            <%= image_tag discussion.image if discussion.image.attached? %>
+                            <% if discussion.image.attached? %>
+                              <%= image_tag discussion.image %>
+                            <% else %>
+                                <%= default_discussion_img(discussion) %>
+                            <% end %>
                             
                             <% if discussion.channel %>
                                 <%= link_to discussion.channel.channel, discussion.channel %>
@@ -24,11 +28,11 @@
                         </div>
                         <div class="blog-info">
                             <div class="admin">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                <a><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                             </div>
                             <div class="comment">
-                                <a href="#"><i class="fa fa-heart" aria-hidden="true"></i><%= discussion.likes.count %></a>
-                                <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%= discussion.replies.count %></a>
+                                <a><i class="fa fa-heart" aria-hidden="true"></i><%= discussion.likes.count %></a>
+                                <a><i class="fa fa-comment" aria-hidden="true"></i><%= discussion.replies.count %></a>
                             </div>
                         </div>
                         <div class="blog-text">
@@ -113,22 +117,14 @@
                             </div>
                             <div class="blog-info">
                                 <div class="admin">
-                                   <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
+                                   <a><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= discussion.user.username %> <%= discussion.user.userlastname %> </a>
                                 </div>
                                 <div class="comment">
-                                  <% if discussion.likes.count == 0 %>
                                     <style>
-                                    .fa-heart {
-                                        color: red!important;
-                                    }
+                                        .fa-heart { color: #F70A80!important; }
                                     </style>
-                                    <a href="#"><i class="fa fa-heart"></i><%= discussion.likes.count %></a>
+                                    <a><i class="fa fa-heart"></i><%= discussion.likes.count %></a>
                                     <i class="fa fa-comment" aria-hidden="true"></i> <%= discussion.replies.count %>
-                                  <% else %>
-                                    <a href="#"><i class="fa fa-heart"></i><%= discussion.likes.count %></a>
-                                    <i class="fa fa-comment" aria-hidden="true"></i> <%= discussion.replies.count %>
-                                
-                                  <% end %>
                                 </div>
                             </div>
                             <div class="blog-text">
