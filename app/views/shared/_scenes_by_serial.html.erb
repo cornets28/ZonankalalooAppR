@@ -27,8 +27,8 @@
                                                             <a><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%= scene.user.username %> <%= scene.user.userlastname %> </a>
                                                         </div>
                                                         <div class="comment">
-                                                            <a><i class="fa fa-heart" aria-hidden="true"></i><%= discussion.likes.count %></a>
-                                                            <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%= discussion.replies.count %></a>
+                                                            <a><i class="fa fa-heart" aria-hidden="true"></i><%#= scene.likes.count %></a>
+                                                            <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%#= scene.replies.count %></a>
                                                         </div>
                                                     </div>
                                                     <div class="blog-text">
@@ -62,8 +62,8 @@
                                                                 <span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
                                                                 </div>
                                                         <% end %>
-                                                        <%= link_to scene do %>
-                                                            <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Plus Details...</p>   
+                                                        <%= link_to serials_path do %>
+                                                            <p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"> Back To All Series</p>   
                                                         <% end %>
                                                     </div>      
                                                 </div>

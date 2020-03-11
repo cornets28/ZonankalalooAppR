@@ -14,7 +14,7 @@
                     <!-- single blog starts here -->
                     <div class="single-blog mb-30"> 
                         <div class="blo-image-and-date" id="blo-image">
-                         <% parameterizeTitle = '/discussions/' %>
+                            <% parameterizeTitle = '/discussions/' %>
                             <a class="transparent-cover" style="background: transparent; z-index: 0; width: 100%; height: 100%;" href="<%= parameterizeTitle += discussion.title.parameterize%>" ></a>
                             <% if discussion.image.attached? %>
                               <%= image_tag discussion.image %>
