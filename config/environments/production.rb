@@ -5,6 +5,11 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  config.cache_store = :redis_store, 'redis://localhost:3000/0/cache', { expires_in: 90.minutes }
+  config.action_dispatch.rack_cache = {
+    metastore: 'redis://localhost:6379/1/metastore',
+    entitystore: 'redis://localhost:6379/1/entitystore'
+  }
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

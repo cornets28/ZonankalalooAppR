@@ -19,18 +19,26 @@ Rails.application.configure do
   config.active_storage.service = :amazon
 
   # Enable/disable caching. By default caching is disabled.
-  if Rails.root.join('tmp/caching-dev.txt').exist?
-    config.action_controller.perform_caching = true
+  # if Rails.root.join('tmp/caching-dev.txt').exist?
+  config.action_controller.perform_caching = true
 
-    config.cache_store = :memory_store
-    config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
-    }
-  else
-    config.action_controller.perform_caching = false
+  config.cache_store = :redis_store, {
+    host: 'localhost',
+    post: 3000,
+    db: 0,
+    password: 'mysecret',
+    namespace: 'cache'
+  }, {
+    expires_in: 90.minutes
+  }
+  config.public_file_server.headers = {
+    'Cache-Control' => "public, max-age=#{2.days.seconds.to_i}"
+  }
+  # else
+  #   config.action_controller.perform_caching = false
 
-    config.cache_store = :null_store
-  end
+  #   config.cache_store = :null_store
+  # end
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

@@ -46,6 +46,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
+gem 'redis-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -71,6 +72,10 @@ group :development, :test do
   gem 'guard', '~> 2.14', '>= 2.14.2'
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'redis-rack-cache'
 end
 
 group :development do
