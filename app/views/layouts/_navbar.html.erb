@@ -34,9 +34,9 @@
                                                         <% end %>
                                                     </ul>
                                                     <ul class="single-mega-item">
-                                                    <% if !@channels.any? %>
+                                                    <% if @channels.count >= 4 %>
                                                         <% @channels[4..7].each do |c| %>
-                                                            <a><li><%#= link_to c.channel, c %></li></a>
+                                                            <a><li><%= link_to c.channel, c %></li></a>
                                                         <% end %>
                                                     <% end %>
                                                     </ul>
