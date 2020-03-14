@@ -4,132 +4,126 @@
 
 
  <div class="main-menu-area" id="sticker">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="logo ptb-32">
-                                    <a href="/">
-                                        <img src="/img/zonankalaloo.png" width="190" style="margin-top: -2rem;" alt="zonankalaloo image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-9">
-                                <div class="main-menu">
-                                    <nav>
-                                        <ul>
-                                            <li><a href="/home"><strong>QUI SOMMES NOUS</strong></a></li>
-                                            <li ><a href="/discussions"><strong>DISCUSSIONS</strong></a>
-                                                <ul class="drop-menu">
-                                                    <li> 
-                                                        <%= link_to 'Ecrivez Un Article', new_discussion_path %>
-                                                    </li> 
-                                                </ul>
-                                            </li>
-                                            <li class="mega-menu"><a href="/channels"><strong>CATEGORIES</strong></a>
-                                                <div class="mega-menu-area">
-                                                    <ul class="single-mega-item">
-                                                        <% @channels[0..3].each do |c| %>
-                                                            <a><li><%= link_to c.channel, c %></li></a>
-                                                        <% end %>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                    <% if @channels.count >= 4 %>
-                                                        <% @channels[4..7].each do |c| %>
-                                                            <a><li><%= link_to c.channel, c %></li></a>
-                                                        <% end %>
-                                                    <% end %>
-                                                    </ul>
-                                                    <ul class="single-mega-item">
-                                                        <% if has_role?(:admin) %>
-                                                            <li><%= link_to 'Creez Nouvelle Catégorie', new_channel_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
-                                                            <li><%= link_to 'Ajoutez Nouveau Partenaire', new_partner_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
-                                                            <li><%= link_to 'Ajoutez Nouveau Sponsor', new_sponsor_path,style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
-                                                            <li><%= link_to 'Ajoutez Nouveau Membre', new_team_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>                            
-                                                        <% end %>   
-                                                    </ul>
-                                              </div>
-                                            </li>
-                                            <li ><a href="/serials"><strong>FEUILLETONS</strong></a>
-                                                <ul class="drop-menu">
-                                                    <li> 
-                                                        <%= link_to 'Nouvelle Serie', new_serial_path %>
-                                                    </li> 
-                                                    <li> 
-                                                       <%= link_to 'Nouvelle Scene', new_scene_path %>
-                                                    </li> 
-                                                </ul>
-                                            </li>
-                                            <li><a href="/jobs"><strong>EMPLOIS</strong></a>
-                                                <% if has_role?(:admin) %>
-                                                  <ul class="drop-menu">
-                                                    <li><%= link_to 'Ajoutez Un Job', new_job_path, class:'' %></li> 
-                                                  </ul>                          
-                                                <% end %> 
-                                            </li> 
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="donate-button ptb-32">
-                                    <a class="waves-effect waves-light" href="">Donate</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="logo ptb-32">
+                    <a href="/">
+                        <img src="/img/zonankalaloo.png" width="190" style="margin-top: -2rem;" alt="zonankalaloo image">
+                    </a>
                 </div>
-                <!-- End main menu area -->
-                <!-- Start mobile menu -->
-                <div class="mobile-menu-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="mobile-menu">
-                                <nav id="dropdown">
-                                    <ul class="nav">
-                                       <li><a href="/home"><strong>QUI SOMMES NOUS</strong></a></li>
-                                       <li><strong><a href="/discussions"><strong>DISCUSSIONS</strong></a>
-                                          <ul>
-                                             <li> 
-                                                <%= link_to 'Ecrivez Un Article', new_discussion_path %>
-                                            </li> 
-                                          </ul>
-                                      </li>
-                                                
-                                     <li><a class="home" href="#">CATEGORIES</a>
-                                        <ul>  
-                                            <% @channels.each do |c| %>
-                                                <li><%= link_to c.channel, c %></li>
-                                            <% end %> 
-                                            <li> 
-                                                <% if has_role?(:admin) %>
-                                                    <li><%= link_to 'Creez Nouvelle Catégorie', new_channel_path, class:'button is-info' %></li>
-                                                        <li><%= link_to 'Ajoutez Nouveau Partenaire', new_partner_path, class:'button is-info' %></li>
-                                                        <li><%= link_to 'Ajoutez Nouveau Sponsor', new_sponsor_path, class:'button is-info' %></li>
-                                                    <li><%= link_to 'Ajoutez Nouveau Membre', new_team_path, class:'button is-info' %></li>
-                                                <% end %> 
-                                            </li> 
-                                        </ul>   
-                                     </li>
+            </div>
 
-                                      <li><strong><a href="/serials"><strong>FEUILLETONS</strong></a>
-                                            <ul>
-                                                <li> 
-                                                    <%= link_to 'Nouvelle Serie', new_serial_path %>
-                                                </li> 
-                                                <li> 
-                                                <%= link_to 'Nouvelle Scene', new_scene_path %>
-                                            </li> 
-                                            </ul>
-                                        </li>
-                                        
-                                     <li><a href="/jobs">EMPLOIS</a>
-                                         <ul>
-                                             <li><a href="#">Coming soon!</a></li>
-                                         </ul>
-                                        </li>
+           <div class="col-sm-9">
+                <div class="main-menu">
+                    <nav>
+                        <ul>
+                            <li><a href="/home"><strong>QUI SOMMES NOUS</strong></a></li>
+                            <li ><a href="/discussions"><strong>DISCUSSIONS</strong></a>
+                                <ul class="drop-menu">
+                                    <li><%= link_to 'Ecrivez Un Article', new_discussion_path %></li> 
+                                </ul>
+                            </li>
+                            <li class="mega-menu"><a href="/channels"><strong>CATEGORIES</strong></a>
+                                <div class="mega-menu-area">
+                                    <ul class="single-mega-item">
+                                        <% @channels[0..3].each do |c| %>
+                                            <a><li><%= link_to c.channel, c %></li></a>
+                                        <% end %>
                                     </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
+                                    <ul class="single-mega-item">
+                                        <% if @channels.count >= 4 %>
+                                            <% @channels[4..7].each do |c| %>
+                                                <a><li><%= link_to c.channel, c %></li></a>
+                                            <% end %>
+                                        <% end %>
+                                    </ul>
+                                    <ul class="single-mega-item">
+                                        <% if has_role?(:admin) %>
+                                            <li><%= link_to 'Creez Nouvelle Catégorie', new_channel_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
+                                            <li><%= link_to 'Ajoutez Nouveau Partenaire', new_partner_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
+                                            <li><%= link_to 'Ajoutez Nouveau Sponsor', new_sponsor_path,style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
+                                            <li><%= link_to 'Ajoutez Nouveau Membre', new_team_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>                            
+                                        <% end %>   
+                                    </ul>
+                                </div>
+                            </li>
+                            <li ><a href="/serials"><strong>FEUILLETONS</strong></a>
+                                <ul class="drop-menu">
+                                    <li> <%= link_to 'Nouvelle Serie', new_serial_path %> </li> 
+                                    <li> <%= link_to 'Nouvelle Scene', new_scene_path %> </li> 
+                                </ul>
+                            </li>
+                            <li><a href="/jobs"><strong>EMPLOIS</strong></a>
+                                <% if has_role?(:admin) %>
+                                    <ul class="drop-menu">
+                                        <li><%= link_to 'Ajoutez Un Job', new_job_path, class:'' %></li> 
+                                    </ul>                          
+                                <% end %> 
+                            </li> 
+                        </ul>
+                    </nav>
                 </div>
-                <!-- End mobile menu -->
+                <div class="donate-button ptb-32">
+                    <a class="waves-effect waves-light" href="">Donate</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                
+<!-- Start mobile menu -->
+<div class="mobile-menu-area">
+    <div class="container">
+        <div class="row">
+            <div class="mobile-menu">
+                <nav id="dropdown">
+                    <ul class="nav">
+                        <li><a href="/home"><strong>QUI SOMMES NOUS</strong></a></li>
+                        <li><strong><a href="/discussions"><strong>DISCUSSIONS</strong></a>
+                            <ul>
+                                <li> 
+                                    <%= link_to 'Ecrivez Un Article', new_discussion_path %>
+                                </li> 
+                            </ul>
+                        </li>
+                                                
+                        <li><a class="home" href="#">CATEGORIES</a>
+                            <ul>  
+                                <% @channels.each do |c| %>
+                                    <li><%= link_to c.channel, c %></li>
+                                <% end %> 
+                                <li> 
+                                    <% if has_role?(:admin) %>
+                                        <li><%= link_to 'Creez Nouvelle Catégorie', new_channel_path, class:'button is-info' %></li>
+                                        <li><%= link_to 'Ajoutez Nouveau Partenaire', new_partner_path, class:'button is-info' %></li>
+                                        <li><%= link_to 'Ajoutez Nouveau Sponsor', new_sponsor_path, class:'button is-info' %></li>
+                                        <li><%= link_to 'Ajoutez Nouveau Membre', new_team_path, class:'button is-info' %></li>
+                                    <% end %> 
+                                </li> 
+                            </ul>   
+                         </li>
+
+                        <li><strong><a href="/serials"><strong>FEUILLETONS</strong></a>
+                            <ul>
+                                <li> 
+                                    <%= link_to 'Nouvelle Serie', new_serial_path %>
+                                </li> 
+                                <li> 
+                                    <%= link_to 'Nouvelle Scene', new_scene_path %>
+                                </li> 
+                            </ul>
+                        </li>
+                                    
+                        <li><a href="/jobs">EMPLOIS</a>
+                            <ul>
+                                <li><a href="#">Coming soon!</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>   
+    </div>
+</div>
+<!-- End mobile menu -->
