@@ -19,12 +19,12 @@
                     <nav>
                         <ul>
                             <li><a href="/home"><strong>QUI SOMMES NOUS</strong></a></li>
-                            <li ><a href="/discussions"><strong>DISCUSSIONS</strong></a>
+                            <li ><a href="/discussions"><strong>ARTICLES</strong></a>
                                 <ul class="drop-menu">
                                     <li><%= link_to 'Ecrivez Un Article', new_discussion_path %></li> 
                                 </ul>
                             </li>
-                            <li class="mega-menu"><a href="/channels"><strong>CATEGORIES</strong></a>
+                            <li class="mega-menu"><a href="/channels"><strong>CHANNELS</strong></a>
                                 <div class="mega-menu-area">
                                     <ul class="single-mega-item">
                                         <% @channels[0..3].each do |c| %>
@@ -40,7 +40,7 @@
                                     </ul>
                                     <ul class="single-mega-item">
                                         <% if has_role?(:admin) %>
-                                            <li><%= link_to 'Creez Nouvelle Catégorie', new_channel_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
+                                            <li><%= link_to 'Creez Nouveau Channel', new_channel_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
                                             <li><%= link_to 'Ajoutez Nouveau Partenaire', new_partner_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
                                             <li><%= link_to 'Ajoutez Nouveau Sponsor', new_sponsor_path,style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>
                                             <li><%= link_to 'Ajoutez Nouveau Membre', new_team_path, style:"padding-bottom: .88rem; padding-top: .88rem;" %></li>                            
@@ -80,7 +80,7 @@
                 <nav id="dropdown">
                     <ul class="nav">
                         <li><a href="/home"><strong>QUI SOMMES NOUS</strong></a></li>
-                        <li><strong><a href="/discussions"><strong>DISCUSSIONS</strong></a>
+                        <li><strong><a href="/discussions"><strong>ARTICLES</strong></a>
                             <ul>
                                 <li> 
                                     <%= link_to 'Ecrivez Un Article', new_discussion_path %>
@@ -88,14 +88,14 @@
                             </ul>
                         </li>
                                                 
-                        <li><a class="home" href="#">CATEGORIES</a>
+                        <li><a class="home" href="#">Channel</a>
                             <ul>  
                                 <% @channels.each do |c| %>
                                     <li><%= link_to c.channel, c %></li>
                                 <% end %> 
                                 <li> 
                                     <% if has_role?(:admin) %>
-                                        <li><%= link_to 'Creez Nouvelle Catégorie', new_channel_path, class:'button is-info' %></li>
+                                        <li><%= link_to 'Creez Nouveau Channel', new_channel_path, class:'button is-info' %></li>
                                         <li><%= link_to 'Ajoutez Nouveau Partenaire', new_partner_path, class:'button is-info' %></li>
                                         <li><%= link_to 'Ajoutez Nouveau Sponsor', new_sponsor_path, class:'button is-info' %></li>
                                         <li><%= link_to 'Ajoutez Nouveau Membre', new_team_path, class:'button is-info' %></li>
