@@ -1,4 +1,8 @@
-<% provide(:title, "#{@discussion.title}") %>
+<%# provide(:title, "#{@discussion.title}") %>
+<%# content_for :meta_title, "#{@post.title} | #{DEFAULT_META["meta_title"]}" %>
+
+<% content_for :meta_description, @discussion.title %>
+<% content_for :meta_image, image_tag(@discussion.image) %>
 
 <section class="our-blog-area pt-90 pb-60">
 	<div class="container">
