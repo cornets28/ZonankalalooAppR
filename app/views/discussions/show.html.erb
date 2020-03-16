@@ -1,8 +1,9 @@
-<%# provide(:title, "#{@discussion.title}") %>
-<%# content_for :meta_title, "#{@post.title} | #{DEFAULT_META["meta_title"]}" %>
+<%# provide(:title, image_tag(@discussion.image))%>
+<% content_for :meta_title, "#{@discussion.title} | #{DEFAULT_META["meta_title"]}" %>
 
 <% content_for :meta_description, @discussion.title %>
-<% content_for :meta_image, image_tag(@discussion.image) %>
+<%# content_for :meta_image image_tag(@discussion.image) if @discussion.image.attached? %>
+<%# content_for :meta_image mage_tag('/img/zonankalaloo.png') %>
 
 <section class="our-blog-area pt-90 pb-60">
 	<div class="container">
