@@ -1,79 +1,135 @@
 <% provide(:title, "#{@discussion.channel}") %>
 
 <section class="our-blog-area pt-90 pb-60">
-    <div class="container">
-        <div class="row">
-            <div class="blog">
-                <div class="col-sm-8">
-                    <div class="blog-details single-blog mb-30">
-                        <div class="blog-details-title">
-                            <h2><strong><%= @discussion.title %></strong></h2>
-                        </div>
+	<div class="container">
+		<div class="row">
+			<div class="blog">
+				<div class="col-sm-8">
+					<div class="blog-details single-blog mb-30">
+						<div class="blog-details-title">
+							<h2><strong><%= @discussion.title %></strong></h2>
+						</div>
 
-                        <div class="blog-info">
-                            <div class="admin">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Auteur:  <%= @discussion.user.username %> <%= @discussion.user.userlastname %>, Catégorie: <%= link_to @discussion.channel.channel, @discussion.channel %></a>,
-                            </div>
-                            <div class="comment">
-                                Publié il y a
-                                <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><%= time_ago_in_words(@discussion.created_at) %></a>
-                                <a href="#"><i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i><%= @discussion.likes.count %></a>
-                                <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%= @discussion.replies.count %></a>
-                            </div>
-                        </div>
-                        <div class="blo-image-and-date">
-                           <%= image_tag @discussion.image if @discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%> 
-                            <%= default_discussion_img(@discussion)if !@discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%> 
-                        </div>
-                        <div class="blog-text">
-                            <p><%= @discussion.content %></p>
-                        </div>
-                        <br/>
-                        <div class="card-footer bg-white">
-                            <% if @discussion.likes.any? {|like| like.user == current_user}%>
-                            <h5 style="padding-top: 1rem"><strong> Otez votre Like <%= link_to "",  like_path(id: @discussion.id), 
-                                method: :delete,class:"fa fa-lg fa-thumbs-down" %></strong></h5>
-                            <% else %>
-                            <h5 style="padding-top: 1rem"><strong> J'aimes <%= link_to "", likes_path(id: @discussion.id),
-                                method: :discussion,class:"fa fa-lg fa-thumbs-up" %></strong></h5>
-                            <% end %>
-                        </div>
-                        <hr>
-                                           
-                        <div class="blog-coment-box">
-                            <div class="single0blog-coment">
-                                <h5><strong><%= @discussion.replies.count %> Reponse(s) | <%= @discussion.likes.count %> <i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i></strong></h5>
-                                <ul>
-                                   <li><%= render @discussion.replies %></li>
-                                </ul>
-                            </div>    
-                            <ul>
-                                <% if user_signed_in? %>
-                                    <%= render 'replies/form' %>
-                                <% else %> 
-                                     <p class="permission">Pour Participer, Vous Devez <%= link_to 'Rentrez Votre Email', new_user_session_path %> ou
-                                    <%= link_to 'Enrigistrez-vous', new_user_registration_path %></p>
-                                <% end %>
-                            </ul>
-                        </div>
-                    </div>
-                </div> 
-            </div>
-            <%= render "/shared/most_popular_discussions" %>
-        </div> 
-    </div>              
+						<div class="blog-info">
+							<div class="admin">
+								<a href="#"
+									><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%=
+									@discussion.user.username %> <%= @discussion.user.userlastname
+									%>, Catégorie: <%= link_to @discussion.channel.channel,
+									@discussion.channel %></a
+								>,
+							</div>
+							<div class="comment">
+								Publié il y a
+								<a href="#"
+									><i class="fa fa-calendar" aria-hidden="true"></i><%=
+									time_ago_in_words(@discussion.created_at) %></a
+								>
+								<a href="#"
+									><i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i><%=
+									@discussion.likes.count %></a
+								>
+								<a href="#"
+									><i class="fa fa-comment" aria-hidden="true"></i><%=
+									@discussion.replies.count %></a
+								>
+							</div>
+						</div>
+						<div class="blo-image-and-date">
+							<%= image_tag @discussion.image if @discussion.image.attached?
+							{style:"width: 100%; height:50%; object-fit: cover;" }%> <%=
+							default_discussion_img(@discussion)if !@discussion.image.attached?
+							{style:"width: 100%; height:50%; object-fit: cover;" }%>
+						</div>
+						<div class="blog-text">
+							<p><%= @discussion.content %></p>
+						</div>
+						<br />
+						<hr />
+						<div style="display: flex;">
+							<div class="card-footer bg-white">
+								<% if @discussion.likes.any? {|like| like.user ==
+								current_user}%>
+								<h5 style="padding-top: 1rem">
+									<strong>
+										Otez votre Like <%= link_to "", like_path(id:
+										@discussion.id), method: :delete,class:"fa fa-lg
+										fa-thumbs-down" %></strong
+									>
+								</h5>
+								<% else %>
+
+								<h5 style="padding-top: 1rem">
+									<strong>
+										J'aime <%= link_to "", likes_path(id: @discussion.id),
+										method: :discussion,class:"fa fa-lg fa-thumbs-up" %></strong
+									>
+								</h5>
+								<% end %>
+							</div>
+
+							<div
+								class="blog-share"
+								style="padding-top: 1rem; padding-left: 2rem"
+							>
+								<p>
+									Patager sur:
+									<span style="margin-left: 1rem;">
+										<a
+											href="https://www.facebook.com/sharer/sharer.php?u=<%= request.original_url %>"
+											class="social-link"
+										>
+											<i class="fa fa-facebook" aria-hidden="true"></i>
+										</a>
+									</span>
+									<span style="margin-left: 1rem;">
+										<a
+											href="whatsapp://send?text=<%= request.original_url %>"
+											class="social-link"
+										>
+											<i class="fa fa-whatsapp" aria-hidden="true"></i>
+										</a>
+									</span>
+									<span style="margin-left: 1rem;">
+										<a
+											href="https://twitter.com/intent/tweet?text=<%= request.original_url %>"
+											class="social-link"
+										>
+											<i class="fa fa-twitter" aria-hidden="true"></i>
+										</a>
+									</span>
+								</p>
+							</div>
+						</div>
+						<hr />
+
+						<div class="blog-coment-box">
+							<div class="single0blog-coment">
+								<h5>
+									<strong
+										><%= @discussion.replies.count %> Reponse(s) | <%=
+										@discussion.likes.count %>
+										<i class="fa fa-lg fa-thumbs-up" aria-hidden="true"></i
+									></strong>
+								</h5>
+								<ul>
+									<li><%= render @discussion.replies %></li>
+								</ul>
+							</div>
+							<ul>
+								<% if user_signed_in? %> <%= render 'replies/form' %> <% else %>
+								<p class="permission">
+									Pour Participer, Vous Devez <%= link_to 'Rentrez Votre Email',
+									new_user_session_path %> ou <%= link_to 'Enrigistrez-vous',
+									new_user_registration_path %>
+								</p>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<%= render "/shared/most_popular_discussions" %>
+		</div>
+	</div>
 </section>
-
-           
-
-
-
-
-
-
-
-
-
-
-
-

@@ -437,6 +437,9 @@
 	.test {
 		z-index: inherit;
 	}
+	#scenefix {
+		/* overflow-y: hidden; */
+	}
 }
 
 /* Large Mobile :480px. */

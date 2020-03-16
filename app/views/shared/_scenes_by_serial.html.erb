@@ -2,7 +2,7 @@
 
 <!--TO BE ERASED -->
 <section class="people-says-area2 pt-54 pb-20">
-        <div class="container">
+        <div class="container" id ="scenefix">
             <div class="row">
                 <div class="col-sm-12">
                     <!--<div class="container">-->
@@ -31,14 +31,14 @@
                                                             <a href="#"><i class="fa fa-comment" aria-hidden="true"></i><%#= scene.replies.count %></a>
                                                         </div>
                                                     </div>
-                                                    <div class="blog-text">
+                                                    <div class="blog-text" style="color: white;">
                                                         <h3>
                                                             <%= link_to scene do %>
                                                                 <%= truncate(scene.title, length: 32) %>
                                                             <% end %>
                                                         </h3>
                                                         <%= truncate(strip_tags(scene.content.to_s), length: 190) %>
-                                                        <p>
+                                                        <p style="color: blanchedalmond;">
                                                             <em>
                                                                 <small>
                                                                     Publié, il y a <%= time_ago_in_words(scene.created_at) %>, Categorie
