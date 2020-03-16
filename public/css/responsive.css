@@ -437,12 +437,14 @@
 	.test {
 		z-index: inherit;
 	}
-	#scenefix {
-		/* overflow-y: hidden; */
-	}
-	.people-says-area2 {
-		/* overflow-y: hidden; */
-		/* padding-left: -4rem; */
+	 /* #scenefix {
+		margin-top: -5% !important;
+	} */
+
+	#people-says {
+		overflow: hidden;
+		margin-right: -4rem;
+		width: 50%;
 	}
 }
 

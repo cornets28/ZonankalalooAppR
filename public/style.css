@@ -900,8 +900,7 @@ h1.title1 {
 	background: rgba(0, 0, 0, 0) url("img/globe2.jpg") repeat scroll 0 0 / cover;
 }
 .people-says-area2 {
-	background: rgba(0, 0, 0, 0) url("img/darkbg3.jpeg") repeat scroll 0 0 /
-		cover;
+	background: rgba(0, 0, 0, 0) url("img/darkbg3.jpeg") repeat scroll 0 0 / cover;
 }
 .single-people {
 	margin: auto;
@@ -2287,4 +2286,7 @@ h1.title1 {
 }
 /* #mc-submit {
 	padding-left: 4rem;
+} */
+/* #scenefix {
+	margin-top: 40% !important;
 } */
