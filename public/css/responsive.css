@@ -440,6 +440,10 @@
 	#scenefix {
 		/* overflow-y: hidden; */
 	}
+	.people-says-area2 {
+		/* overflow-y: hidden; */
+		/* padding-left: -4rem; */
+	}
 }
 
 /* Large Mobile :480px. */
