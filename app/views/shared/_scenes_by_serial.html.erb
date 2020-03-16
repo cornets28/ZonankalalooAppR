@@ -16,22 +16,12 @@
 									<!--starts here -->
 									<div class="single-blog mb-30" id="no-margin-scene">
 										<div class="blo-image-and-date" id="blo-image">
-											<%= image_tag scene.image if scene.image.attached? %> <%
-											if scene.serial %> <%= link_to scene.serial.mainTitle,
-											scene.serial %> <% end %>
+                                            <%= image_tag scene.image if scene.image.attached? %> 
+                                            <% if scene.serial %> 
+                                                <%= link_to scene.serial.mainTitle, scene.serial %> 
+                                            <% end %>
 										</div>
-										<div class="blog-info">
-											<div class="comment">
-												<a
-													><i class="fa fa-heart" aria-hidden="true"></i><%#=
-													scene.likes.count %></a
-												>
-												<a href="#"
-													><i class="fa fa-comment" aria-hidden="true"></i><%#=
-													scene.replies.count %></a
-												>
-											</div>
-										</div>
+										
 										<div class="blog-text" style="color: white;">
 											<h3>
 												<%= scene.title %>
@@ -42,34 +32,25 @@
 													<small>
                                                         Publié, il y a 
                                                         <%= time_ago_in_words(scene.created_at) %>
-                                                       
-                                                        par <span style="color: blanchedalmond;"><%= scene.user.username %> <%= scene.user.userlastname %></span>
+                                                        , par <span style="color: blanchedalmond;"><%= scene.user.username %> <%= scene.user.userlastname %></span>
 													</small>
 												</em>
 											</p>
 											<% if scene_author(scene) || has_role?(:admin) %>
-											<div class="column has-text-left">
+											    <div class="column has-text-left">
 												<%= link_to edit_scene_path(scene) do %>
-												<span class="icon is-small"
-													><i class="fa fa-pencil"></i
-												></span>
-												<% end %> | <%= link_to scene, method: :delete, data:
-												{confirm: "En etes vous sure" } do %>
-												<span class="icon is-small"
-													><i class="fa fa-trash-o"></i
-												></span>
+												    <span class="icon is-small"><i class="fa fa-pencil"></i></span>
+                                                <% end %> | 
+                                                <%= link_to scene, method: :delete, data: {confirm: "En etes vous sure" } do %>
+												    <span class="icon is-small"><i class="fa fa-trash-o"></i></span>
 												<% end %>
-											</div>
+											   </div>
 											<% else %>
 											<div class="column has-text-left">
-												<span class="icon is-small"
-													><i class="fa fa-hand-o-right" aria-hidden="true"></i
-												></span>
+												<span class="icon is-small"><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>
 											</div>
 											<% end %> <%= link_to serials_path do %>
-											<p
-												style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;"
-											>
+											<p style="margin-top: -2rem; float:right !important; margin-bottom: 0rem;">
 												Toutes les Series
 											</p>
 											<% end %>
