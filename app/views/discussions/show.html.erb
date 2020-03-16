@@ -1,5 +1,4 @@
-<% provide(:title, @discussion.title)%> 
-
+<% provide(:title, @discussion.title)%>
 
 <section class="our-blog-area pt-90 pb-60">
 	<div class="container">
@@ -37,8 +36,8 @@
 							</div>
 						</div>
 						<div class="blo-image-and-date">
-                <%= image_tag @discussion.image if @discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%> 
-                <%= default_discussion_img(@discussion)if !@discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%>
+							<%= image_tag @discussion.image if @discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" } %>
+							<%= default_discussion_img(@discussion)if !@discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%>
 						</div>
 						<div class="blog-text">
 							<p><%= @discussion.content %></p>
@@ -80,6 +79,11 @@
 										>
 											<i class="fa fa-facebook" aria-hidden="true"></i>
 										</a>
+										<style>
+											.fa-facebook {
+												color: #4267b2 !important;
+											}
+										</style>
 									</span>
 									<span style="margin-left: 1rem;">
 										<a
@@ -88,6 +92,11 @@
 										>
 											<i class="fa fa-whatsapp" aria-hidden="true"></i>
 										</a>
+										<style>
+											.fa-whatsapp {
+												color: #07d755 !important;
+											}
+										</style>
 									</span>
 									<span style="margin-left: 1rem;">
 										<a
@@ -96,6 +105,11 @@
 										>
 											<i class="fa fa-twitter" aria-hidden="true"></i>
 										</a>
+										<style>
+											.fa-twitter {
+												color: #2aa1f2 !important;
+											}
+										</style>
 									</span>
 								</p>
 							</div>
