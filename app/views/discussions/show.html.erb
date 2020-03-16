@@ -1,9 +1,8 @@
-<%# provide(:title, image_tag(@discussion.image))%>
-<% content_for :meta_title, "#{@discussion.title} | #{DEFAULT_META["meta_title"]}" %>
-
-<% content_for :meta_description, @discussion.title %>
-<%# content_for :meta_image image_tag(@discussion.image) if @discussion.image.attached? %>
-<%# content_for :meta_image mage_tag('/img/zonankalaloo.png') %>
+<% provide(:title, @discussion.title)%> <%#content_for :meta_title,
+"#{@discussion.title} | #{DEFAULT_META["meta_title"]}" %> <%# content_for
+:meta_description, @discussion.title %> <%# content_for :meta_image
+image_tag(@discussion.image) if @discussion.image.attached? %> <%# content_for
+:meta_image mage_tag('/img/zonankalaloo.png') %>
 
 <section class="our-blog-area pt-90 pb-60">
 	<div class="container">
@@ -41,8 +40,10 @@
 							</div>
 						</div>
 						<div class="blo-image-and-date">
-							<%= image_tag @discussion.image if @discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%> 
-                            <%= default_discussion_img(@discussion)if !@discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%>
+							<%= image_tag @discussion.image if @discussion.image.attached?
+							{style:"width: 100%; height:50%; object-fit: cover;" }%> <%=
+							default_discussion_img(@discussion)if !@discussion.image.attached?
+							{style:"width: 100%; height:50%; object-fit: cover;" }%>
 						</div>
 						<div class="blog-text">
 							<p><%= @discussion.content %></p>
