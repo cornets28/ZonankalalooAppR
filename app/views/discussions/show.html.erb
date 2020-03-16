@@ -12,7 +12,7 @@
 
 						<div class="blog-info">
 							<div class="admin">
-								<a href="#"
+								<a href=""
 									><i class="fa fa-user" aria-hidden="true"></i> Auteur: <%=
 									@discussion.user.username %> <%= @discussion.user.userlastname
 									%>, Catégorie: <%= link_to @discussion.channel.channel,
@@ -36,10 +36,8 @@
 							</div>
 						</div>
 						<div class="blo-image-and-date">
-							<%= image_tag @discussion.image if @discussion.image.attached?
-							{style:"width: 100%; height:50%; object-fit: cover;" }%> <%=
-							default_discussion_img(@discussion)if !@discussion.image.attached?
-							{style:"width: 100%; height:50%; object-fit: cover;" }%>
+							<%= image_tag @discussion.image if @discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%> 
+                            <%= default_discussion_img(@discussion)if !@discussion.image.attached? {style:"width: 100%; height:50%; object-fit: cover;" }%>
 						</div>
 						<div class="blog-text">
 							<p><%= @discussion.content %></p>
