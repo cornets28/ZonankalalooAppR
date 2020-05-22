@@ -36,6 +36,8 @@ cd ZonankalalooAppR
 ```
 - Install dependencies: ```yarn install```
 - Install dependencies: ```bundle install```
+  
+  (You may have to remove the `Gemfile.lock` and `Yarn.lock` files if encountering issues and then run ```bundle install``` and  ```yarn install```)
 - Make sure you have Ruby installed
 - Run:
     ```
