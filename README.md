@@ -1,6 +1,6 @@
 # ZonankalalooAppR
 
-# Table of Contents
+# Table of Contents:
 
 - [ZonankalalooAppR](#zonankalalooappr)
   * [Screenshots](#screenshots)
