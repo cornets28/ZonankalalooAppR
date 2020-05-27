@@ -21,7 +21,7 @@ This is a personal News App, built using  Ruby on Rails, HTML and CSS, SASS, Jav
 
 This is a news app where users can view existing articles with no need to sign up or log in. However, if a user would like to publish, like, or comment an article (news), s/he will need to register or sign in if s/he already has an account registered. A user is a constraint to edit/delete an article that is not his/hers. This app also provides a section where users can write a series. A User cannot edit/delete a series that is not his/hers. However, all users can view his/her series.
 
-This app could have already been deployed on a professional hosting area which would make it accessible to the world, but due to some personal issues and some minor bugs to fixe, we have not done so.
+This app could have already been deployed on a professional hosting area which would make it accessible to the world, but due to some personal issues and some minor bugs to fix, we have not done so.
 
 ## Requirements
 
