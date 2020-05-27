@@ -8,6 +8,7 @@
   * [Requirements](#requirements)
   * [Usage](#usage)
   * [Demo](#demo)
+  * [Test](#test)
 
 
 
@@ -46,6 +47,8 @@ cd ZonankalalooAppR
  
  ## Demo
  If you want to view the live version of this app, copy and paste the following link in your broswer: 
-  ```
-    https://fathomless-stream-70466.herokuapp.com/
-  ```
+  
+    [ZonanKalaloo Demo](https://fathomless-stream-70466.herokuapp.com/)
+  
+## Test
+No Test has been written yet for this project. This will come soon.
