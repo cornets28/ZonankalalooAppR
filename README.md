@@ -51,4 +51,4 @@ cd ZonankalalooAppR
   [ZonanKalaloo Demo](https://fathomless-stream-70466.herokuapp.com/)
   
 ## Test
-No Test has been written yet for this project. This will come soon.
+No Test has been written yet for this project. This will come soon
